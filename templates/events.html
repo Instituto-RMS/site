@@ -7,11 +7,16 @@
 {% endif %}
 
 <div class="not-prose">
-  {% if section.pages | length == 0 %}
+  {% if paginator %}
+    {% set events = paginator.pages %}
+  {% else %}
+    {% set events = section.pages %}
+  {% endif %}
+  {% if events | length == 0 %}
   <p class="opacity-70">Nenhum evento agendado no momento. Volte em breve!</p>
   {% else %}
   <div class="grid gap-4 sm:grid-cols-2">
-    {% for event in section.pages %}
+    {% for event in events %}
     <div class="block-bg flex flex-col rounded-lg p-5">
       <time class="mb-1 font-mono text-sm opacity-60">{{ event.date | date(format="%d/%m/%Y") }}</time>
       <h2 class="mt-0 mb-2 text-xl font-bold text-black dark:text-white">{{ event.title }}</h2>
