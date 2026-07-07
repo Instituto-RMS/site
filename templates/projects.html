@@ -1,35 +1,42 @@
 {% extends "index.html" %}<!---->
-{% block main %}<!---->
+{% block main %}
+<h1 class="mb-4">{{ section.title }}</h1>
 
-{% for asset in page.assets %}<!---->
-{% if asset is ending_with("data.toml") %}<!---->
-{% set_global data = load_data(path=asset, format="toml") %}<!---->
-{% endif %}<!---->
-{% endfor %}<!---->
+{% if section.content %}
+<section class="mb-12">{{ section.content | safe }}</section>
+{% endif %}
 
-<h1 class="mb-16">{{ page.title }}</h1>
-{% for project in data.project %}
-<div class="not-prose block-bg my-4 flex w-full flex-col rounded-lg px-5 py-1.5">
-  <h3 class="my-2 text-xl font-bold text-black dark:text-white">{{ project.name }}</h3>
-  <p>{{ project.desc }}</p>
-  <div class="my-2 flex flex-wrap items-center justify-between">
-    <div class="flex flex-wrap gap-x-2 text-sm opacity-60">
-      {% for tag in project.tags %}
-      <span>#{{ tag }}</span>
-      {% endfor %}
-    </div>
-    <div class="flex flex-wrap gap-x-2">
-      {% for link in project.links %}
+<div class="not-prose">
+  {% if paginator %}
+    {% set projects = paginator.pages %}
+  {% else %}
+    {% set projects = section.pages %}
+  {% endif %}
+  {% if projects | length == 0 %}
+  <p class="opacity-70">Nenhum projeto cadastrado no momento. Volte em breve!</p>
+  {% else %}
+  <div class="grid gap-4 sm:grid-cols-2">
+    {% for project in projects %}
+    <div class="block-bg flex flex-col rounded-lg p-5">
+      <h2 class="mt-0 mb-2 text-xl font-bold text-black dark:text-white">
+        <a class="no-underline" href="{{ project.permalink }}">{{ project.title }}</a>
+      </h2>
+      <p class="mb-4 grow opacity-80">{{ project.description | default(value=project.summary) | safe }}</p>
+      {% if project.extra.tags %}
+      <div class="mb-4 flex flex-wrap gap-x-2 text-sm opacity-60">
+        {% for tag in project.extra.tags %}
+        <span>#{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
       <a
-        class="underline"
-        href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe  }}"
-        rel="noopener"
-        target="_blank"
-        >{{ link.name }}</a
+        class="self-start rounded-full bg-black px-4 py-2 text-sm text-white no-underline duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
+        href="{{ project.permalink }}"
+        >Saiba mais</a
       >
-      {% endfor %}
     </div>
+    {% endfor %}
   </div>
+  {% endif %}
 </div>
-{% endfor %}<!---->
 {% endblock main %}

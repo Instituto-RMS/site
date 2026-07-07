@@ -1,0 +1,37 @@
+{% extends "index.html" %}<!---->
+{% block main %}
+<article>
+  <header class="mb-8">
+    <h1 class="my-0! pb-2.5">{{ page.title }}</h1>
+    {% if page.extra.tags %}
+    <div class="mt-2 flex flex-wrap gap-x-2 text-sm opacity-60">
+      {% for tag in page.extra.tags %}
+      <span>#{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <section>{{ page.content | safe }}</section>
+
+  {% if page.extra.links %}
+  <div class="not-prose mt-8 flex flex-wrap gap-3">
+    {% for link in page.extra.links %}
+    <a
+      class="inline-block rounded-full bg-black px-5 py-3 text-sm font-medium text-white no-underline duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
+      href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+      rel="noopener"
+      target="_blank"
+      >{{ link.name }}</a
+    >
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <hr />
+
+  <p>
+    <a class="secondary-link" href="{{ get_url(path=`@/projects/_index.md`) }}">← Ver todos os projetos</a>
+  </p>
+</article>
+{% endblock main %}

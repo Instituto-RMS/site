@@ -83,9 +83,7 @@
       <p class="mb-4 grow opacity-80">{{ project.blurb }}</p>
       <a
         class="self-start rounded-full bg-black px-4 py-2 text-sm text-white no-underline duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
-        href="{{ project.url }}"
-        rel="noopener"
-        target="_blank"
+        href="{{ project.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
         >Saiba mais</a
       >
     </div>
