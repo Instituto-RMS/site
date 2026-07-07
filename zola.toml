@@ -85,16 +85,21 @@ loading = "lazy"
 # Anything marked TODO is a stubbed placeholder pending real data/links.
 
 [extra.home]
-hero_headline = "Onde ideias viram protótipos — e protótipos viram soluções reais."
-hero_subheadline = "O Rio Maker Space é uma comunidade de makers, estudantes e curiosos que constrói foguetes, balões estratosféricos, robótica e muito mais — de forma aberta, colaborativa e gratuita."
-hero_cta_primary_label = "Quero fazer parte"
-hero_cta_primary_url = "mailto:riomakerspace@gmail.com?subject=Quero%20fazer%20parte%20do%20RMS"
+hero_headline = "A infraestrutura por trás da inovação maker no Rio de Janeiro."
+hero_subheadline = "O Rio Maker Space reúne 11 anos de experiência técnica e comunitária para apoiar escolas, competições e instituições que precisam de expertise em foguetes, balões estratosféricos, robótica e muito mais."
+hero_cta_primary_label = "Fale com nossa equipe"
+hero_cta_primary_url = "mailto:riomakerspace@gmail.com?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
 hero_cta_secondary_label = "Conheça nossos projetos"
 hero_cta_secondary_url = "$BASE_URL/projects"
 
 open_source_text = "Tudo aqui é aberto — do código ao hardware."
 open_source_cta_label = "Ver nossos projetos no GitHub →"
 open_source_url = "https://github.com/RIO-MAKER-SPACE-GIT"
+
+[[extra.home.final_ctas]]
+text = "Precisa de expertise técnica?"
+cta_label = "Contrate uma consultoria"
+cta_url = "mailto:riomakerspace@gmail.com?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
 
 [[extra.home.final_ctas]]
 text = "Quer aprender fazendo?"
@@ -105,11 +110,6 @@ cta_url = "mailto:riomakerspace@gmail.com?subject=Quero%20participar%20do%20RMS"
 text = "Tem uma escola ou instituição?"
 cta_label = "Leve o RMS pra você"
 cta_url = "mailto:riomakerspace@gmail.com?subject=Parceria%20institucional%20com%20o%20RMS"
-
-[[extra.home.final_ctas]]
-text = "Precisa de expertise técnica?"
-cta_label = "Contrate uma consultoria"
-cta_url = "mailto:riomakerspace@gmail.com?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
 
 [extra.contact]
 email = "riomakerspace@gmail.com"

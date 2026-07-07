@@ -14,11 +14,11 @@ label = "projetos de ponta documentados publicamente (foguetes, balões estratos
 confirmed = true
 
 [[stat]]
-value = ""
-label = "eventos e oficinas realizados"
-confirmed = false
+value = "+400"
+label = "pessoas conectadas no Porto Maravalley"
+confirmed = true
 
 [[stat]]
-value = ""
-label = "pessoas já impactadas (alunos, participantes, comunidade)"
-confirmed = false
+value = "32"
+label = "projetos técnicos expostos"
+confirmed = true
