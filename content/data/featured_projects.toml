@@ -1,0 +1,31 @@
+# Featured projects shown in the "Projetos em destaque" section of the homepage.
+# `url` fields are stubbed to "#" pending real Notion page links — replace them
+# (and remove the TODO comments) once available.
+
+[[project]]
+icon = "🚀"
+name = "Foguete UIARA"
+blurb = "Desenvolvido com CBPF e UFRJ, alcançou 1 km de altitude com telemetria feita 100% por makers voluntários."
+# TODO: replace with the real Notion page link.
+url = "#"
+
+[[project]]
+icon = "🎈"
+name = "Balão de Exploração Científica (BEC)"
+blurb = "Um balão de hélio que já chegou a 23 km de altitude, coletando dados de temperatura, radiação e localização em tempo real."
+# TODO: replace with the real Notion page link.
+url = "#"
+
+[[project]]
+icon = "🪽"
+name = "Projeto ASA"
+blurb = "Uma asa com aviônica de satélite que sobe até 23 km e volta sozinha ao ponto de lançamento — pilotada por um computador de bordo feito por nós."
+# TODO: replace with the real Notion page link.
+url = "#"
+
+[[project]]
+icon = "🛰️"
+name = "StarChain"
+blurb = "Nosso projeto mais ousado: uma constelação de satélites para infraestrutura descentralizada em órbita."
+# TODO: replace with the real Notion page link.
+url = "#"

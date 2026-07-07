@@ -1,54 +1,26 @@
-[[project]]
-name = "lorem"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["nisi", "saepe"]
-links = [
-  { name = "github", url = "https://example.com" },
-  { name = "docs", url = "https://example.com" },
-]
+# TODO: replace stubbed "#" links with real project pages (Notion, GitHub repos,
+# docs, etc.) once available.
 
 [[project]]
-name = "ipsum"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["lorem", "ipsum"]
-links = [
-  { name = "homepage", url = "https://example.com" },
-  { name = "source", url = "https://example.com" },
-  { name = "docs", url = "https://example.com" },
-]
+name = "Foguete UIARA"
+desc = "Desenvolvido com CBPF e UFRJ, o UIARA alcançou 1 km de altitude com telemetria feita 100% por makers voluntários."
+tags = ["foguetaria", "telemetria", "CBPF", "UFRJ"]
+links = [{ name = "Saiba mais", url = "#" }]
 
 [[project]]
-name = "dolor sit"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["amet", "ipsum", "vero", "optio"]
-links = [{ name = "github", url = "https://example.com" }]
+name = "Balão de Exploração Científica (BEC)"
+desc = "Um balão de hélio que já chegou a 23 km de altitude, coletando dados de temperatura, radiação e localização em tempo real."
+tags = ["balonismo estratosférico", "telemetria", "ciência"]
+links = [{ name = "Saiba mais", url = "#" }]
 
 [[project]]
-name = "amet"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["lorem", "ipsum"]
-links = [
-  { name = "website", url = "https://example.com" },
-  { name = "github", url = "https://example.com" },
-  { name = "docs", url = "https://example.com" },
-  { name = "wiki", url = "https://example.com" },
-]
+name = "Projeto ASA"
+desc = "Uma asa com aviônica de satélite que sobe até 23 km e volta sozinha ao ponto de lançamento, pilotada por um computador de bordo feito por makers do RMS."
+tags = ["aviônica", "satélites", "autonomia"]
+links = [{ name = "Saiba mais", url = "#" }]
 
 [[project]]
-name = "lorem-ipsum"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["dolor", "lorem", "ipsum", "amet"]
-links = [
-  { name = "github", url = "https://example.com" },
-  { name = "docs", url = "https://example.com" },
-]
-
-[[project]]
-name = "praesentium"
-desc = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium, nisi saepe dolor unde iusto dolore nam, vero optio consequuntur repudiandae et! Atque libero expedita laudantium cupiditate, sit explicabo sequi ipsa!"
-tags = ["lorem", "ipsum"]
-links = [
-  { name = "homepage", url = "https://example.com" },
-  { name = "github", url = "https://example.com" },
-  { name = "docs", url = "https://example.com" },
-]
+name = "StarChain"
+desc = "Nosso projeto mais ousado: uma constelação de satélites para infraestrutura descentralizada em órbita."
+tags = ["satélites", "constelação", "infraestrutura descentralizada"]
+links = [{ name = "Saiba mais", url = "#" }]

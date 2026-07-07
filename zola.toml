@@ -1,8 +1,8 @@
-base_url = "https://kita-zola.pages.dev"
-title = "Kita"
-description = "Kita is a clean, elegant and simple blog theme for Zola."
-author = "st1020"
-default_language = "en"
+base_url = "https://riomakerspace.com.br"
+title = "Rio Maker Space"
+description = "Rio Maker Space (RMS) é uma comunidade maker aberta no Rio de Janeiro que constrói foguetes, balões estratosféricos, robótica e tecnologia open source desde 2015."
+author = "Rio Maker Space"
+default_language = "pt-BR"
 taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
 
 
@@ -14,10 +14,6 @@ insert_anchor_links = "heading"
 # Kita theme supports both "inline" and "class" modes.
 style = "class"
 
-# You can use a single theme.
-# theme = "dark-plus"
-
-# If light/dark themes are set, the code highlighting theme will follow Kita theme's light/dark mode.
 light_theme = "light-plus"
 dark_theme = "dark-plus"
 
@@ -32,71 +28,42 @@ mermaid = false
 comment = false
 # Enable floating table of contents on the right side of the post page.
 side_toc = true
-# The URL of social image.
-social_image = "icons/github.svg"
+# The URL of social image (Open Graph / share preview).
+# TODO: add a real branded share image to static/images and point this at it, e.g. "images/social.png".
+# social_image = "images/social.png"
 
 # The Kita style config.
 [extra.style]
-# The custom background color.
 # bg_color = ""
-
-# The custom background color in dark mode.
 # bg_dark_color = ""
-
-# Enable header blur.
 # header_blur = true
-
-# The custom header color, only available when `header_blur` is false.
 # header_color = ""
-
-# The custom header color in dark mode, only available when `header_blur` is false.
 # header_dark_color = ""
 
-# The profile on home page.
+# The profile card is not rendered on the homepage (which uses the custom
+# `home.html` template below) but is kept here in case a blog-style section
+# using the default `index.html`/`section.html` layout is added later.
 [extra.profile]
-name = "Kita - Zola Theme"
-bio = "Kita is a clean, elegant and simple blog theme for Zola."
-# The URL of avatar.
-avatar_url = "icons/github.svg"
-# Invert color in dark mode.
-avatar_invert = true
-
-# The social icons below the profile on the home page.
-# The `name` should be the file name of static/icons/*.svg or the icon name of https://simpleicons.org/
-[[extra.profile.social]]
-name = "github"
-url = "https://github.com/st1020/kita"
-
-[[extra.profile.social]]
-name = "twitter"
-url = "https://github.com/st1020/kita"
-
-[[extra.profile.social]]
-name = "rss"
-url = "$BASE_URL/atom.xml"
+name = "Rio Maker Space"
+bio = "Comunidade de makers, estudantes e curiosos que constrói o futuro com as próprias mãos."
+# avatar_url = "images/logo.png" # TODO: add a real RMS logo/avatar to static/images.
 
 # The top menu.
 [[extra.menu]]
-name = "Projects"
+name = "Projetos"
 url = "$BASE_URL/projects"
 
 [[extra.menu]]
-name = "Archive"
-url = "$BASE_URL/archive"
+name = "Eventos"
+url = "$BASE_URL/events"
 
 [[extra.menu]]
-name = "Tags"
-url = "$BASE_URL/tags"
-
-[[extra.menu]]
-name = "About"
+name = "Sobre"
 url = "$BASE_URL/about"
 
 # The page footer options.
 [extra.footer]
-since = 2020
-license = "CC BY-SA 4.0"
-license_url = "https://creativecommons.org/licenses/by-sa/4.0/deed"
+since = 2015
 
 # The giscus comment options, only available when comment is enabled.
 [extra.giscus]
@@ -110,5 +77,49 @@ reactions_enabled = 0
 emit_metadata = 0
 input_position = "top"
 theme = "light"
-lang = "en"
+lang = "pt-BR"
 loading = "lazy"
+
+# --- RMS-specific site content below (not part of the upstream Kita theme) ---
+# These tables drive `templates/home.html` and `templates/partials/footer.html`.
+# Anything marked TODO is a stubbed placeholder pending real data/links.
+
+[extra.home]
+hero_headline = "Onde ideias viram protótipos — e protótipos viram soluções reais."
+hero_subheadline = "O Rio Maker Space é uma comunidade de makers, estudantes e curiosos que constrói foguetes, balões estratosféricos, robótica e muito mais — de forma aberta, colaborativa e gratuita."
+hero_cta_primary_label = "Quero fazer parte"
+hero_cta_primary_url = "mailto:riomakerspace@gmail.com?subject=Quero%20fazer%20parte%20do%20RMS"
+hero_cta_secondary_label = "Conheça nossos projetos"
+hero_cta_secondary_url = "$BASE_URL/projects"
+
+open_source_text = "Tudo aqui é aberto — do código ao hardware."
+open_source_cta_label = "Ver nossos projetos no GitHub →"
+open_source_url = "https://github.com/RIO-MAKER-SPACE-GIT"
+
+[[extra.home.final_ctas]]
+text = "Quer aprender fazendo?"
+cta_label = "Quero participar"
+cta_url = "mailto:riomakerspace@gmail.com?subject=Quero%20participar%20do%20RMS"
+
+[[extra.home.final_ctas]]
+text = "Tem uma escola ou instituição?"
+cta_label = "Leve o RMS pra você"
+cta_url = "mailto:riomakerspace@gmail.com?subject=Parceria%20institucional%20com%20o%20RMS"
+
+[[extra.home.final_ctas]]
+text = "Precisa de expertise técnica?"
+cta_label = "Contrate uma consultoria"
+cta_url = "mailto:riomakerspace@gmail.com?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
+
+[extra.contact]
+email = "riomakerspace@gmail.com"
+website_url = "https://riomakerspace.com.br"
+website_label = "riomakerspace.com.br"
+github_url = "https://github.com/RIO-MAKER-SPACE-GIT"
+# TODO: replace with the real Telegram group/channel link.
+telegram_url = "#"
+# TODO: replace with the real Instagram profile link.
+instagram_url = "#"
+instagram_label = "@Rio_Maker_Space"
+# TODO: replace with the real LinkedIn company page link.
+linkedin_url = "#"

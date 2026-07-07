@@ -1,0 +1,35 @@
+{% extends "index.html" %}<!---->
+{% block main %}
+<article>
+  <header class="mb-8">
+    <h1 class="my-0! pb-2.5">{{ page.title }}</h1>
+    <div class="text-sm opacity-60">
+      <time>{{ page.date | date(format="%d/%m/%Y") }}</time>
+      {% if page.extra.location %}
+      <span class="mx-1">&middot;</span>
+      <span>{{ page.extra.location }}</span>
+      {% endif %}
+    </div>
+  </header>
+
+  <section>{{ page.content | safe }}</section>
+
+  {% if page.extra.cta_url %}
+  <div class="not-prose mt-8">
+    <a
+      class="inline-block rounded-full bg-black px-5 py-3 text-sm font-medium text-white no-underline duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
+      href="{{ page.extra.cta_url }}"
+      rel="noopener"
+      target="_blank"
+      >{{ page.extra.cta_label | default(value="Saiba mais") }}</a
+    >
+  </div>
+  {% endif %}
+
+  <hr />
+
+  <p>
+    <a class="secondary-link" href="{{ get_url(path=`@/events/_index.md`) }}">← Ver todos os eventos</a>
+  </p>
+</article>
+{% endblock main %}

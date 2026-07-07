@@ -1,0 +1,24 @@
+# Numbers shown in the "Números que provam o impacto" section of the homepage.
+# `confirmed = false` entries are rendered as "a confirmar" placeholders instead
+# of a made-up number — update `value` and flip `confirmed` to `true` once the
+# real figures are gathered.
+
+[[stat]]
+value = "11 anos"
+label = "de cultura maker no Rio de Janeiro (desde 2015)"
+confirmed = true
+
+[[stat]]
+value = "4+"
+label = "projetos de ponta documentados publicamente (foguetes, balões estratosféricos, aviônica, satélites)"
+confirmed = true
+
+[[stat]]
+value = ""
+label = "eventos e oficinas realizados"
+confirmed = false
+
+[[stat]]
+value = ""
+label = "pessoas já impactadas (alunos, participantes, comunidade)"
+confirmed = false

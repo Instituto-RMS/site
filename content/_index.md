@@ -1,4 +1,4 @@
 +++
-sort_by = "date"
-paginate_by = 5
+title = "Rio Maker Space"
+template = "home.html"
 +++

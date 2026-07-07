@@ -1,0 +1,29 @@
+{% extends "index.html" %}<!---->
+{% block main %}
+<h1 class="mb-4">{{ section.title }}</h1>
+
+{% if section.content %}
+<section class="mb-12">{{ section.content | safe }}</section>
+{% endif %}
+
+<div class="not-prose">
+  {% if section.pages | length == 0 %}
+  <p class="opacity-70">Nenhum evento agendado no momento. Volte em breve!</p>
+  {% else %}
+  <div class="grid gap-4 sm:grid-cols-2">
+    {% for event in section.pages %}
+    <div class="block-bg flex flex-col rounded-lg p-5">
+      <time class="mb-1 font-mono text-sm opacity-60">{{ event.date | date(format="%d/%m/%Y") }}</time>
+      <h2 class="mt-0 mb-2 text-xl font-bold text-black dark:text-white">{{ event.title }}</h2>
+      <p class="mb-4 grow opacity-80">{{ event.description | default(value=event.summary) | safe }}</p>
+      <a
+        class="self-start rounded-full bg-black px-4 py-2 text-sm text-white no-underline duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
+        href="{{ event.permalink }}"
+        >{{ event.extra.cta_label | default(value="Saiba mais") }}</a
+      >
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock main %}

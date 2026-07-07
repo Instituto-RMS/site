@@ -1,0 +1,11 @@
+# Partners and testimonials shown in the "Comunidade & parceiros" section.
+# `testimonial` is intentionally empty — the homepage hides that block entirely
+# until at least one entry is added here. Example entry once you have one:
+#
+# [[testimonial]]
+# name = "Fulano de Tal"
+# role = "Aluno"
+# quote = "..."
+
+partners = ["CBPF", "UFRJ · Minerva Rockets", "Ajuda Robótica", "Galileu"]
+testimonial = []
