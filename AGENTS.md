@@ -45,9 +45,12 @@ content/
     _index.md              # marks this section as render=false, uses pages.html template
     about.md                # /about
     archive.md              # /archive (uses templates/archive.html)
-    projects/               # /projects — project list
-      index.md
-      data.toml             # actual project entries (name, desc, tags, links) loaded via load_data()
+  projects/                # /projects — project section (mirrors events/)
+    _index.md              # list page config (sort_by="weight", template="projects.html", page_template="project.html")
+    <slug>.md               # one Markdown file per project (title, description, weight, extra.tags, extra.links)
+  events/                  # /events — event section
+    _index.md              # list page config (sort_by="date", paginate_by, template="events.html", page_template="event.html")
+    <slug>.md               # one Markdown file per event (title, date, description, extra.location, extra.cta_*)
   shortcodes/               # demo content showcasing the `gallery` shortcode
   markdown-syntax.md, math-typesetting.md, placeholder-*.md, theme-config.md
                             # example/demo blog posts from the upstream theme — remove for a real site
@@ -56,7 +59,10 @@ templates/
   page.html                 # single post/page layout
   section.html              # section listing layout
   pages.html                # layout used by the "pages" (non-blog) section
-  projects.html             # renders content/pages/projects/data.toml as project cards
+  projects.html             # /projects list view — iterates paginator.pages/section.pages
+  project.html              # /projects/<slug> detail view — tags + extra.links CTAs
+  events.html                # /events list view — iterates paginator.pages/section.pages
+  event.html                  # /events/<slug> detail view
   archive.html               # archive listing by date
   taxonomy_list.html / taxonomy_single.html   # tags pages
   404.html
@@ -103,6 +109,18 @@ embedded calendar, membership CTA) to keep the diff from upstream Kita small.
   precedent for how a Notion sync could work: **a sync script could write
   Notion data out to TOML/JSON files under `content/`, and templates load them
   the same way**, rather than needing custom Tera code per data type.
+
+  **UPDATE:** `projects` is now a full Zola section (`content/projects/`),
+  structured identically to `events` — one Markdown file per project with
+  `title`, `description`, `weight` (controls sort order via `sort_by =
+  "weight"` in `_index.md`), and `extra.tags` / `extra.links` (list of
+  `{ name, url }`). Each project gets its own detail page at
+  `/projects/<slug>` (rendered by `templates/project.html`), and the list
+  page (`templates/projects.html`) links to those pages instead of
+  out to external URLs directly. This replaces the old single-page
+  `data.toml` approach described above; keep this note as historical context
+  for the previous TOML pattern, but new content should follow the
+  Markdown-per-item section pattern used by both `events/` and `projects/`.
 - Demo/placeholder content (`markdown-syntax.md`, `math-typesetting.md`,
   `placeholder-*.md`, `theme-config.md`, `content/shortcodes/*`) is upstream
   theme sample content — expect to delete it when real makerspace content
@@ -127,10 +145,11 @@ No code for this exists yet. When implementing it, consider:
    (currently `.gitignore` does not list it — add it if you add dotenv usage).
 4. **Mapping Notion databases to content types**: decide up front which
    Notion databases map to which Zola sections (e.g. a "Projects" database →
-   `content/pages/projects/data.toml`, an "Events"/"Blog" database → Markdown
-   posts under `content/`, an "Equipment"/"Tools" database → a new data file).
-   Follow the existing TOML-data-source pattern used by `projects.html` where
-   it fits, to minimize new template code.
+   Markdown files under `content/projects/`, an "Events"/"Blog" database →
+   Markdown files under `content/events/`, an "Equipment"/"Tools" database →
+   a new section or data file). Follow the existing Markdown-per-item section
+   pattern used by `events/` and `projects/` where it fits, to minimize new
+   template code.
 5. **Images/files from Notion**: Notion-hosted file URLs expire; any synced
    images should be downloaded into `static/` (or a `static/notion/` subfolder)
    during sync rather than linked directly.
@@ -147,6 +166,17 @@ No code for this exists yet. When implementing it, consider:
   some legacy `giallo*.css` files — don't commit build output.
 - No test suite exists in this repo. Validation = `zola build` (or `zola check`)
   succeeding, plus visual review via `zola serve`.
+- **Preferred way to verify rendered output**: instead of relying solely on
+  `zola build` exit status, check that the live dev server (`zola serve`,
+  default `http://127.0.0.1:1111`) actually renders the expected markup. Use
+  the `fetch`/`curl` tool to pull the relevant URL and pipe it through `grep`
+  to confirm specific elements/links/text are present (e.g.
+  `curl -s http://127.0.0.1:1111/projects/ | grep -o '<h1[^>]*>[^<]*</h1>'`).
+  This catches template/content bugs that a successful build can silently
+  hide (e.g. an empty section, a stale link, wrong data being iterated).
+  **If no dev server is already running, do not start one yourself in the
+  background** — ask the user to run `zola serve` (or confirm one is already
+  running) before attempting to fetch/grep against it.
 
 ## Suggested first steps for rebranding to the makerspace site
 
