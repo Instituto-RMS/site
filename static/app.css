@@ -2,6 +2,16 @@
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* RMS brand palette. Green is the primary accent; cyan/orange are reserved for
+   secondary/decorative use (illustrations, small chips, occasional highlights).
+   Registering these via @theme exposes them as Tailwind utilities, e.g.
+   bg-brand-green, text-brand-cyan, border-brand-orange. */
+@theme {
+  --color-brand-green: #adf758;
+  --color-brand-cyan: #80e3f6;
+  --color-brand-orange: #fdb314;
+}
+
 /* Pure CSS Icons, see: https://unocss.dev/presets/icons */
 :root {
   --i-octicon-info-16: url("data:image/svg+xml;utf8,%3Csvg viewBox='0 0 16 16' width='1em' height='1em' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath fill='currentColor' d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13a6.5 6.5 0 0 0 0-13M6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75M8 6a1 1 0 1 1 0-2a1 1 0 0 1 0 2'/%3E%3C/svg%3E");
@@ -142,7 +152,7 @@ article {
 }
 
 .header {
-  @apply bg-(--header) dark:bg-(--header-dark);
+  @apply bg-(--header) shadow-[0_1px_0_0_rgba(0,0,0,0.06)] dark:bg-(--header-dark) dark:shadow-[0_1px_0_0_rgba(255,255,255,0.08)];
 }
 
 .btn-menu {
@@ -176,20 +186,49 @@ article {
   @apply bg-black/10 backdrop-blur dark:bg-white/10;
 }
 
+/* Tinted with brand green instead of neutral gray, so every card across the
+   site (stats, features, blog list, taxonomies...) carries a hint of brand
+   color rather than looking flat gray. */
 @utility block-bg {
-  @apply bg-black/3 dark:bg-white/8;
+  @apply bg-brand-green/8 dark:bg-brand-green/10;
 }
 
 @utility block-hover {
-  @apply hover:bg-black/5 dark:hover:bg-white/11;
+  @apply hover:bg-brand-green/15 dark:hover:bg-brand-green/18;
 }
 
 @utility block-hover-mask {
-  @apply hover:bg-black/2 dark:hover:bg-white/3;
+  @apply hover:bg-brand-green/6 dark:hover:bg-brand-green/10;
+}
+
+/* Small colored pill. Pair with an explicit bg-brand-* utility (often via
+   macros::accent_bg) at the call site rather than baking a color in here,
+   since Tailwind utilities share specificity and can't reliably override
+   a color set inside another @utility. */
+@utility tag-chip {
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium text-black no-underline border border-gray-300 dark:border-gray-600;
+}
+
+/* Colored circle behind an emoji/icon. Pair with a bg-brand-* utility (often
+   via macros::accent_bg_soft) and explicit sizing classes at the call site. */
+@utility icon-badge {
+  @apply inline-flex items-center justify-center rounded-full;
 }
 
 @utility primary-link {
   @apply text-black no-underline hover:opacity-80 dark:text-white;
+}
+
+/* Primary CTA: brand green with black text. Works in both light and dark mode
+   since the green stays legible against black text either way, so unlike the
+   old bg-black/dark:bg-white pattern it needs no dark: variant. */
+@utility btn-primary {
+  @apply rounded-full bg-brand-green font-medium text-black no-underline duration-100 hover:brightness-95 active:scale-95;
+}
+
+/* Secondary/outline CTA, with a brand-green hover accent instead of solid fill. */
+@utility btn-outline {
+  @apply rounded-full border border-black/20 font-medium no-underline duration-100 hover:border-brand-green active:scale-95 dark:border-white/30 dark:hover:border-brand-green;
 }
 
 @utility secondary-link {

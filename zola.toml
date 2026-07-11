@@ -34,11 +34,14 @@ side_toc = true
 
 # The Kita style config.
 [extra.style]
-# bg_color = ""
+bg_color = "#ffffff"
 # bg_dark_color = ""
 # header_blur = true
-# header_color = ""
-# header_dark_color = ""
+header_color = "#ffffff"
+header_dark_color = "#1c1c1f"
+
+# Logo shown on the right side of the header (desktop only).
+logo_url = "images/RMS-logo.png"
 
 # The profile card is not rendered on the homepage (which uses the custom
 # `home.html` template below) but is kept here in case a blog-style section
@@ -85,6 +88,7 @@ loading = "lazy"
 # Anything marked TODO is a stubbed placeholder pending real data/links.
 
 [extra.home]
+hero_image = "images/hero-background.jpg"
 hero_headline = "A infraestrutura por trás da inovação maker no Rio de Janeiro."
 hero_subheadline = "O Rio Maker Space reúne 11 anos de experiência técnica e comunitária para apoiar escolas, competições e instituições que precisam de expertise em foguetes, balões estratosféricos, robótica e muito mais."
 hero_cta_primary_label = "Fale com nossa equipe"

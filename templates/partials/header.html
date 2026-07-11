@@ -1,10 +1,19 @@
 <header
   class="{% if config.extra.style.header_blur %}blur-header{% else %}header{% endif %} fixed top-0 z-40 mx-auto min-h-14 w-full"
 >
-  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:items-center lg:justify-between">
     <div class="flex justify-between">
-      <div class="flex items-center">
-        <a class="text-2xl font-semibold" href="{{ get_url(path=``) }}">{{ config.title }}</a>
+      <div class="flex items-center gap-2">
+        {% if config.extra.style.logo_url %}
+        <a href="{{ get_url(path=``) }}" class="flex shrink-0 items-center">
+          <img
+            src="{{ get_url(path=config.extra.style.logo_url) }}"
+            alt="{{ config.title }}"
+            class="h-8 w-auto"
+          />
+        </a>
+        {% endif %}
+        <a class="text-xl font-bold tracking-tight" href="{{ get_url(path=``) }}">{{ config.title }}</a>
         <div
           class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:bg-right dark:invert"
           role="button"
@@ -71,9 +80,12 @@
         class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
       >
         {% for menu in config.extra.menu %}
+        {% set menu_path = menu.url | replace(from=`$BASE_URL`, to=``) %}
+        {% set current = current_path | default(value=``) %}
+        {% set is_active = current == menu_path or current == menu_path ~ `/` or current is starting_with(menu_path ~ `/`) %}
         <li>
           <a
-            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            class="primary-link block border-b-2 py-2 text-center text-base font-medium tracking-tight lg:px-4 lg:py-1 {% if is_active %}border-brand-green font-semibold{% else %}border-transparent{% endif %}"
             href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
             >{{ menu.name }}</a
           >

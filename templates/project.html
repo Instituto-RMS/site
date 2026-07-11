@@ -4,9 +4,9 @@
   <header class="mb-8">
     <h1 class="my-0! pb-2.5">{{ page.title }}</h1>
     {% if page.extra.tags %}
-    <div class="mt-2 flex flex-wrap gap-x-2 text-sm opacity-60">
+    <div class="mt-2 flex flex-wrap gap-2">
       {% for tag in page.extra.tags %}
-      <span>#{{ tag }}</span>
+      <span class="tag-chip">#{{ tag }}</span>
       {% endfor %}
     </div>
     {% endif %}
@@ -18,7 +18,7 @@
   <div class="not-prose mt-8 flex flex-wrap gap-3">
     {% for link in page.extra.links %}
     <a
-      class="inline-block rounded-full bg-black px-5 py-3 text-sm font-medium text-white no-underline duration-100 active:scale-95 dark:bg-white/80 dark:text-black"
+      class="btn-primary inline-block px-5 py-3 text-sm"
       href="{{ link.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
       rel="noopener"
       target="_blank"
