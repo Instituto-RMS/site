@@ -166,17 +166,9 @@ No code for this exists yet. When implementing it, consider:
   some legacy `giallo*.css` files — don't commit build output.
 - No test suite exists in this repo. Validation = `zola build` (or `zola check`)
   succeeding, plus visual review via `zola serve`.
-- **Preferred way to verify rendered output**: instead of relying solely on
-  `zola build` exit status, check that the live dev server (`zola serve`,
-  default `http://127.0.0.1:1111`) actually renders the expected markup. Use
-  the `fetch`/`curl` tool to pull the relevant URL and pipe it through `grep`
-  to confirm specific elements/links/text are present (e.g.
-  `curl -s http://127.0.0.1:1111/projects/ | grep -o '<h1[^>]*>[^<]*</h1>'`).
-  This catches template/content bugs that a successful build can silently
-  hide (e.g. an empty section, a stale link, wrong data being iterated).
-  **If no dev server is already running, do not start one yourself in the
-  background** — ask the user to run `zola serve` (or confirm one is already
-  running) before attempting to fetch/grep against it.
+- **To build the site**: run `zola build` (Zola) and `bun run build` (Tailwind).
+  Do not start a dev server yourself — ask the user to run `zola serve` if one
+  is needed.
 
 ## Suggested first steps for rebranding to the makerspace site
 
