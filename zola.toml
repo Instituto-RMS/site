@@ -27,7 +27,7 @@ mermaid = false
 # Enable comment support globally.
 comment = false
 # Enable floating table of contents on the right side of the post page.
-side_toc = true
+side_toc = false
 # The URL of social image (Open Graph / share preview).
 # TODO: add a real branded share image to static/images and point this at it, e.g. "images/social.png".
 # social_image = "images/social.png"

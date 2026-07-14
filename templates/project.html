@@ -15,6 +15,9 @@
     {% endif %}
   </header>
 
+  <!-- TOC inline below the project header -->
+  {% include "partials/toc.html" %}
+
   <section>{{ page.content | safe }}</section>
 
   {% if page.extra.links %}

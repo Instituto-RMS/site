@@ -21,6 +21,9 @@
     </div>
   </header>
 
+  <!-- TOC inline below the event header -->
+  {% include "partials/toc.html" %}
+
   <section>{{ page.content | safe }}</section>
 
   {% if page.extra.cta_url %}

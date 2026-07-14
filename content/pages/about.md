@@ -1,6 +1,9 @@
 +++
 title = "Sobre"
 path = "about"
+
+[extra]
+side_toc = true
 +++
 
 ## O que é o Rio Maker Space
