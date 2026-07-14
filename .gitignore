@@ -4,3 +4,6 @@
 /static/giallo-dark.css
 /static/giallo-light.css
 /static/processed_images/
+.env
+__pycache__/
+*.pyc
