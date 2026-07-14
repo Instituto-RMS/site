@@ -12,6 +12,9 @@
 .env
 .env.local
 
+# Local-only task/checklist files
+TODO.md
+
 # Python artifacts
 __pycache__/
 *.pyc
