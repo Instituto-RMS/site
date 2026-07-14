@@ -62,9 +62,15 @@ git rm -rf . >/dev/null 2>&1 || true
 cp -a "${PUBLIC_DIR}/." .
 rm -rf "${PUBLIC_DIR}"
 
+# Limpa artefatos que não devem ir pro Pages
+rm -rf node_modules .env .env.local .gitignore
+find . -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
+find . -name '*.pyc' -delete 2>/dev/null || true
+
 # Adiciona .nojekyll para GitHub Pages não tentar processar com Jekyll
 touch .nojekyll
 
+# Commita apenas arquivos do site
 git add -A
 git commit -m "Deploy site $(date -u +%Y-%m-%dT%H:%M:%SZ)" || true
 
