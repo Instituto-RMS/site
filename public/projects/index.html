@@ -1,0 +1,455 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="pt-BR">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    Rio Maker Space
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" content="#adf758" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  <meta name="description" content="Rio Maker Space (RMS) é uma comunidade maker aberta no Rio de Janeiro que constrói foguetes, balões estratosféricos, robótica e tecnologia open source desde 2015." />
+  <meta name="author" content="Rio Maker Space" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Rio Maker Space" />
+  <meta property="og:description" content="Rio Maker Space (RMS) é uma comunidade maker aberta no Rio de Janeiro que constrói foguetes, balões estratosféricos, robótica e tecnologia open source desde 2015." />
+  <meta property="og:url" content="https://riomakerspace.com.br" />
+  
+  <!---->
+  
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- Main CSS-->
+  <link rel="stylesheet" href="https://riomakerspace.com.br/main.css" />
+  <style>
+    :root {
+      --bg: #f7f7f5;
+      --bg-dark: #0c0c0d;
+      --header: #f7f7f5;
+      --header-dark: #0c0c0d;
+    }
+  </style>
+
+  <!-- Markdown Highlighting -->
+  
+  <!---->
+  
+  <link id="giallo" rel="stylesheet" href="/giallo-dark.css" />
+  
+  <!---->
+  
+
+  <!-- Preload -->
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://riomakerspace.com.br/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://riomakerspace.com.br/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://riomakerspace.com.br/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;riomakerspace.com.br" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="overflow-x-hidden text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-16 w-full"
+>
+  <div class="mx-auto flex w-full max-w-5xl items-center justify-between p-4 lg:px-6">
+    <div class="flex items-center gap-3">
+      
+      <a href="https://riomakerspace.com.br" class="flex shrink-0 items-center">
+        <img
+          src="https://riomakerspace.com.br/images/RMS-logo.png"
+          alt="Rio Maker Space"
+          class="h-8 w-auto"
+        />
+      </a>
+      
+      <a class="font-display text-lg font-bold tracking-tight" href="https://riomakerspace.com.br">Rio Maker Space</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <div
+        class="btn-dark h-6 w-6 shrink-0 cursor-pointer text-[0px] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:bg-right dark:invert"
+        role="button"
+        aria-label="Dark"
+      ></div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          htmlClass.add("dark");
+        } else {
+          htmlClass.remove("dark");
+        }
+        const mode = isDark ? "dark" : "light";
+        document.body.dispatchEvent(new CustomEvent("set-theme", { detail: mode }));
+        document.querySelector("#giallo")?.setAttribute("href", `/giallo-${mode}.css`);
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="hidden lg:flex lg:items-center lg:gap-1">
+      <ul
+        class="flex flex-row items-center gap-1"
+      >
+        
+        
+        
+        
+        <li>
+          <a
+            class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight border-b-2 border-brand-green font-semibold"
+            href="https://riomakerspace.com.br/projects"
+            >Projetos</a
+          >
+        </li>
+        
+        
+        
+        
+        <li>
+          <a
+            class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight "
+            href="https://riomakerspace.com.br/events"
+            >Eventos</a
+          >
+        </li>
+        
+        
+        
+        
+        <li>
+          <a
+            class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight "
+            href="https://riomakerspace.com.br/about"
+            >Sobre</a
+          >
+        </li>
+        
+      </ul>
+      <!-- Header Nav inject -->
+      
+    </nav>
+
+    <nav class="nav-wrapper absolute inset-x-0 top-16 flex-col border-b border-concrete/15 bg-(--header) px-4 py-4 shadow-lg backdrop-blur-lg lg:hidden dark:border-concrete/10 dark:bg-(--header-dark)">
+      <div class="rule-brand absolute inset-x-0 bottom-0" aria-hidden="true"></div>
+      <ul class="flex w-full flex-col gap-2">
+        
+        
+        
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-base font-medium tracking-tight text-brand-green font-semibold"
+            href="https://riomakerspace.com.br/projects"
+            >Projetos</a
+          >
+        </li>
+        
+        
+        
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-base font-medium tracking-tight "
+            href="https://riomakerspace.com.br/events"
+            >Eventos</a
+          >
+        </li>
+        
+        
+        
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-base font-medium tracking-tight "
+            href="https://riomakerspace.com.br/about"
+            >Sobre</a
+          >
+        </li>
+        
+      </ul>
+      <!-- Header Nav inject -->
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <!-- Body Start inject -->
+    
+
+    <div class="flex">
+      <div class="order-1 hidden w-[calc((100%-var(--container-3xl))/2)] lg:block"></div>
+      <aside
+        class="sticky top-0 order-3 mt-48 hidden h-min w-[calc((100%-var(--container-3xl))/2)] lg:block"
+      >
+        
+
+      </aside>
+      <main
+        class="prose prose-steel dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg order-2 mx-auto min-h-[calc(100vh-9rem)] w-full max-w-3xl px-4 pt-24 pb-16 wrap-break-word lg:pt-32"
+      >
+        
+
+  
+
+
+<section class="relative left-1/2 -mt-24 mb-16 w-screen -translate-x-1/2 overflow-hidden bg-brand-black px-4 pt-32 pb-20 text-center text-white sm:px-6 lg:-mt-32 lg:pt-40 lg:pb-24">
+  <div class="rule-brand absolute inset-x-0 top-0" aria-hidden="true"></div>
+  <div class="rule-brand absolute inset-x-0 bottom-0" aria-hidden="true"></div>
+  <p class="mb-3 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-green">Portfólio técnico</p>
+  <h1 class="mx-auto mb-4 max-w-4xl font-display text-4xl leading-display font-extrabold tracking-tight text-brand-white lg:text-6xl">Projetos</h1>
+  
+  <p class="mx-auto max-w-2xl text-concrete/90"><p>De foguetes a satélites, conheça o que a comunidade do RMS já construiu com as próprias mãos.</p>
+<!-- This section is intended to eventually be populated/synced from the Notion "Projects" database -->
+</p>
+  
+</section>
+
+<section class="mb-16">
+  <div class="mb-8 flex items-end justify-between">
+    <h2 class="text-2xl font-extrabold tracking-tight">Todos os projetos</h2>
+    <span class="hidden font-mono text-xs text-concrete/60 uppercase tracking-widest sm:block">4 projetos</span>
+  </div>
+
+  <div class="not-prose">
+    
+    <div class="grid gap-4 sm:grid-cols-2">
+      
+      <div class="stat-card-green flex flex-col p-6">
+        <h2 class="mt-0 mb-2 text-xl font-bold">
+          <a class="no-underline hover:text-brand-green" href="https:&#x2F;&#x2F;riomakerspace.com.br&#x2F;projects&#x2F;balao-de-exploracao-cientifica-bec&#x2F;">Balão de Exploração Científica (BEC)</a>
+        </h2>
+        <p class="mb-4 grow opacity-80">23 km de altitude e comunicação LoRa acima de 100 km</p>
+        
+        <div class="mb-4 flex flex-wrap gap-2">
+          
+          <span class="tag-chip">#aeroespacial</span>
+          
+          <span class="tag-chip">#balão meteorológico</span>
+          
+          <span class="tag-chip">#telemetria</span>
+          
+          <span class="tag-chip">#sensoriamento</span>
+          
+          <span class="tag-chip">#LoRa</span>
+          
+        </div>
+        
+        <a
+          class="btn-primary self-start px-4 py-2 text-sm"
+          href="https:&#x2F;&#x2F;riomakerspace.com.br&#x2F;projects&#x2F;balao-de-exploracao-cientifica-bec&#x2F;"
+          >Saiba mais</a
+        >
+      </div>
+      
+      <div class="stat-card-cyan flex flex-col p-6">
+        <h2 class="mt-0 mb-2 text-xl font-bold">
+          <a class="no-underline hover:text-brand-green" href="https:&#x2F;&#x2F;riomakerspace.com.br&#x2F;projects&#x2F;foguete-uiara&#x2F;">Foguete UIARA</a>
+        </h2>
+        <p class="mb-4 grow opacity-80">Apogeu de 1 km; circuitos e telemetria desenvolvidos pelo RMS</p>
+        
+        <div class="mb-4 flex flex-wrap gap-2">
+          
+          <span class="tag-chip">#aeroespacial</span>
+          
+          <span class="tag-chip">#eletrônica</span>
+          
+          <span class="tag-chip">#telemetria</span>
+          
+          <span class="tag-chip">#competição</span>
+          
+        </div>
+        
+        <a
+          class="btn-primary self-start px-4 py-2 text-sm"
+          href="https:&#x2F;&#x2F;riomakerspace.com.br&#x2F;projects&#x2F;foguete-uiara&#x2F;"
+          >Saiba mais</a
+        >
+      </div>
+      
+      <div class="stat-card-orange flex flex-col p-6">
+        <h2 class="mt-0 mb-2 text-xl font-bold">
+          <a class="no-underline hover:text-brand-green" href="https:&#x2F;&#x2F;riomakerspace.com.br&#x2F;projects&#x2F;projeto-asa&#x2F;">Projeto ASA</a>
+        </h2>
+        <p class="mb-4 grow opacity-80">Primeiro voo a 23 km, com dados recebidos a mais de 90 km</p>
+        
+        <div class="mb-4 flex flex-wrap gap-2">
+          
+          <span class="tag-chip">#aeroespacial</span>
+          
+          <span class="tag-chip">#aviônica</span>
+          
+          <span class="tag-chip">#navegação autônoma</span>
+          
+          <span class="tag-chip">#balão meteorológico</span>
+          
+        </div>
+        
+        <a
+          class="btn-primary self-start px-4 py-2 text-sm"
+          href="https:&#x2F;&#x2F;riomakerspace.com.br&#x2F;projects&#x2F;projeto-asa&#x2F;"
+          >Saiba mais</a
+        >
+      </div>
+      
+      <div class="stat-card-green flex flex-col p-6">
+        <h2 class="mt-0 mb-2 text-xl font-bold">
+          <a class="no-underline hover:text-brand-green" href="https:&#x2F;&#x2F;riomakerspace.com.br&#x2F;projects&#x2F;starchain&#x2F;">StarChain</a>
+        </h2>
+        <p class="mb-4 grow opacity-80">Conceito de constelação LEO para processamento distribuído</p>
+        
+        <div class="mb-4 flex flex-wrap gap-2">
+          
+          <span class="tag-chip">#aeroespacial</span>
+          
+          <span class="tag-chip">#blockchain</span>
+          
+          <span class="tag-chip">#satélites</span>
+          
+          <span class="tag-chip">#space tech</span>
+          
+        </div>
+        
+        <a
+          class="btn-primary self-start px-4 py-2 text-sm"
+          href="https:&#x2F;&#x2F;riomakerspace.com.br&#x2F;projects&#x2F;starchain&#x2F;"
+          >Saiba mais</a
+        >
+      </div>
+      
+    </div>
+    
+  </div>
+</section>
+
+      </main>
+    </div>
+
+    <footer class="mx-auto mt-12 max-w-3xl border-t border-concrete/15 px-8 py-10 text-sm">
+  <div class="mb-8 text-center">
+    <p class="font-display text-lg font-bold tracking-tight">Rio Maker Space</p>
+    <p class="mt-1 opacity-70">A infraestrutura humana e logística por trás da inovação maker no Rio de Janeiro.</p>
+  </div>
+
+  <nav class="mb-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+    
+    <a class="secondary-link" href="mailto:riomakerspace@gmail.com">riomakerspace@gmail.com</a>
+    
+    
+    <a class="secondary-link" href="https:&#x2F;&#x2F;riomakerspace.com.br" rel="noopener" target="_blank">riomakerspace.com.br</a>
+    
+    
+    <a class="secondary-link" href="#" rel="noopener" target="_blank">WhatsApp</a>
+    
+    
+    <a class="secondary-link" href="#" rel="noopener" target="_blank">@Rio_Maker_Space</a>
+    
+    
+    <a class="secondary-link" href="#" rel="noopener" target="_blank">LinkedIn</a>
+    
+    
+    <a class="secondary-link" href="https:&#x2F;&#x2F;github.com&#x2F;RIO-MAKER-SPACE-GIT" rel="noopener" target="_blank">GitHub</a>
+    
+  </nav>
+
+  <div class="flex flex-col items-center justify-between gap-3 opacity-60 lg:flex-row">
+    <div>
+      <!---->
+      <!---->
+      &copy; 2015 - 2026<!---->
+      
+      <a class="link" href="https://riomakerspace.com.br">
+        Rio Maker Space
+      </a>
+      
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="link" href="https://www.getzola.org/" rel="noopener" target="_blank">
+        Powered by Zola
+      </a>
+      <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+    </div>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+
+    <!-- Body End inject -->
+    
+  </body>
+</html>
