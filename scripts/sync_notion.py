@@ -7,6 +7,12 @@ Expected .env exports:
     export NOTION_TOKEN=secret_xxx
     export NOTION_PROJECTS_DB_ID=...
     export NOTION_EVENTS_DB_ID=...
+
+Local extensions:
+    Drop a `scripts/sync_notion.local.py` file (gitignored). If it defines a
+    `post_sync(ctx: dict)` function, it will be called after the main sync
+    finishes. Use it for custom post-processing, extra sections, or local-only
+    overrides without changing the shared script.
 """
 
 import json
@@ -17,6 +23,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import requests
+
+SCRIPT_DIR = Path(__file__).parent.resolve()
+REPO_ROOT = SCRIPT_DIR.parent
 
 API = "https://api.notion.com/v1"
 HEADERS = {
@@ -323,6 +332,31 @@ def sync_section(
     print(f"  {written} written, {skipped} up-to-date, {removed} removed")
 
 
+def run_local_hook(ctx: dict) -> None:
+    """Call `post_sync(ctx)` from `scripts/sync_notion.local.py` if it exists."""
+    local_path = SCRIPT_DIR / "sync_notion.local.py"
+    if not local_path.exists():
+        return
+
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location("sync_notion_local", local_path)
+    if spec is None or spec.loader is None:
+        return
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+    hook = getattr(module, "post_sync", None)
+    if hook is None:
+        return
+
+    try:
+        hook(ctx)
+    except Exception as exc:
+        print(f"[sync_notion.local.py] post_sync hook failed: {exc}")
+        raise
+
+
 def main() -> None:
     projects_db = get_env("NOTION_PROJECTS_DB_ID")
     events_db = get_env("NOTION_EVENTS_DB_ID")
@@ -331,6 +365,14 @@ def main() -> None:
     sync_section(events_db, CONTENT_ROOT / "events", build_event_front_matter)
 
     print("Done.")
+
+    ctx = {
+        "projects_db_id": projects_db,
+        "events_db_id": events_db,
+        "content_root": CONTENT_ROOT,
+        "repo_root": REPO_ROOT,
+    }
+    run_local_hook(ctx)
 
 
 if __name__ == "__main__":
