@@ -911,9 +911,13 @@
     border-radius: calc(infinity * 1px);
     border-style: var(--tw-border-style);
     border-width: 1px;
-    border-color: color-mix(in srgb, #212122 20%, transparent);
+    border-color: color-mix(in srgb, #c9c8c3 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-steel) 20%, transparent);
+      border-color: color-mix(in oklab, var(--color-concrete) 30%, transparent);
+    }
+    background-color: color-mix(in srgb, #c9c8c3 10%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-concrete) 10%, transparent);
     }
     padding-inline: calc(var(--spacing) * 2.5);
     padding-block: calc(var(--spacing) * 1);
@@ -921,17 +925,8 @@
     line-height: var(--tw-leading, var(--text-xs--line-height));
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
-    color: var(--color-steel);
+    color: var(--color-concrete);
     text-decoration-line: none;
-    &:where(.dark, .dark *) {
-      border-color: color-mix(in srgb, #c9c8c3 30%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        border-color: color-mix(in oklab, var(--color-concrete) 30%, transparent);
-      }
-    }
-    &:where(.dark, .dark *) {
-      color: var(--color-concrete);
-    }
   }
   .block {
     display: block;
@@ -1773,6 +1768,12 @@
       color: color-mix(in oklab, var(--color-concrete) 90%, transparent);
     }
   }
+  .text-steel\/70 {
+    color: color-mix(in srgb, #212122 70%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-steel) 70%, transparent);
+    }
+  }
   .text-white {
     color: var(--color-white);
   }
@@ -2134,6 +2135,14 @@
   .dark\:text-black {
     &:where(.dark, .dark *) {
       color: var(--color-black);
+    }
+  }
+  .dark\:text-concrete\/60 {
+    &:where(.dark, .dark *) {
+      color: color-mix(in srgb, #c9c8c3 60%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--color-concrete) 60%, transparent);
+      }
     }
   }
   .dark\:text-white {
