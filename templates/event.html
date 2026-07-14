@@ -7,7 +7,13 @@
     <p class="mb-3 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-green">Evento</p>
     <h1 class="mx-auto my-0! max-w-4xl font-display text-3xl leading-display font-extrabold tracking-tight text-brand-white lg:text-5xl">{{ page.title }}</h1>
     <div class="mt-3 font-mono text-xs font-semibold uppercase tracking-widest text-concrete/70">
-      <time>{{ page.date | date(format="%d/%m/%Y") }}</time>
+      <time>
+        {% if page.extra.date_text %}
+          {{ page.extra.date_text }}
+        {% else %}
+          {{ page.date | date(format="%d/%m/%Y") }}
+        {% endif %}
+      </time>
       {% if page.extra.location %}
       <span class="mx-2">·</span>
       <span>{{ page.extra.location }}</span>

@@ -1,14 +1,18 @@
 +++
 title = "Foguete UIARA"
-description = "Desenvolvido com CBPF e UFRJ, o UIARA alcançou 1 km de altitude com telemetria feita 100% por makers voluntários."
-weight = 1
-
+description = "Apogeu de 1 km; circuitos e telemetria desenvolvidos pelo RMS"
+weight = 10
+draft = false
 [extra]
-tags = ["foguetaria", "telemetria", "CBPF", "UFRJ"]
-links = [{ name = "Saiba mais", url = "#" }]
+status = "Concluído"
+tags = ["aeroespacial", "eletrônica", "telemetria", "competição"]
+partners = "CBPF (LITMEC), UFRJ (Minerva Rockets)"
+highlight = false
+external_link = "https://www.riomakerspace.com.br/projetos/foguete-uiara-1-km"
+start_date = ""
+
 +++
 
-Desenvolvido com CBPF e UFRJ, o UIARA alcançou 1 km de altitude com telemetria feita 100% por makers voluntários.
 
-<!-- TODO: this is placeholder example content. Replace with real details once
-     confirmed, or let the Notion sync overwrite this file entirely. -->
+Foguete desenvolvido para a competição LASC 2019, com apogeu de 1 km de altitude.
+Toda a telemetria e os circuitos eletrônicos de sensoriamento foram desenvolvidos pelos makers do próprio espaço. O trabalho foi colaborativo e voluntário.
