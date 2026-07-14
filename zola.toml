@@ -120,8 +120,9 @@ email = "riomakerspace@gmail.com"
 website_url = "https://riomakerspace.com.br"
 website_label = "riomakerspace.com.br"
 github_url = "https://github.com/RIO-MAKER-SPACE-GIT"
-# TODO: replace with the real Telegram group/channel link.
-telegram_url = "#"
+# TODO: replace with the real WhatsApp group/channel link.
+whatsapp_url = "#"
+whatsapp_label = "WhatsApp"
 # TODO: replace with the real Instagram profile link.
 instagram_url = "#"
 instagram_label = "@Rio_Maker_Space"

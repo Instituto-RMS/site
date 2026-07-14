@@ -11,8 +11,8 @@
     {% if config.extra.contact.website_url %}
     <a class="secondary-link" href="{{ config.extra.contact.website_url }}" rel="noopener" target="_blank">{{ config.extra.contact.website_label | default(value=config.extra.contact.website_url) }}</a>
     {% endif %}
-    {% if config.extra.contact.telegram_url %}
-    <a class="secondary-link" href="{{ config.extra.contact.telegram_url }}" rel="noopener" target="_blank">Telegram</a>
+    {% if config.extra.contact.whatsapp_url %}
+    <a class="secondary-link" href="{{ config.extra.contact.whatsapp_url }}" rel="noopener" target="_blank">{{ config.extra.contact.whatsapp_label | default(value="WhatsApp") }}</a>
     {% endif %}
     {% if config.extra.contact.instagram_url %}
     <a class="secondary-link" href="{{ config.extra.contact.instagram_url }}" rel="noopener" target="_blank">{{ config.extra.contact.instagram_label | default(value="Instagram") }}</a>
