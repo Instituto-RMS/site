@@ -1,8 +1,8 @@
 # Dependencies
 /node_modules
 
-# Build output is now committed to serve from GitHub Pages root
-# /public
+# Zola build output — deployed to gh-pages branch, not main
+/public
 
 # Generated CSS and assets
 /static/giallo.css
@@ -13,6 +13,7 @@
 # Secrets and local environment overrides — NEVER commit these
 .env
 .env.local
+.env.local.example
 
 # Local-only task/checklist files
 TODO.md
@@ -21,5 +22,5 @@ TODO.md
 __pycache__/
 *.pyc
 
-# Local-only sync extensions (keep the .example templates in git)
+# Local-only sync extensions
 scripts/*.local.py
