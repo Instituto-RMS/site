@@ -209,7 +209,7 @@ article {
 }
 
 .nav-wrapper {
-  @apply hidden lg:flex;
+  @apply hidden;
 
   &:where(.open *) {
     @apply flex;

@@ -2338,9 +2338,6 @@ article {
 }
 .nav-wrapper {
   display: none;
-  @media (width >= 64rem) {
-    display: flex;
-  }
   &:where(.open *) {
     display: flex;
   }
