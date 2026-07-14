@@ -25,12 +25,12 @@
   <div class="not-prose flex flex-wrap justify-center gap-3">
     <a
       class="btn-primary px-6 py-3"
-      href="{{ config.extra.home.hero_cta_primary_url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+      href="{{ config.extra.home.hero_cta_primary_url | replace(from=`$BASE_URL`, to=get_url(path=``)) | safe }}"
       >{{ config.extra.home.hero_cta_primary_label }}</a
     >
     <a
       class="btn-outline border-concrete/40! text-brand-white hover:border-brand-green hover:text-brand-green px-6 py-3"
-      href="{{ config.extra.home.hero_cta_secondary_url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+      href="{{ config.extra.home.hero_cta_secondary_url | replace(from=`$BASE_URL`, to=get_url(path=``)) | safe }}"
       >{{ config.extra.home.hero_cta_secondary_label }}</a
     >
   </div>
@@ -164,7 +164,7 @@
       <p class="mb-5 grow opacity-80">{{ project.blurb }}</p>
       <a
         class="btn-primary self-start px-4 py-2 text-sm"
-        href="{{ project.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+        href="{{ project.url | replace(from=`$BASE_URL`, to=get_url(path=``)) | safe }}"
         >Saiba mais</a
       >
     </div>

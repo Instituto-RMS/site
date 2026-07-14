@@ -16,7 +16,8 @@
     </div>
     <div class="flex items-center gap-3">
       <div
-        class="btn-dark h-6 w-6 shrink-0 cursor-pointer text-[0px] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:bg-right dark:invert"
+        class="btn-dark h-6 w-6 shrink-0 cursor-pointer text-[0px] dark:bg-right dark:invert"
+        style="background: url({{ get_url(path=`icons/theme.svg`) }}) left center / cover no-repeat"
         role="button"
         aria-label="Dark"
       ></div>
@@ -50,7 +51,7 @@
         }
         const mode = isDark ? "dark" : "light";
         document.body.dispatchEvent(new CustomEvent("set-theme", { detail: mode }));
-        document.querySelector("#giallo")?.setAttribute("href", `/giallo-${mode}.css`);
+        document.querySelector("#giallo")?.setAttribute("href", `{{ get_url(path=`giallo-${mode}.css`) }}`);
         localStorage.setItem("dark", isDark);
       };
 
@@ -81,12 +82,14 @@
       >
         {% for menu in config.extra.menu %}
         {% set menu_path = menu.url | replace(from=`$BASE_URL`, to=``) %}
+        {% set menu_href = get_url(path=menu_path) %}  {# resolves $BASE_URL paths relative to root #}
+        {% if not menu_path %}{% set menu_href = get_url(path=``) %}{% endif %}
         {% set current = current_path | default(value=``) %}
         {% set is_active = current == menu_path or current == menu_path ~ `/` or current is starting_with(menu_path ~ `/`) %}
         <li>
           <a
             class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight {% if is_active %}border-b-2 border-brand-green font-semibold{% endif %}"
-            href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+            href="{{ menu_href }}"
             >{{ menu.name }}</a
           >
         </li>
@@ -101,12 +104,14 @@
       <ul class="flex w-full flex-col gap-2">
         {% for menu in config.extra.menu %}
         {% set menu_path = menu.url | replace(from=`$BASE_URL`, to=``) %}
+        {% set menu_href = get_url(path=menu_path) %}  {# resolves $BASE_URL paths relative to root #}
+        {% if not menu_path %}{% set menu_href = get_url(path=``) %}{% endif %}
         {% set current = current_path | default(value=``) %}
         {% set is_active = current == menu_path or current == menu_path ~ `/` or current is starting_with(menu_path ~ `/`) %}
         <li>
           <a
             class="primary-link block py-2 text-center text-base font-medium tracking-tight {% if is_active %}text-brand-green font-semibold{% endif %}"
-            href="{{ menu.url | replace(from=`$BASE_URL`, to=config.base_url) | safe }}"
+            href="{{ menu_href }}"
             >{{ menu.name }}</a
           >
         </li>

@@ -1874,9 +1874,6 @@
     --tw-prose-invert-th-borders: oklch(43.9% 0 0);
     --tw-prose-invert-td-borders: oklch(37.1% 0 0);
   }
-  .\[background\:url\(\.\/icons\/theme\.svg\)_left_center\/cover_no-repeat\] {
-    background: url(./icons/theme.svg) left center/cover no-repeat;
-  }
   .\[background\:var\(--url\)_center_center\/cover_no-repeat\] {
     background: var(--url) center center/cover no-repeat;
   }
