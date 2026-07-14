@@ -28,7 +28,7 @@
     {% else %}
     <div class="grid gap-4 sm:grid-cols-2">
       {% for project in projects %}
-      <div class="block-bg block-hover border-l-4 {% if loop.index0 % 3 == 0 %}border-l-brand-green{% elif loop.index0 % 3 == 1 %}border-l-brand-cyan{% else %}border-l-brand-orange{% endif %} flex flex-col p-6">
+      <div class="{% if loop.index0 % 3 == 0 %}stat-card-green{% elif loop.index0 % 3 == 1 %}stat-card-cyan{% else %}stat-card-orange{% endif %} flex flex-col p-6">
         <h2 class="mt-0 mb-2 text-xl font-bold">
           <a class="no-underline hover:text-brand-green" href="{{ project.permalink }}">{{ project.title }}</a>
         </h2>
