@@ -257,7 +257,11 @@ article {
 
 /* Small colored pill with high-contrast border — engineered, not soft. */
 @utility tag-chip {
-  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium text-concrete no-underline border border-concrete/30 bg-concrete/10;
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium text-steel no-underline border border-steel/20 dark:border-concrete/30 dark:text-concrete;
+}
+
+@utility tag-chip-dark {
+  @apply tag-chip text-concrete border-concrete/30 bg-concrete/10;
 }
 
 /* Colored circle behind an emoji/icon. Pair with a bg-brand-* utility at the call site. */

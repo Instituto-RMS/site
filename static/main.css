@@ -905,12 +905,33 @@
     justify-content: center;
     border-radius: calc(infinity * 1px);
   }
-  .tag-chip {
+  .tag-chip-dark {
     display: inline-flex;
     align-items: center;
     border-radius: calc(infinity * 1px);
     border-style: var(--tw-border-style);
     border-width: 1px;
+    border-color: color-mix(in srgb, #212122 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-steel) 20%, transparent);
+    }
+    padding-inline: calc(var(--spacing) * 2.5);
+    padding-block: calc(var(--spacing) * 1);
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
+    --tw-font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-steel);
+    text-decoration-line: none;
+    &:where(.dark, .dark *) {
+      border-color: color-mix(in srgb, #c9c8c3 30%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        border-color: color-mix(in oklab, var(--color-concrete) 30%, transparent);
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-concrete);
+    }
     border-color: color-mix(in srgb, #c9c8c3 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-concrete) 30%, transparent);
@@ -919,14 +940,35 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-concrete) 10%, transparent);
     }
+    color: var(--color-concrete);
+  }
+  .tag-chip {
+    display: inline-flex;
+    align-items: center;
+    border-radius: calc(infinity * 1px);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: color-mix(in srgb, #212122 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-steel) 20%, transparent);
+    }
     padding-inline: calc(var(--spacing) * 2.5);
     padding-block: calc(var(--spacing) * 1);
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
-    color: var(--color-concrete);
+    color: var(--color-steel);
     text-decoration-line: none;
+    &:where(.dark, .dark *) {
+      border-color: color-mix(in srgb, #c9c8c3 30%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        border-color: color-mix(in oklab, var(--color-concrete) 30%, transparent);
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-concrete);
+    }
   }
   .block {
     display: block;
