@@ -1,9 +1,20 @@
+# Dependencies and build output
 /node_modules
 /public
+
+# Generated CSS and assets
 /static/giallo.css
 /static/giallo-dark.css
 /static/giallo-light.css
 /static/processed_images/
+
+# Secrets and local environment overrides — NEVER commit these
 .env
+.env.local
+
+# Python artifacts
 __pycache__/
 *.pyc
+
+# Local-only sync extensions (keep the .example templates in git)
+scripts/*.local.py
