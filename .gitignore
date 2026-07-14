@@ -1,6 +1,8 @@
-# Dependencies and build output
+# Dependencies
 /node_modules
-/public
+
+# Build output is now committed to serve from GitHub Pages root
+# /public
 
 # Generated CSS and assets
 /static/giallo.css
