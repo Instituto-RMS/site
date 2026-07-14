@@ -1,0 +1,35 @@
+"""Local extension hook for the Notion → Zola sync script.
+
+Rename or copy this file to `sync_notion.local.py` in the same directory as
+`sync_notion.py`. It is gitignored, so you can customize it per machine without
+affecting the shared script.
+
+The main sync will call `post_sync(ctx)` after finishing, where `ctx` is:
+
+    {
+        "projects_db_id": str,
+        "events_db_id": str,
+        "content_root": Path,
+        "repo_root": Path,
+    }
+
+Example uses:
+    - Sync an extra Notion database into a custom section.
+    - Post-process generated Markdown (rewrite image URLs, etc.).
+    - Trigger a local `zola build` or `zola serve` after sync.
+"""
+
+from pathlib import Path
+
+
+def post_sync(ctx: dict) -> None:
+    """Called by scripts/sync_notion.py after the main sync finishes."""
+    print("[sync_notion.local.py] post_sync running...")
+    # Exemplo: sincronizar uma seção extra hipotética.
+    # from sync_notion import sync_section, get_env
+    # sync_section(
+    #     get_env("NOTION_TOOLS_DB_ID"),
+    #     ctx["content_root"] / "tools",
+    #     build_tool_front_matter,  # você define essa função
+    # )
+    pass
