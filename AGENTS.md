@@ -173,6 +173,9 @@ No code for this exists yet. When implementing it, consider:
   site to `gh-pages` and is a public, production action. Agents must **not**
   run it on their own. When the user is ready to deploy, give them the command
   (`./scripts/deploy.sh`) and ask them to run it themselves.
+- **Never commit automatically.** After finishing a deliverable, suggest a
+  commit message and ask the user before committing. If the user starts asking
+  for several unrelated changes, suggest splitting them into separate commits.
 
 ## Suggested first steps for rebranding to the makerspace site
 
