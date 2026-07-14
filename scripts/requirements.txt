@@ -1,0 +1,4 @@
+requests>=2.31
+tomli_w>=1.0
+tenacity>=8.2
+pytest>=8.0

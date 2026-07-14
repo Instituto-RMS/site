@@ -21,6 +21,11 @@ TODO.md
 # Python artifacts
 __pycache__/
 *.pyc
+.venv/
+
+# Imagens baixadas do Notion durante o sync (geradas, nao commitadas).
+# Remova estas linhas se quiser versionar as imagens baixadas.
+/static/notion/
 
 # Local-only sync extensions
 scripts/*.local.py
