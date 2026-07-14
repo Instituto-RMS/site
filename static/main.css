@@ -319,6 +319,9 @@
   .my-4 {
     margin-block: calc(var(--spacing) * 4);
   }
+  .my-6 {
+    margin-block: calc(var(--spacing) * 6);
+  }
   .prose {
     color: var(--tw-prose-body);
     max-width: 65ch;
@@ -1074,6 +1077,9 @@
   .max-w-5xl {
     max-width: var(--container-5xl);
   }
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
+  }
   .min-w-\[50\%\] {
     min-width: 50%;
   }
@@ -1113,6 +1119,9 @@
   }
   .items-start {
     align-items: flex-start;
+  }
+  .justify-around {
+    justify-content: space-around;
   }
   .justify-between {
     justify-content: space-between;
