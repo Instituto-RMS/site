@@ -29,7 +29,7 @@
     <div class="grid gap-4 sm:grid-cols-2">
       {% for event in events %}
       <div class="{% if loop.index0 % 3 == 0 %}stat-card-green{% elif loop.index0 % 3 == 1 %}stat-card-cyan{% else %}stat-card-orange{% endif %} flex flex-col p-6">
-        <time class="mb-1 font-mono text-xs font-semibold uppercase tracking-widest text-concrete/70">
+        <time class="mb-1 font-mono text-xs font-semibold uppercase tracking-widest text-steel/70 dark:text-concrete/70">
           {% if event.extra.date_text %}
             {{ event.extra.date_text }}
           {% else %}

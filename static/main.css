@@ -2187,6 +2187,14 @@
       }
     }
   }
+  .dark\:text-concrete\/70 {
+    &:where(.dark, .dark *) {
+      color: color-mix(in srgb, #c9c8c3 70%, transparent);
+      @supports (color: color-mix(in lab, red, red)) {
+        color: color-mix(in oklab, var(--color-concrete) 70%, transparent);
+      }
+    }
+  }
   .dark\:text-white {
     &:where(.dark, .dark *) {
       color: var(--color-white);
