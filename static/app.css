@@ -194,8 +194,15 @@ article {
 .btn-menu {
   &::before,
   &::after {
-    @apply block h-0.5 w-5 bg-steel duration-200 content-[''] dark:bg-concrete;
+      @apply block h-0.5 w-5 bg-steel duration-200 content-[''];
   }
+
+  @variant dark {
+      &::before,
+      &::after {
+        @apply bg-brand-white;
+      }
+    }
 
   &:where(.open *) {
     &::before {
