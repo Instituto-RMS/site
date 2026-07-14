@@ -67,14 +67,19 @@
   <!---->
   {% endif %}
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+
   <!-- Main CSS-->
   <link rel="stylesheet" href="{{ get_url(path=`main.css`) }}" />
   <style>
     :root {
-      --bg: {{ config.extra.style.bg_color | default(value="#f4f4f5") }};
-      --bg-dark: {{ config.extra.style.bg_dark_color | default(value="#18181b") }};
-      --header: {{ config.extra.style.header_color | default(value="#e4e4e7") }};
-      --header-dark: {{ config.extra.style.header_dark_color | default(value="#27272a") }};
+      --bg: {{ config.extra.style.bg_color | default(value="#f7f7f5") }};
+      --bg-dark: {{ config.extra.style.bg_dark_color | default(value="#0c0c0d") }};
+      --header: {{ config.extra.style.header_color | default(value="#f7f7f5") }};
+      --header-dark: {{ config.extra.style.header_dark_color | default(value="#0c0c0d") }};
     }
   </style>
 

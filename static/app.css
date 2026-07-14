@@ -2,14 +2,23 @@
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* RMS brand palette. Green is the primary accent; cyan/orange are reserved for
-   secondary/decorative use (illustrations, small chips, occasional highlights).
-   Registering these via @theme exposes them as Tailwind utilities, e.g.
-   bg-brand-green, text-brand-cyan, border-brand-orange. */
+/* RMS brand palette. Neon green is the primary action accent; cyan/orange are
+   reserved for secondary/decorative use. Raw, high-contrast surfaces borrow from
+   the same family to keep the workshop feel across light and dark modes. */
 @theme {
   --color-brand-green: #adf758;
   --color-brand-cyan: #80e3f6;
   --color-brand-orange: #fdb314;
+  --color-brand-black: #0c0c0d;
+  --color-brand-white: #f7f7f5;
+  --color-steel: #212122;
+  --color-concrete: #c9c8c3;
+  --font-display: "Space Grotesk", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --leading-tight: 0.95;
+  --leading-display: 1.05;
+  --radius-none: 0px;
 }
 
 /* Pure CSS Icons, see: https://unocss.dev/presets/icons */
@@ -27,15 +36,29 @@ body {
 }
 
 html {
-  --bg: transparent;
-  --bg-dark: transparent;
-  --header: transparent;
-  --header-dark: transparent;
+  --bg: var(--color-brand-white);
+  --bg-dark: var(--color-brand-black);
+  --header: var(--color-brand-white);
+  --header-dark: var(--color-brand-black);
 }
 
 body {
   -webkit-tap-highlight-color: transparent;
-  @apply bg-(--bg) dark:bg-(--bg-dark);
+  @apply bg-(--bg) font-body text-steel antialiased dark:bg-(--bg-dark) dark:text-concrete;
+}
+
+/* Expressive raw baseline: strong section rhythm and exposed boundaries. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display tracking-tight;
+}
+
+::selection {
+  @apply bg-brand-green text-brand-black;
 }
 
 .not-ready * {
@@ -103,6 +126,19 @@ article {
     @apply scroll-mt-16;
   }
 
+  h2,
+  h3 {
+    @apply font-display tracking-tight text-brand-black dark:text-brand-white;
+  }
+
+  hr {
+    @apply border-concrete/40 dark:border-concrete/20;
+  }
+
+  a {
+    @apply underline-offset-2;
+  }
+
   /* GitHub Alerts */
   .markdown-alert-note {
     --admonition-bg: rgba(31, 111, 235, 0.1);
@@ -158,10 +194,8 @@ article {
 .btn-menu {
   &::before,
   &::after {
-    @apply block h-0.5 w-5 bg-black duration-200 content-[''];
+    @apply block h-0.5 w-5 bg-steel duration-200 content-[''] dark:bg-concrete;
   }
-
-  @apply dark:before:invert dark:after:invert;
 
   &:where(.open *) {
     &::before {
@@ -183,54 +217,58 @@ article {
 }
 
 @utility blur-header {
-  @apply bg-black/10 backdrop-blur dark:bg-white/10;
+  @apply bg-concrete/30 backdrop-blur-lg dark:bg-steel/60;
 }
 
-/* Tinted with brand green instead of neutral gray, so every card across the
-   site (stats, features, blog list, taxonomies...) carries a hint of brand
-   color rather than looking flat gray. */
+/* Raw surface: slightly warm, with a faint hint of brand green so cards don't
+   read as flat gray. Kept low so the neon accent stays dominant. */
 @utility block-bg {
-  @apply bg-brand-green/8 dark:bg-brand-green/10;
+  @apply bg-concrete/8 dark:bg-concrete/8 border border-concrete/15 dark:border-concrete/15;
 }
 
 @utility block-hover {
-  @apply hover:bg-brand-green/15 dark:hover:bg-brand-green/18;
+  @apply hover:border-brand-green/50 hover:bg-brand-green/8 dark:hover:border-brand-green/50 dark:hover:bg-brand-green/8;
 }
 
 @utility block-hover-mask {
   @apply hover:bg-brand-green/6 dark:hover:bg-brand-green/10;
 }
 
-/* Small colored pill. Pair with an explicit bg-brand-* utility (often via
-   macros::accent_bg) at the call site rather than baking a color in here,
-   since Tailwind utilities share specificity and can't reliably override
-   a color set inside another @utility. */
+/* Small colored pill with high-contrast border — engineered, not soft. */
 @utility tag-chip {
-  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium text-black no-underline border border-gray-300 dark:border-gray-600;
+  @apply inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium text-steel no-underline border border-steel/20 dark:border-concrete/30 dark:text-concrete;
 }
 
-/* Colored circle behind an emoji/icon. Pair with a bg-brand-* utility (often
-   via macros::accent_bg_soft) and explicit sizing classes at the call site. */
+/* Colored circle behind an emoji/icon. Pair with a bg-brand-* utility at the call site. */
 @utility icon-badge {
   @apply inline-flex items-center justify-center rounded-full;
 }
 
 @utility primary-link {
-  @apply text-black no-underline hover:opacity-80 dark:text-white;
+  @apply text-steel no-underline hover:text-brand-green dark:text-concrete;
 }
 
-/* Primary CTA: brand green with black text. Works in both light and dark mode
-   since the green stays legible against black text either way, so unlike the
-   old bg-black/dark:bg-white pattern it needs no dark: variant. */
+/* Primary CTA: neon green punch on black text. Used as a signature action
+   across both modes. */
 @utility btn-primary {
-  @apply rounded-full bg-brand-green font-medium text-black no-underline duration-100 hover:brightness-95 active:scale-95;
+  @apply inline-flex items-center justify-center rounded-full bg-brand-green px-5 py-2.5 font-semibold text-brand-black no-underline transition-all duration-150 hover:brightness-105 hover:shadow-[0_0_18px_rgba(173,247,88,0.45)] active:scale-95;
 }
 
-/* Secondary/outline CTA, with a brand-green hover accent instead of solid fill. */
+/* Secondary/outline CTA — engineered, with a neon hover glow. */
 @utility btn-outline {
-  @apply rounded-full border border-black/20 font-medium no-underline duration-100 hover:border-brand-green active:scale-95 dark:border-white/30 dark:hover:border-brand-green;
+  @apply inline-flex items-center justify-center rounded-full border border-steel/30 px-5 py-2.5 font-semibold text-steel no-underline transition-all duration-150 hover:border-brand-green hover:text-brand-green dark:border-concrete/40 dark:text-concrete;
 }
 
 @utility secondary-link {
-  @apply text-(--tw-prose-body) no-underline hover:text-black dark:hover:text-white;
+  @apply text-steel/80 no-underline transition-colors hover:text-brand-green dark:text-concrete/80;
+}
+
+/* Utility: thick top border used to introduce raw, exposed divisions. */
+@utility rule-brand {
+  @apply h-1 bg-linear-to-r from-brand-green via-brand-cyan to-brand-orange;
+}
+
+/* Utility: strong blockquote / testimonial treatment. */
+@utility quote-block {
+  @apply relative border-l-4 border-brand-green pl-5 font-display text-lg font-medium leading-tight tracking-tight text-steel dark:text-concrete;
 }

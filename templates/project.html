@@ -1,10 +1,13 @@
 {% extends "index.html" %}<!---->
 {% block main %}
 <article>
-  <header class="mb-8">
-    <h1 class="my-0! pb-2.5">{{ page.title }}</h1>
+  <header class="relative left-1/2 -mt-24 mb-10 w-screen -translate-x-1/2 bg-brand-black px-4 pt-32 pb-12 text-center sm:px-6 lg:-mt-32 lg:pt-40 lg:pb-16">
+    <div class="rule-brand absolute inset-x-0 top-0" aria-hidden="true"></div>
+    <div class="rule-brand absolute inset-x-0 bottom-0" aria-hidden="true"></div>
+    <p class="mb-3 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-green">Projeto</p>
+    <h1 class="mx-auto my-0! max-w-4xl font-display text-3xl leading-display font-extrabold tracking-tight text-brand-white lg:text-5xl">{{ page.title }}</h1>
     {% if page.extra.tags %}
-    <div class="mt-2 flex flex-wrap gap-2">
+    <div class="mt-4 flex flex-wrap justify-center gap-2">
       {% for tag in page.extra.tags %}
       <span class="tag-chip">#{{ tag }}</span>
       {% endfor %}

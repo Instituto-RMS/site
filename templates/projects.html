@@ -1,42 +1,54 @@
 {% extends "index.html" %}<!---->
 {% block main %}
-<h1 class="mb-4">{{ section.title }}</h1>
-
-{% if section.content %}
-<section class="mb-12">{{ section.content | safe }}</section>
+{% if paginator %}
+  {% set projects = paginator.pages %}
+{% else %}
+  {% set projects = section.pages %}
 {% endif %}
 
-<div class="not-prose">
-  {% if paginator %}
-    {% set projects = paginator.pages %}
-  {% else %}
-    {% set projects = section.pages %}
+<section class="relative left-1/2 -mt-24 mb-16 w-screen -translate-x-1/2 overflow-hidden bg-brand-black px-4 pt-32 pb-20 text-center text-white sm:px-6 lg:-mt-32 lg:pt-40 lg:pb-24">
+  <div class="rule-brand absolute inset-x-0 top-0" aria-hidden="true"></div>
+  <div class="rule-brand absolute inset-x-0 bottom-0" aria-hidden="true"></div>
+  <p class="mb-3 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-green">Portfólio técnico</p>
+  <h1 class="mx-auto mb-4 max-w-4xl font-display text-4xl leading-display font-extrabold tracking-tight text-brand-white lg:text-6xl">{{ section.title }}</h1>
+  {% if section.content %}
+  <p class="mx-auto max-w-2xl text-concrete/90">{{ section.content | safe }}</p>
   {% endif %}
-  {% if projects | length == 0 %}
-  <p class="opacity-70">Nenhum projeto cadastrado no momento. Volte em breve!</p>
-  {% else %}
-  <div class="grid gap-4 sm:grid-cols-2">
-    {% for project in projects %}
-    <div class="block-bg border-l-4 {% if loop.index0 % 3 == 0 %}border-brand-green{% elif loop.index0 % 3 == 1 %}border-brand-cyan{% else %}border-brand-orange{% endif %} flex flex-col rounded-lg p-5">
-      <h2 class="mt-0 mb-2 text-xl font-bold text-black dark:text-white">
-        <a class="no-underline" href="{{ project.permalink }}">{{ project.title }}</a>
-      </h2>
-      <p class="mb-4 grow opacity-80">{{ project.description | default(value=project.summary) | safe }}</p>
-      {% if project.extra.tags %}
-      <div class="mb-4 flex flex-wrap gap-2">
-        {% for tag in project.extra.tags %}
-        <span class="tag-chip">#{{ tag }}</span>
-        {% endfor %}
-      </div>
-      {% endif %}
-      <a
-        class="btn-primary self-start px-4 py-2 text-sm"
-        href="{{ project.permalink }}"
-        >Saiba mais</a
-      >
-    </div>
-    {% endfor %}
+</section>
+
+<section class="mb-16">
+  <div class="mb-8 flex items-end justify-between">
+    <h2 class="text-2xl font-extrabold tracking-tight">Todos os projetos</h2>
+    <span class="hidden font-mono text-xs text-concrete/60 uppercase tracking-widest sm:block">{{ projects | length }} projeto{% if projects | length != 1 %}s{% endif %}</span>
   </div>
-  {% endif %}
-</div>
+
+  <div class="not-prose">
+    {% if projects | length == 0 %}
+    <p class="opacity-70">Nenhum projeto cadastrado no momento. Volte em breve!</p>
+    {% else %}
+    <div class="grid gap-4 sm:grid-cols-2">
+      {% for project in projects %}
+      <div class="block-bg block-hover border-l-4 {% if loop.index0 % 3 == 0 %}border-l-brand-green{% elif loop.index0 % 3 == 1 %}border-l-brand-cyan{% else %}border-l-brand-orange{% endif %} flex flex-col p-6">
+        <h2 class="mt-0 mb-2 text-xl font-bold">
+          <a class="no-underline hover:text-brand-green" href="{{ project.permalink }}">{{ project.title }}</a>
+        </h2>
+        <p class="mb-4 grow opacity-80">{{ project.description | default(value=project.summary) | safe }}</p>
+        {% if project.extra.tags %}
+        <div class="mb-4 flex flex-wrap gap-2">
+          {% for tag in project.extra.tags %}
+          <span class="tag-chip">#{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <a
+          class="btn-primary self-start px-4 py-2 text-sm"
+          href="{{ project.permalink }}"
+          >Saiba mais</a
+        >
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
 {% endblock main %}

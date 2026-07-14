@@ -34,11 +34,11 @@ side_toc = true
 
 # The Kita style config.
 [extra.style]
-bg_color = "#ffffff"
-# bg_dark_color = ""
+bg_color = "#f7f7f5"
+bg_dark_color = "#0c0c0d"
 # header_blur = true
-header_color = "#ffffff"
-header_dark_color = "#1c1c1f"
+header_color = "#f7f7f5"
+header_dark_color = "#0c0c0d"
 
 # Logo shown on the right side of the header (desktop only).
 logo_url = "images/RMS-logo.png"
