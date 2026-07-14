@@ -169,6 +169,10 @@ No code for this exists yet. When implementing it, consider:
 - **To build the site**: run `zola build` (Zola) and `bun run build` (Tailwind).
   Do not start a dev server yourself — ask the user to run `zola serve` if one
   is needed.
+- **Never deploy automatically.** `scripts/deploy.sh` pushes the generated
+  site to `gh-pages` and is a public, production action. Agents must **not**
+  run it on their own. When the user is ready to deploy, give them the command
+  (`./scripts/deploy.sh`) and ask them to run it themselves.
 
 ## Suggested first steps for rebranding to the makerspace site
 
