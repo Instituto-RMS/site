@@ -36,6 +36,6 @@ acreditam na cultura maker.
 
 ## Fale com a gente
 
-- E-mail: [riomakerspace@gmail.com](mailto:riomakerspace@gmail.com)
-- Site: [riomakerspace.com.br](https://riomakerspace.com.br)
+- E-mail: [contato@riomakerspace.com.br](mailto:contato@riomakerspace.com.br)
+- Site: [www.riomakerspace.com.br](https://www.riomakerspace.com.br)
 - GitHub: [github.com/RIO-MAKER-SPACE-GIT](https://github.com/RIO-MAKER-SPACE-GIT)

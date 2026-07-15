@@ -92,7 +92,7 @@ hero_image = "images/hero-background.jpg"
 hero_headline = "A infraestrutura por trás da inovação maker no Rio de Janeiro."
 hero_subheadline = "O Rio Maker Space reúne 11 anos de experiência técnica e comunitária para apoiar escolas, competições e instituições que precisam de expertise em foguetes, balões estratosféricos, robótica e muito mais."
 hero_cta_primary_label = "Fale com nossa equipe"
-hero_cta_primary_url = "mailto:riomakerspace@gmail.com?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
+hero_cta_primary_url = "mailto:contato@riomakerspace.com.br?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
 hero_cta_secondary_label = "Conheça nossos projetos"
 hero_cta_secondary_url = "$BASE_URL/projects"
 
@@ -103,28 +103,28 @@ open_source_url = "https://github.com/RIO-MAKER-SPACE-GIT"
 [[extra.home.final_ctas]]
 text = "Precisa de expertise técnica?"
 cta_label = "Contrate uma consultoria"
-cta_url = "mailto:riomakerspace@gmail.com?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
+cta_url = "mailto:contato@riomakerspace.com.br?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
 
 [[extra.home.final_ctas]]
 text = "Quer aprender fazendo?"
 cta_label = "Quero participar"
-cta_url = "mailto:riomakerspace@gmail.com?subject=Quero%20participar%20do%20RMS"
+cta_url = "mailto:contato@riomakerspace.com.br?subject=Quero%20participar%20do%20RMS"
 
 [[extra.home.final_ctas]]
 text = "Tem uma escola ou instituição?"
 cta_label = "Leve o RMS pra você"
-cta_url = "mailto:riomakerspace@gmail.com?subject=Parceria%20institucional%20com%20o%20RMS"
+cta_url = "mailto:contato@riomakerspace.com.br?subject=Parceria%20institucional%20com%20o%20RMS"
 
 [extra.contact]
-email = "riomakerspace@gmail.com"
-website_url = "https://riomakerspace.com.br"
-website_label = "riomakerspace.com.br"
+email = "contato@riomakerspace.com.br"
+website_url = "https://www.riomakerspace.com.br"
+website_label = "www.riomakerspace.com.br"
 github_url = "https://github.com/RIO-MAKER-SPACE-GIT"
 # TODO: replace with the real WhatsApp group/channel link.
-whatsapp_url = "#"
+whatsapp_url = "https://chat.whatsapp.com/JlSiWCgBQrkJ223PX8Cl3i"
 whatsapp_label = "WhatsApp"
 # TODO: replace with the real Instagram profile link.
-instagram_url = "#"
-instagram_label = "@Rio_Maker_Space"
+instagram_url = "https://www.instagram.com/rio_maker_space/"
+instagram_label = "@rio_maker_space"
 # TODO: replace with the real LinkedIn company page link.
-linkedin_url = "#"
+linkedin_url = "https://www.linkedin.com/company/riomakerspace"
