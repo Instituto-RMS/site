@@ -89,31 +89,90 @@ loading = "lazy"
 
 [extra.home]
 hero_image = "images/hero-background.jpg"
-hero_headline = "A infraestrutura por trás da inovação maker no Rio de Janeiro."
-hero_subheadline = "O Rio Maker Space reúne 11 anos de experiência técnica e comunitária para apoiar escolas, competições e instituições que precisam de expertise em foguetes, balões estratosféricos, robótica e muito mais."
-hero_cta_primary_label = "Fale com nossa equipe"
-hero_cta_primary_url = "mailto:contato@riomakerspace.com.br?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
-hero_cta_secondary_label = "Conheça nossos projetos"
-hero_cta_secondary_url = "$BASE_URL/projects"
+hero_eyebrow = "RIO MAKER SPACE"
+hero_headline = "Tecnologia aberta para transformar curiosidade em futuro."
+hero_subheadline = "Somos uma comunidade que conecta educação prática, projetos reais e pessoas que querem criar. Do primeiro circuito ao céu, fazemos tecnologia aberta acontecer no Rio de Janeiro."
+hero_cta_primary_label = "Quero participar"
+hero_cta_primary_url = "https://chat.whatsapp.com/JlSiWCgBQrkJ223PX8Cl3i"
+hero_cta_secondary_label = "Quero ser parceiro"
+hero_cta_secondary_url = "mailto:contato@riomakerspace.com.br?subject=Quero%20ser%20parceiro%20do%20RMS"
 
-open_source_text = "Tudo aqui é aberto — do código ao hardware."
-open_source_cta_label = "Ver nossos projetos no GitHub →"
+# Section 2 — "Impacto que se mede" eyebrow/heading are rendered from
+# stats.toml; this controls the small section eyebrow label.
+impact_eyebrow = "Métricas da comunidade"
+
+# Section 3 — Três pilares
+pillars_eyebrow = "Fundamentos"
+pillars_heading = "Três formas de fazer acontecer"
+pillars_support = "Criamos experiências onde tecnologia, aprendizagem e comunidade avançam juntas."
+
+# Section 4 — "Na prática": two cards (Projetos / Eventos)
+practice_eyebrow = "Na prática"
+practice_heading = "Da bancada ao céu"
+practice_support = "Projetos e encontros que transformam conhecimento em experiências abertas, concretas e compartilháveis."
+
+# Section 7 — CTA final: três portas de entrada (kept here in the flat
+# [extra.home] section so they aren't swallowed by a sub-table header below).
+final_heading = "Vamos construir o próximo projeto juntos?"
+final_eyebrow = "Próximos passos"
+
+[extra.home.practice_projects]
+heading = "Projetos que exploram limites"
+text = "Desenvolvemos e apoiamos projetos de eletrônica, robótica, IoT e aeroespacial que saem da bancada para testar o mundo real."
+# image = "images/projects-hero.jpg"  # TODO: add ASA/BEC/UIARA photo
+highlights = [
+  "Projeto ASA: 23 km de altitude",
+  "Foguete UIARA: apogeu de 1 km, em parceria com CBPF e UFRJ",
+  "BEC: sensores atmosféricos, telemetria e comunicação LoRa de longo alcance",
+]
+cta_label = "Conheça nossos projetos"
+cta_url = "$BASE_URL/projects"
+
+[extra.home.practice_events]
+heading = "Eventos que conectam pessoas"
+text = "Reunimos makers, estudantes, pesquisadores, famílias e comunidades para descobrir, testar e construir tecnologia junto."
+# image = "images/events-hero.jpg"  # TODO: add Arduino Day photo
+highlights = [
+  "Arduino Day: encontros anuais de tecnologia aberta e criação coletiva",
+  "Palestras, competições, exposições interativas e demonstrações técnicas",
+  "Conexão entre comunidades, grupos de pesquisa e instituições de ensino",
+]
+cta_label = "Veja nossos eventos"
+cta_url = "$BASE_URL/events"
+
+# Section 5 — Próximos encontros fallback (shown when no upcoming events)
+[extra.home.upcoming_fallback]
+heading = "O próximo projeto pode começar com você"
+text = "Acompanhe os próximos encontros, projetos e experiências da comunidade RMS."
+fallback_text = "Quer receber os próximos convites do RMS? Entre para a comunidade e acompanhe nossos canais."
+cta_label = "Quero acompanhar"
+cta_url = "https://chat.whatsapp.com/JlSiWCgBQrkJ223PX8Cl3i"
+
+# Section 6 — Comunidade, parceiros e conhecimento aberto
+[extra.home.community]
+heading = "Feito em comunidade. Compartilhado em aberto."
+text = "O RMS constrói junto com makers, escolas, grupos de pesquisa, instituições e comunidades que acreditam que tecnologia deve ser acessível, prática e compartilhável."
+open_source_heading = "Conhecimento aberto por princípio"
+open_source_text = "Projetos, aprendizados e processos que podem ser compartilhados, adaptados e levados adiante. A documentação faz parte do que construímos."
+open_source_cta_label = "Explorar documentação e repositórios"
 open_source_url = "https://github.com/RIO-MAKER-SPACE-GIT"
 
+# Section 7 — CTA final: three doors (final_heading / final_eyebrow are
+# defined above in the flat [extra.home] section; the array is here).
 [[extra.home.final_ctas]]
-text = "Precisa de expertise técnica?"
-cta_label = "Contrate uma consultoria"
-cta_url = "mailto:contato@riomakerspace.com.br?subject=Consultoria%20t%C3%A9cnica%20com%20o%20RMS"
-
-[[extra.home.final_ctas]]
-text = "Quer aprender fazendo?"
+text = "Quero criar, aprender e me aproximar da comunidade maker."
 cta_label = "Quero participar"
-cta_url = "mailto:contato@riomakerspace.com.br?subject=Quero%20participar%20do%20RMS"
+cta_url = "https://chat.whatsapp.com/JlSiWCgBQrkJ223PX8Cl3i"
 
 [[extra.home.final_ctas]]
-text = "Tem uma escola ou instituição?"
-cta_label = "Leve o RMS pra você"
-cta_url = "mailto:contato@riomakerspace.com.br?subject=Parceria%20institucional%20com%20o%20RMS"
+text = "Quero conversar sobre atividades, eventos ou experiências de tecnologia aberta."
+cta_label = "Levar para minha escola ou organização"
+cta_url = "mailto:contato@riomakerspace.com.br?subject=Experi%C3%AAncia%20RMS%20para%20escola%20ou%20organiza%C3%A7%C3%A3o"
+
+[[extra.home.final_ctas]]
+text = "Quero apoiar, cocriar ou conectar o RMS a uma nova oportunidade."
+cta_label = "Quero construir uma parceria"
+cta_url = "mailto:contato@riomakerspace.com.br?subject=Parceria%20com%20o%20RMS"
 
 [extra.contact]
 email = "contato@riomakerspace.com.br"

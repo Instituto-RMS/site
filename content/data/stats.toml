@@ -1,24 +1,31 @@
-# Numbers shown in the "Números que provam o impacto" section of the homepage.
-# `confirmed = false` entries are rendered as "a confirmar" placeholders instead
-# of a made-up number — update `value` and flip `confirmed` to `true` once the
-# real figures are gathered.
+# Numbers shown in the "Impacto que se mede" section of the homepage.
+# Values come from the V1 homepage briefing — only confirmed figures are used.
+#
+# Rules (per briefing):
+#  - "10 anos de trajetória maker no Rio" (not "10 anos de RMS" — the
+#    trajectory includes initiatives prior to the current name).
+#  - "550 inscrições" refers to Arduino Day 2026 Sympla sign-ups; it is NOT
+#    in-person attendance, so keep the label tied to inscrições.
+#  - Do NOT add unverified totals (participants, workshops, partners,
+#    documented projects) in this phase.
+#  - The "23 km" card refers to Projeto ASA, launched alongside BEC.
 
 [[stat]]
-value = "11 anos"
-label = "de cultura maker no Rio de Janeiro (desde 2015)"
+value = "10 anos"
+label = "de trajetória maker no Rio"
 confirmed = true
 
 [[stat]]
-value = "4+"
-label = "projetos de ponta documentados publicamente (foguetes, balões estratosféricos, aviônica, satélites)"
+value = "550 inscrições"
+label = "mobilizadas no Arduino Day 2026"
 confirmed = true
 
 [[stat]]
-value = "+400"
-label = "pessoas conectadas no Porto Maravalley"
+value = "3 edições"
+label = "aproximando pessoas da tecnologia aberta"
 confirmed = true
 
 [[stat]]
-value = "32"
-label = "projetos técnicos expostos"
+value = "23 km"
+label = "de altitude em uma missão aeroespacial maker"
 confirmed = true

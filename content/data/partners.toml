@@ -1,4 +1,8 @@
-# Partners and testimonials shown in the "Comunidade & parceiros" section.
+# Partners and testimonials shown in the "Feito em comunidade" section.
+# Only list partners with confirmed relationship and authorization to appear.
+# Possible references from current portfolio: CBPF, UFRJ/Minerva Rockets,
+# UERJ Sats, GFRJ, Galileu Robotics, OBA.
+#
 # `testimonial` is intentionally empty — the homepage hides that block entirely
 # until at least one entry is added here. Example entry once you have one:
 #
@@ -7,5 +11,5 @@
 # role = "Aluno"
 # quote = "..."
 
-partners = ["CBPF", "UFRJ · Minerva Rockets", "Ajuda Robótica", "Galileu", "Lymatek", "Cybersecurity Girls / Como uma Garota"]
+partners = ["CBPF", "UFRJ · Minerva Rockets", "UERJ Sats", "GFRJ", "Galileu Robotics", "OBA"]
 testimonial = []
