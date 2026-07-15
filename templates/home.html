@@ -46,9 +46,9 @@
   <p class="mb-10 max-w-2xl opacity-80">
     Uma comunidade construída com tempo, experimentação e conhecimento compartilhado.
   </p>
-  <div class="not-prose grid grid-cols-2 gap-4 lg:grid-cols-4">
+  <div class="not-prose grid grid-cols-1 gap-4 lg:grid-cols-5">
     {% for stat in stats.stat %}
-    <div class="flex flex-col justify-between p-5 text-left transition-colors lg:p-6 {% if loop.index0 % 3 == 0 %}stat-card-green{% elif loop.index0 % 3 == 1 %}stat-card-cyan{% else %}stat-card-orange{% endif %}">
+    <div class="flex flex-col justify-between p-5 text-left transition-colors lg:p-6 {% if loop.index0 == 0 or loop.index0 == 3 %}lg:col-span-2{% else %}lg:col-span-3{% endif %} {% if loop.index0 % 3 == 0 %}stat-card-green{% elif loop.index0 % 3 == 1 %}stat-card-cyan{% else %}stat-card-orange{% endif %}">
       {% if stat.confirmed %}
       <div class="font-display text-3xl leading-display font-extrabold break-words hyphens-auto lg:text-4xl">{{ stat.value }}</div>
       {% else %}
