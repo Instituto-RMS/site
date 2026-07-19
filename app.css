@@ -241,18 +241,17 @@ article {
   @apply hover:bg-brand-green/6 dark:hover:bg-brand-green/10;
 }
 
-/* Impact stats cards: thick colored left edge, subtle surrounding border, and
-   per-color hover tint instead of the generic green hover. */
+/* Impact stats cards: thin colored border cycling through brand colors. */
 @utility stat-card-green {
-  @apply bg-concrete/5 dark:bg-concrete/5 border border-brand-green/30 dark:border-brand-green/30 border-l-4 border-l-brand-green hover:bg-brand-green/20 dark:hover:bg-brand-green/25;
+  @apply border border-brand-green dark:border-brand-green;
 }
 
 @utility stat-card-cyan {
-  @apply bg-concrete/5 dark:bg-concrete/5 border border-brand-cyan/30 dark:border-brand-cyan/30 border-l-4 border-l-brand-cyan hover:bg-brand-cyan/20 dark:hover:bg-brand-cyan/25;
+  @apply border border-brand-cyan dark:border-brand-cyan;
 }
 
 @utility stat-card-orange {
-  @apply bg-concrete/5 dark:bg-concrete/5 border border-brand-orange/30 dark:border-brand-orange/30 border-l-4 border-l-brand-orange hover:bg-brand-orange/20 dark:hover:bg-brand-orange/25;
+  @apply border border-brand-orange dark:border-brand-orange;
 }
 
 /* Small colored pill with high-contrast border — engineered, not soft. */
