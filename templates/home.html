@@ -19,9 +19,6 @@
   <div class="absolute inset-0 -z-10 bg-linear-to-b from-brand-black/30 via-brand-black/70 to-brand-black" aria-hidden="true"></div>
   <div class="rule-brand absolute inset-x-0 top-0" aria-hidden="true"></div>
   <div class="rule-brand absolute inset-x-0 bottom-0" aria-hidden="true"></div>
-  {% if home.hero_eyebrow %}
-  <p class="mb-4 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-green">{{ home.hero_eyebrow }}</p>
-  {% endif %}
   <h1 class="mx-auto mb-6 max-w-4xl font-display text-4xl leading-display font-extrabold tracking-tight text-brand-white sm:text-5xl lg:text-6xl">{{ home.hero_headline }}</h1>
   <p class="mx-auto mb-10 max-w-2xl text-base text-concrete/90 sm:text-lg lg:text-xl">{{ home.hero_subheadline }}</p>
   <div class="not-prose flex flex-wrap justify-center gap-3">
@@ -48,7 +45,7 @@
   </p>
   <div class="not-prose grid grid-cols-1 gap-4 lg:grid-cols-5">
     {% for stat in stats.stat %}
-    <div class="flex flex-col justify-between p-5 text-left transition-colors lg:p-6 {% if loop.index0 == 0 or loop.index0 == 3 %}lg:col-span-2{% else %}lg:col-span-3{% endif %} {% if loop.index0 % 3 == 0 %}stat-card-green{% elif loop.index0 % 3 == 1 %}stat-card-cyan{% else %}stat-card-orange{% endif %}">
+    <div class="flex flex-col justify-between p-5 text-left lg:p-6 {% if loop.index0 == 0 or loop.index0 == 3 %}lg:col-span-2{% else %}lg:col-span-3{% endif %} {% if loop.index0 % 3 == 0 %}stat-card-green{% elif loop.index0 % 3 == 1 %}stat-card-cyan{% else %}stat-card-orange{% endif %}">
       {% if stat.confirmed %}
       <div class="font-display text-3xl leading-display font-extrabold break-words hyphens-auto lg:text-4xl">{{ stat.value }}</div>
       {% else %}
@@ -68,7 +65,7 @@
   <p class="mb-10 max-w-2xl opacity-80">{{ home.pillars_support }}</p>
   <div class="not-prose grid gap-4 lg:grid-cols-3">
     <!-- Pilar 1 -->
-    <div class="group block-bg block-hover flex flex-col overflow-hidden">
+    <div class="block-bg flex flex-col overflow-hidden">
       <div class="flex aspect-[4/3] items-center justify-center bg-brand-green/10 text-4xl">
         <!-- TODO: replace with photo of kids/families in a maker experience -->
         <span aria-hidden="true">🧑‍🤝‍🧑</span>
@@ -79,7 +76,7 @@
       </div>
     </div>
     <!-- Pilar 2 -->
-    <div class="group block-bg block-hover flex flex-col overflow-hidden">
+    <div class="block-bg flex flex-col overflow-hidden">
       <div class="flex aspect-[4/3] items-center justify-center bg-brand-cyan/10 text-4xl">
         <!-- TODO: replace with photo of boards, sensors, robots, prototypes -->
         <span aria-hidden="true">🔧</span>
@@ -90,7 +87,7 @@
       </div>
     </div>
     <!-- Pilar 3 -->
-    <div class="group block-bg block-hover flex flex-col overflow-hidden">
+    <div class="block-bg flex flex-col overflow-hidden">
       <div class="flex aspect-[4/3] items-center justify-center bg-brand-orange/10 text-4xl">
         <!-- TODO: replace with photo of event / collective build / demo -->
         <span aria-hidden="true">🛠️</span>
@@ -111,7 +108,7 @@
   <p class="mb-10 max-w-2xl opacity-80">{{ home.practice_support }}</p>
   <div class="not-prose grid gap-4 lg:grid-cols-2">
     <!-- Card 1 — Projetos que exploram limites -->
-    <div class="group stat-card-green flex flex-col p-6 lg:p-8">
+    <div class="stat-card-green flex flex-col p-6 lg:p-8">
       <div class="mb-4 flex aspect-[16/9] items-center justify-center bg-brand-green/10 text-4xl">
         <!-- TODO: add ASA/BEC launch or UIARA photo -->
         <span aria-hidden="true">🚀</span>
@@ -133,7 +130,7 @@
       >
     </div>
     <!-- Card 2 — Eventos que conectam pessoas -->
-    <div class="group stat-card-cyan flex flex-col p-6 lg:p-8">
+    <div class="stat-card-cyan flex flex-col p-6 lg:p-8">
       <div class="mb-4 flex aspect-[16/9] items-center justify-center bg-brand-cyan/10 text-4xl">
         <!-- TODO: add Arduino Day audience/robots photo -->
         <span aria-hidden="true">🎪</span>
@@ -210,7 +207,7 @@
   {% if partners.partners and partners.partners | length > 0 %}
   <div class="not-prose mb-12 flex flex-wrap gap-3">
     {% for partner in partners.partners %}
-    <span class="block-bg block-hover px-4 py-2 text-sm font-medium">{{ partner }}</span>
+    <span class="block-bg px-4 py-2 text-sm font-medium">{{ partner }}</span>
     {% endfor %}
   </div>
   {% endif %}
@@ -250,7 +247,7 @@
   </div>
   <div class="not-prose mt-10 grid gap-4 lg:grid-cols-3">
     {% for cta in home.final_ctas %}
-    <div class="block-bg block-hover flex flex-col items-center p-6 text-center lg:p-8">
+    <div class="block-bg flex flex-col items-center p-6 text-center lg:p-8">
       <p class="mb-4 font-medium opacity-90">{{ cta.text }}</p>
       <a
         class="btn-primary mt-auto px-5 py-2.5 text-sm"
