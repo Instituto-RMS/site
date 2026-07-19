@@ -88,7 +88,7 @@
   <link rel="canonical" href="https:&#x2F;&#x2F;www.riomakerspace.com.br" />
 
   <!-- Head inject -->
-  <script defer data-domain="riomakerspace.com.br" src="https://vince-analytics-template-production-792d.up.railway.app/js/script.js"></script>
+  <script defer data-domain="riomakerspace.com.br" src="https://vince-analytics-template-production-792d.up.railway.app/js/script.tagged-events.outbound-links.js"></script>
 </head>
 
   <body class="overflow-x-hidden text-black duration-200 ease-out dark:text-white">
@@ -309,12 +309,12 @@
   <p class="mx-auto mb-10 max-w-2xl text-base text-concrete/90 sm:text-lg lg:text-xl">Somos uma comunidade que conecta educação prática, projetos reais e pessoas que querem criar. Do primeiro circuito ao céu, fazemos tecnologia aberta acontecer no Rio de Janeiro.</p>
   <div class="not-prose flex flex-wrap justify-center gap-3">
     <a
-      class="btn-primary px-6 py-3"
+      class="btn-primary px-6 py-3 vince-event-name=Quero+Participar"
       href="https://chat.whatsapp.com/JlSiWCgBQrkJ223PX8Cl3i"
       >Quero participar</a
     >
     <a
-      class="btn-outline border-concrete/40! text-brand-white hover:border-brand-green hover:text-brand-green px-6 py-3"
+      class="btn-outline border-concrete/40! text-brand-white hover:border-brand-green hover:text-brand-green px-6 py-3 vince-event-name=Quero+Ser+Parceiro"
       href="mailto:contato@riomakerspace.com.br?subject=Quero%20ser%20parceiro%20do%20RMS"
       >Quero ser parceiro</a
     >
@@ -550,7 +550,7 @@
     <div class="block-bg flex flex-col items-center p-6 text-center lg:p-8">
       <p class="mb-4 font-medium opacity-90">Quero criar, aprender e me aproximar da comunidade maker.</p>
       <a
-        class="btn-primary mt-auto px-5 py-2.5 text-sm"
+        class="btn-primary mt-auto px-5 py-2.5 text-sm vince-event-name=Quero+participar"
         href="https://chat.whatsapp.com/JlSiWCgBQrkJ223PX8Cl3i"
         >Quero participar</a
       >
@@ -559,7 +559,7 @@
     <div class="block-bg flex flex-col items-center p-6 text-center lg:p-8">
       <p class="mb-4 font-medium opacity-90">Quero conversar sobre atividades, eventos ou experiências de tecnologia aberta.</p>
       <a
-        class="btn-primary mt-auto px-5 py-2.5 text-sm"
+        class="btn-primary mt-auto px-5 py-2.5 text-sm vince-event-name=Levar+para+minha+escola+ou+organização"
         href="mailto:contato@riomakerspace.com.br?subject=Experi%C3%AAncia%20RMS%20para%20escola%20ou%20organiza%C3%A7%C3%A3o"
         >Levar para minha escola ou organização</a
       >
@@ -568,7 +568,7 @@
     <div class="block-bg flex flex-col items-center p-6 text-center lg:p-8">
       <p class="mb-4 font-medium opacity-90">Quero apoiar, cocriar ou conectar o RMS a uma nova oportunidade.</p>
       <a
-        class="btn-primary mt-auto px-5 py-2.5 text-sm"
+        class="btn-primary mt-auto px-5 py-2.5 text-sm vince-event-name=Quero+construir+uma+parceria"
         href="mailto:contato@riomakerspace.com.br?subject=Parceria%20com%20o%20RMS"
         >Quero construir uma parceria</a
       >
@@ -631,6 +631,31 @@
 
 
     <!-- Body End inject -->
-    
+    <script>
+  (function () {
+    var thresholds = [25, 50, 75, 100];
+    var fired = {};
+    function fire(pct) {
+      if (fired[pct]) return;
+      fired[pct] = true;
+      var name = 'Scroll ' + pct + '%';
+      if (typeof window.plausible === 'function') {
+        window.plausible(name);
+      }
+    }
+    function onScroll() {
+      var doc = document.documentElement;
+      var scrollTop = window.scrollY || doc.scrollTop;
+      var max = (doc.scrollHeight - doc.clientHeight) / 100;
+      if (max <= 0) return;
+      var pct = scrollTop / max;
+      for (var i = 0; i < thresholds.length; i++) {
+        if (pct >= thresholds[i]) fire(thresholds[i]);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+  })();
+</script>
   </body>
 </html>

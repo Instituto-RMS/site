@@ -92,7 +92,7 @@
   <link rel="canonical" href="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;projects&#x2F;foguete-uiara-apogeu-de-1-km&#x2F;" />
 
   <!-- Head inject -->
-  <script defer data-domain="riomakerspace.com.br" src="https://vince-analytics-template-production-792d.up.railway.app/js/script.js"></script>
+  <script defer data-domain="riomakerspace.com.br" src="https://vince-analytics-template-production-792d.up.railway.app/js/script.tagged-events.outbound-links.js"></script>
 </head>
 
   <body class="overflow-x-hidden text-black duration-200 ease-out dark:text-white">
@@ -420,6 +420,31 @@ O desafio? Alcançar o <strong>apogeu de 1 km de altitude</strong> com um foguet
 
 
     <!-- Body End inject -->
-    
+    <script>
+  (function () {
+    var thresholds = [25, 50, 75, 100];
+    var fired = {};
+    function fire(pct) {
+      if (fired[pct]) return;
+      fired[pct] = true;
+      var name = 'Scroll ' + pct + '%';
+      if (typeof window.plausible === 'function') {
+        window.plausible(name);
+      }
+    }
+    function onScroll() {
+      var doc = document.documentElement;
+      var scrollTop = window.scrollY || doc.scrollTop;
+      var max = (doc.scrollHeight - doc.clientHeight) / 100;
+      if (max <= 0) return;
+      var pct = scrollTop / max;
+      for (var i = 0; i < thresholds.length; i++) {
+        if (pct >= thresholds[i]) fire(thresholds[i]);
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+  })();
+</script>
   </body>
 </html>
