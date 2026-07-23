@@ -105,6 +105,11 @@ impact_eyebrow = "Métricas da comunidade"
 pillars_eyebrow = "Fundamentos"
 pillars_heading = "Três formas de fazer acontecer"
 pillars_support = "Criamos experiências onde tecnologia, aprendizagem e comunidade avançam juntas."
+pillar_images = [
+  "images/pillar-community.jpg",
+  "images/pillar-tech.jpg",
+  "images/pillar-maker.jpg",
+]
 
 # Section 4 — "Na prática": two cards (Projetos / Eventos)
 practice_eyebrow = "Na prática"
@@ -119,7 +124,7 @@ final_eyebrow = "Próximos passos"
 [extra.home.practice_projects]
 heading = "Projetos que exploram limites"
 text = "Desenvolvemos e apoiamos projetos de eletrônica, robótica, IoT e aeroespacial que saem da bancada para testar o mundo real."
-# image = "images/projects-hero.jpg"  # TODO: add ASA/BEC/UIARA photo
+image = "images/projects-hero.jpg"
 highlights = [
   "Projeto ASA: 23 km de altitude",
   "Foguete UIARA: apogeu de 1 km, em parceria com CBPF e UFRJ",
@@ -131,7 +136,7 @@ cta_url = "$BASE_URL/projects"
 [extra.home.practice_events]
 heading = "Eventos que conectam pessoas"
 text = "Reunimos makers, estudantes, pesquisadores, famílias e comunidades para descobrir, testar e construir tecnologia junto."
-# image = "images/events-hero.jpg"  # TODO: add Arduino Day photo
+image = "images/events-hero.jpg"
 highlights = [
   "Arduino Day: encontros anuais de tecnologia aberta e criação coletiva",
   "Palestras, competições, exposições interativas e demonstrações técnicas",
