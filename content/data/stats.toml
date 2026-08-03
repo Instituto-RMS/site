@@ -11,21 +11,21 @@
 #  - The "23 km" card refers to Projeto ASA, launched alongside BEC.
 
 [[stat]]
-value = "10 anos"
+value = "11 anos"
 label = "de trajetória maker no Rio"
 confirmed = true
 
 [[stat]]
-value = "550 inscrições"
-label = "mobilizadas no Arduino Day 2026"
+value = "+17 mil visualizações mensais"
+label = "no Instagram e LinkedIn inspirando novos makers"
 confirmed = true
 
 [[stat]]
-value = "3 edições"
-label = "aproximando pessoas da tecnologia aberta"
+value = "+200 pessoas"
+label = "mobilizadas pelo movimento maker"
 confirmed = true
 
 [[stat]]
-value = "23 km"
-label = "de altitude em uma missão aeroespacial maker"
+value = "+10 eventos"
+label = "Organizados ou com projetos e experimentos do RMS"
 confirmed = true

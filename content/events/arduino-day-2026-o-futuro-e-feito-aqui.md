@@ -20,15 +20,7 @@ external_link = ""
 +++
 
 
-{% columns() %}
-	{% column() %}
-		<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/image_211a7e07.png" alt="">
-	{% end %}
-	{% column() %}
-		<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/image_4a89de16.png" alt="">
-	{% end %}
-{% end %}
-## Sobre o evento
+# Sobre o evento
 O **Arduino Day 2026 — O Futuro é Feito Aqui!** transformou o Maravalley em um grande ponto de encontro para quem gosta de criar, experimentar e aprender tecnologia na prática.
 Durante um dia inteiro, makers, estudantes, famílias, profissionais e pessoas curiosas circularam por palestras, oficinas, competições e exposições interativas. Mais do que apresentar projetos prontos, o evento abriu espaço para conhecer os processos, fazer perguntas e descobrir como cada ideia saiu do papel.
 ## Experiências e atividades
