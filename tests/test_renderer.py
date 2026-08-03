@@ -32,6 +32,32 @@ def test_convert_columns_case_insensitive():
     assert "{% column() %}" in out
 
 
+def test_convert_columns_preserves_ratio():
+    src = (
+        '<columns>\n'
+        '<column ratio="33.33">A</column>\n'
+        '<column ratio="33.33">B</column>\n'
+        '<column ratio="33.33">C</column>\n'
+        "</columns>"
+    )
+    out = _convert_columns(src)
+    assert '{% column(ratio=33.33) %}' in out
+    assert "<column" not in out
+
+
+def test_convert_columns_mixed_ratio_and_plain():
+    src = (
+        '<columns>\n'
+        '<column ratio="50">A</column>\n'
+        '<column>B</column>\n'
+        "</columns>"
+    )
+    out = _convert_columns(src)
+    assert '{% column(ratio=50) %}' in out
+    assert '{% column() %}' in out
+    assert "<column" not in out
+
+
 # --- imagens (sem download) ---------------------------------------------------
 
 def test_render_markdown_without_downloader_keeps_urls():

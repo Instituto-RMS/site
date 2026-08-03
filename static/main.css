@@ -289,6 +289,9 @@
   .order-3 {
     order: 3;
   }
+  .-mx-2 {
+    margin-inline: calc(var(--spacing) * -2);
+  }
   .mx-1 {
     margin-inline: calc(var(--spacing) * 1);
   }
@@ -821,6 +824,9 @@
   .ml-auto {
     margin-left: auto;
   }
+  .box-border {
+    box-sizing: border-box;
+  }
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -1101,9 +1107,6 @@
   }
   .items-start {
     align-items: flex-start;
-  }
-  .justify-around {
-    justify-content: space-around;
   }
   .justify-between {
     justify-content: space-between;

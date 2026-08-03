@@ -37,7 +37,9 @@ _IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 # Regex para <columns>...</columns> (com possivel whitespace/quebras entre).
 _COLUMNS_OPEN_RE = re.compile(r"<columns\s*>", re.IGNORECASE)
 _COLUMNS_CLOSE_RE = re.compile(r"</columns\s*>", re.IGNORECASE)
-_COLUMN_OPEN_RE = re.compile(r"<column\s*>", re.IGNORECASE)
+# <column> pode vir com atributo `ratio="33.33"` (Notion). Capturamos o valor
+# para repassar ao shortcode Zola `{{ column(ratio=...) }}`.
+_COLUMN_OPEN_RE = re.compile(r'<column(?:\s+ratio="([0-9.]+)")?\s*>', re.IGNORECASE)
 _COLUMN_CLOSE_RE = re.compile(r"</column\s*>", re.IGNORECASE)
 
 # Outras tags HTML fantasmas que a Notion insere e que nao renderizam.
@@ -123,7 +125,14 @@ def _convert_columns(text: str) -> str:
 
     text = _COLUMNS_OPEN_RE.sub("{% columns() %}", text)
     text = _COLUMNS_CLOSE_RE.sub("{% end %}", text)
-    text = _COLUMN_OPEN_RE.sub("{% column() %}", text)
+
+    def _column_repl(match: re.Match) -> str:
+        ratio = match.group(1)
+        if ratio:
+            return "{%% column(ratio=%s) %%}" % ratio
+        return "{% column() %}"
+
+    text = _COLUMN_OPEN_RE.sub(_column_repl, text)
     text = _COLUMN_CLOSE_RE.sub("{% end %}", text)
     return text
 
