@@ -7,7 +7,7 @@
 
   <!-- Title -->
   <title>
-    Hackanoel - Rio Maker Space
+    Ressonador Harmônico com Arduino - Rio Maker Space
   </title>
 
   <!-- Meta -->
@@ -25,14 +25,14 @@
   <!---->
   
   <!---->
-  <meta name="description" content="Recorrente" />
+  <meta name="description" content="Demonstração prática de ressonância harmônica: Arduino gera tons de 440Hz e 392Hz que fazem um diapasão vibrar por simpatia." />
   <meta name="author" content="Rio Maker Space" />
   <!-- The Open Graph protocol -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Hackanoel" />
+  <meta property="og:title" content="Ressonador Harmônico com Arduino" />
   <meta property="og:site_name" content="Rio Maker Space" />
-  <meta property="og:description" content="Recorrente" />
-  <meta property="og:url" content="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;events&#x2F;hackanoel&#x2F;" />
+  <meta property="og:description" content="Demonstração prática de ressonância harmônica: Arduino gera tons de 440Hz e 392Hz que fazem um diapasão vibrar por simpatia." />
+  <meta property="og:url" content="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;projects&#x2F;ressonador-harmonico-com-arduino&#x2F;" />
   
   <!---->
   
@@ -89,7 +89,7 @@
   
 
   <!-- Canonical -->
-  <link rel="canonical" href="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;events&#x2F;hackanoel&#x2F;" />
+  <link rel="canonical" href="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;projects&#x2F;ressonador-harmonico-com-arduino&#x2F;" />
 
   <!-- Head inject -->
   <script defer data-domain="riomakerspace.com.br" src="https://vince-analytics-template-production-792d.up.railway.app/js/script.outbound-links.tagged-events.js"></script>
@@ -187,7 +187,7 @@
         
         <li>
           <a
-            class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight "
+            class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight border-b-2 border-brand-green font-semibold"
             href="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;projects"
             >Projetos</a
           >
@@ -200,7 +200,7 @@
         
         <li>
           <a
-            class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight border-b-2 border-brand-green font-semibold"
+            class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight "
             href="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;events"
             >Eventos</a
           >
@@ -235,7 +235,7 @@
         
         <li>
           <a
-            class="primary-link block py-2 text-center text-base font-medium tracking-tight "
+            class="primary-link block py-2 text-center text-base font-medium tracking-tight text-brand-green font-semibold"
             href="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;projects"
             >Projetos</a
           >
@@ -248,7 +248,7 @@
         
         <li>
           <a
-            class="primary-link block py-2 text-center text-base font-medium tracking-tight text-brand-green font-semibold"
+            class="primary-link block py-2 text-center text-base font-medium tracking-tight "
             href="https:&#x2F;&#x2F;www.riomakerspace.com.br&#x2F;events"
             >Eventos</a
           >
@@ -295,24 +295,28 @@
   <header class="relative left-1/2 -mt-24 mb-10 w-screen -translate-x-1/2 bg-brand-black px-4 pt-32 pb-12 text-center sm:px-6 lg:-mt-32 lg:pt-40 lg:pb-16">
     <div class="rule-brand absolute inset-x-0 top-0" aria-hidden="true"></div>
     <div class="rule-brand absolute inset-x-0 bottom-0" aria-hidden="true"></div>
-    <p class="mb-3 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-green">Evento</p>
-    <h1 class="mx-auto my-0! max-w-4xl font-display text-3xl leading-display font-extrabold tracking-tight text-brand-white lg:text-5xl">Hackanoel</h1>
-    <div class="mt-3 font-mono text-xs font-semibold uppercase tracking-widest text-concrete/70">
-      <time>
-        
-          Data a marcar
-        
-      </time>
+    <p class="mb-3 font-mono text-xs font-medium uppercase tracking-[0.2em] text-brand-green">Projeto</p>
+    <h1 class="mx-auto my-0! max-w-4xl font-display text-3xl leading-display font-extrabold tracking-tight text-brand-white lg:text-5xl">Ressonador Harmônico com Arduino</h1>
+    
+    <div class="mt-4 flex flex-wrap justify-center gap-2">
+      
+      <span class="tag-chip-dark">#eletrônica</span>
+      
+      <span class="tag-chip-dark">#sensoriamento</span>
+      
+      <span class="tag-chip-dark">#Física &#x2F; Som</span>
       
     </div>
+    
   </header>
 
-  <!-- TOC inline below the event header -->
+  <!-- TOC inline below the project header -->
   
 
 
-  <section><p>Evento comunitário de Natal em que participantes constroem pequenos projetos eletrônicos com materiais reaproveitados, como garrafas PET, papelão e componentes recuperados.
-A proposta combina criatividade maker, educação prática, reaproveitamento de materiais e espírito natalino.</p>
+  <section><p>Este projeto pretende demonstrar uma propriedade conhecida no mundo da física como <strong>Ressonância Harmônica</strong>, usando o Arduino Uno como gerador de tons sonoros que nos permite demonstrar o efeito na prática.
+Usamos os pinos 8 e 9 do Arduino, sendo o pino 8 configurado como saída digital e o pino 9 como entrada digital. Uma chave seletora conectada ao pino 9 determina a frequência de trabalho: na posição GND o Arduino gera um tom de <strong>440 Hz</strong> (Nota Lá), e em +5V gera <strong>392 Hz</strong>. O sinal passa então por um circuito integrador e um amplificador antes de chegar ao alto-falante.
+Usamos um diapasão na frequência de 440 Hz (Nota Lá) que entrará em ressonância — vibrará — à medida que o circuito gere o sinal de frequência correto.</p>
 </section>
 
   
@@ -320,7 +324,7 @@ A proposta combina criatividade maker, educação prática, reaproveitamento de 
   <hr />
 
   <p>
-    <a class="secondary-link" href="https://www.riomakerspace.com.br/events/">← Ver todos os eventos</a>
+    <a class="secondary-link" href="https://www.riomakerspace.com.br/projects/">← Ver todos os projetos</a>
   </p>
 </article>
 

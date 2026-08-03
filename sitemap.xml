@@ -13,16 +13,16 @@
         <loc>https://www.riomakerspace.com.br/events/</loc>
     </url>
     <url>
+        <loc>https://www.riomakerspace.com.br/events/arduino-day-2024/</loc>
+        <lastmod>2024-03-30</lastmod>
+    </url>
+    <url>
         <loc>https://www.riomakerspace.com.br/events/arduino-day-2025/</loc>
         <lastmod>2025-03-29</lastmod>
     </url>
     <url>
         <loc>https://www.riomakerspace.com.br/events/arduino-day-2026-o-futuro-e-feito-aqui/</loc>
         <lastmod>2026-04-25</lastmod>
-    </url>
-    <url>
-        <loc>https://www.riomakerspace.com.br/events/hackanoel/</loc>
-        <lastmod>2099-12-31</lastmod>
     </url>
     <url>
         <loc>https://www.riomakerspace.com.br/events/lancamento-do-bec-barra-do-pirai/</loc>
@@ -32,11 +32,10 @@
         <loc>https://www.riomakerspace.com.br/events/page/1/</loc>
     </url>
     <url>
-        <loc>https://www.riomakerspace.com.br/events/sbpc-2019/</loc>
-        <lastmod>2099-12-31</lastmod>
+        <loc>https://www.riomakerspace.com.br/projects/</loc>
     </url>
     <url>
-        <loc>https://www.riomakerspace.com.br/projects/</loc>
+        <loc>https://www.riomakerspace.com.br/projects/arco-cantante/</loc>
     </url>
     <url>
         <loc>https://www.riomakerspace.com.br/projects/balao-de-exploracao-cientifica-bec-2019/</loc>
@@ -45,7 +44,16 @@
         <loc>https://www.riomakerspace.com.br/projects/foguete-uiara-apogeu-de-1-km/</loc>
     </url>
     <url>
+        <loc>https://www.riomakerspace.com.br/projects/link-laser/</loc>
+    </url>
+    <url>
         <loc>https://www.riomakerspace.com.br/projects/projeto-asa-asa-com-avionica-de-satelite/</loc>
+    </url>
+    <url>
+        <loc>https://www.riomakerspace.com.br/projects/ressonador-harmonico-com-arduino/</loc>
+    </url>
+    <url>
+        <loc>https://www.riomakerspace.com.br/projects/robo-eron/</loc>
     </url>
     <url>
         <loc>https://www.riomakerspace.com.br/projects/starchain-infraestrutura-orbital-para-blockchain/</loc>
