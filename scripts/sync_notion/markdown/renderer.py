@@ -22,6 +22,7 @@ import logging
 import re
 from html import escape
 from typing import Optional
+from urllib.parse import unquote, urlparse
 
 from ..assets import AssetDownloader
 from .transforms import image_filename_from_url, strip_metadata_markdown
@@ -83,6 +84,18 @@ def _rewrite_images(text: str, downloader: Optional[AssetDownloader]) -> str:
 
     def _replace(match: re.Match) -> str:
         caption, url = match.group(1), match.group(2)
+        # A Notion as vezes devolve "URLs" que na verdade sao blobs
+        # codificados em JSON do tipo `file://{"source":"attachment:...":...}`
+        # (vindos de anexos que nao foram exportados como arquivo real).
+        # `requests` nao tem adapter para `file://` e essas URLs nao sao
+        # buscaveis; pulamos em vez de tentar baixar.
+        if not _is_fetchable(url):
+            log.warning(
+                "pulando imagem com URL nao-buscavel (scheme=%r): %s",
+                urlparse(url).scheme,
+                url,
+            )
+            return match.group(0)
         try:
             asset = downloader.download(url)
         except Exception as exc:  # noqa: BLE001 - queremos continuar o sync
@@ -91,6 +104,13 @@ def _rewrite_images(text: str, downloader: Optional[AssetDownloader]) -> str:
         return f'<img src="{asset.web_path}" alt="{escape(caption)}">'
 
     return _IMAGE_RE.sub(_replace, text)
+
+
+def _is_fetchable(url: str) -> bool:
+    """True se a URL tem scheme http/https (buscavel via requests)."""
+
+    scheme = urlparse(url).scheme.lower()
+    return scheme in ("http", "https")
 
 
 # --- colunas ------------------------------------------------------------------
