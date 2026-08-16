@@ -1,17 +1,21 @@
 +++
-title = "Lançamento do BEC — Barra do Piraí"
+title = "Lançamento do BEC - Barra do Piraí"
 description = "Realizado"
 draft = false
 date = "2025-09-07"
+
 [extra]
 status = "Realizado"
-tags = ["robótica", "educação", "comunidade"]
+tags = [
+    "robótica",
+    "educação",
+    "comunidade",
+]
 location = "Barra do Piraí"
 audience = ""
 partners = "Ajuda Robótica"
 highlight = false
 external_link = ""
-
 +++
 
 
@@ -26,3 +30,15 @@ O conjunto alcançou 23 km de altitude, com dados recebidos pela estação de so
 - Sinfonia Elétrica com Bobina de Tesla
 - TermoHumiNet
 O lançamento validou o RS41, o sistema LILYGO com LoRa e a estrutura e o mecanismo de soltura do Projeto ASA.
+<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250908-WA014_4fcc583d.jpg" alt="">
+{% columns() %}
+	{% column(ratio=50) %}
+		<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0157_02618dcb.jpg" alt="">
+		
+	{% end %}
+	{% column(ratio=50) %}
+		<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0144_1f96d556.jpg" alt="">
+		
+	{% end %}
+{% end %}
+<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0097_7ea8425c.jpg" alt="">

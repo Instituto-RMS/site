@@ -1,11 +1,11 @@
 +++
 title = "Hackanoel 2024"
-description = "Rascunho"
+description = "Realizado"
 draft = false
 date = "2024-12-16"
 
 [extra]
-status = "Rascunho"
+status = "Realizado"
 tags = [
     "sucata",
     "natal",
@@ -24,13 +24,13 @@ A edição de 2024 repetiu a fórmula: mesas cheias de sucata, famílias reunida
 ## Fotos
 {% columns() %}
 	{% column(ratio=33.33) %}
-		<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T191323.000Z-0001_1d27ddec.jpg" alt="">
+		<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T191323.000Z-0001_d3c0821d.jpg" alt="">
 		
 	{% end %}
 	{% column(ratio=33.33) %}
-		<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T191835.000Z-0001_007702c3.jpg" alt="">
+		<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T191835.000Z-0001_08b66e4b.jpg" alt="">
 	{% end %}
 	{% column(ratio=33.33) %}
-		<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T212639.000Z-0001_57f3e986.jpg" alt="">
+		<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T212639.000Z-0001_3d663592.jpg" alt="">
 	{% end %}
 {% end %}
