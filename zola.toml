@@ -160,7 +160,7 @@ text = "O RMS constrói junto com makers, escolas, grupos de pesquisa, institui�
 open_source_heading = "Conhecimento aberto por princípio"
 open_source_text = "Projetos, aprendizados e processos que podem ser compartilhados, adaptados e levados adiante. A documentação faz parte do que construímos."
 open_source_cta_label = "Explorar documentação e repositórios"
-open_source_url = "https://github.com/RIO-MAKER-SPACE-GIT"
+open_source_url = "https://github.com/Instituto-RMS"
 
 # Section 7 — CTA final: three doors (final_heading / final_eyebrow are
 # defined above in the flat [extra.home] section; the array is here).
@@ -183,7 +183,7 @@ cta_url = "mailto:contato@riomakerspace.com.br?subject=Parceria%20com%20o%20RMS"
 email = "contato@riomakerspace.com.br"
 website_url = "https://www.riomakerspace.com.br"
 website_label = "www.riomakerspace.com.br"
-github_url = "https://github.com/RIO-MAKER-SPACE-GIT"
+github_url = "https://github.com/Instituto-RMS"
 # TODO: replace with the real WhatsApp group/channel link.
 whatsapp_url = "https://chat.whatsapp.com/JlSiWCgBQrkJ223PX8Cl3i"
 whatsapp_label = "WhatsApp"

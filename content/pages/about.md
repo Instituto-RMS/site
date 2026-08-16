@@ -38,4 +38,4 @@ acreditam na cultura maker.
 
 - E-mail: [contato@riomakerspace.com.br](mailto:contato@riomakerspace.com.br)
 - Site: [www.riomakerspace.com.br](https://www.riomakerspace.com.br)
-- GitHub: [github.com/RIO-MAKER-SPACE-GIT](https://github.com/RIO-MAKER-SPACE-GIT)
+- GitHub: [github.com/Instituto-RMS](https://github.com/Instituto-RMS)
