@@ -188,7 +188,7 @@ github_url = "https://github.com/Instituto-RMS"
 whatsapp_url = "https://chat.whatsapp.com/JlSiWCgBQrkJ223PX8Cl3i"
 whatsapp_label = "WhatsApp"
 # TODO: replace with the real Instagram profile link.
-instagram_url = "https://www.instagram.com/rio_maker_space/"
+instagram_url = "https://www.instagram.com/riomakerspace/"
 instagram_label = "Instagram"
 # TODO: replace with the real LinkedIn company page link.
 linkedin_url = "https://www.linkedin.com/company/riomakerspace"
