@@ -44,7 +44,6 @@ content/
   pages/                   # non-blog pages
     _index.md              # marks this section as render=false, uses pages.html template
     about.md                # /about
-    archive.md              # /archive (uses templates/archive.html)
   projects/                # /projects — project section (mirrors events/)
     _index.md              # list page config (sort_by="weight", template="projects.html", page_template="project.html")
     <slug>.md               # one Markdown file per project (title, description, weight, extra.tags, extra.links)
@@ -63,7 +62,6 @@ templates/
   project.html              # /projects/<slug> detail view — tags + extra.links CTAs
   events.html                # /events list view — iterates paginator.pages/section.pages
   event.html                  # /events/<slug> detail view
-  archive.html               # archive listing by date
   taxonomy_list.html / taxonomy_single.html   # tags pages
   404.html
   macros.html                # Tera macros (formatted by oxfmt — see .oxfmtrc.json ignore list)
