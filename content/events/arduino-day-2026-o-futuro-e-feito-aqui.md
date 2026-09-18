@@ -41,7 +41,7 @@ A programação foi pensada para diferentes níveis de curiosidade. Teve palestr
 - **UERJ Sats:** satélites, placas de circuito e sistemas de antenas.
 - **GFRJ:** foguetes, paraquedas e tecnologias de lançamento.
 - **Geração de Entropia Física:** experiências com sensores, aleatoriedade e criptografia.
-- Ambientes de realidade virtual e demonstrações interativas para diferentes idades.
+- **Ambientes de realidade virtual** e demonstrações interativas para diferentes idades.
 ## Um evento feito em comunidade
 Quem passou pelo Maravalley naquele dia viu uma mistura rara de encontrar no mesmo espaço: crianças montando seus primeiros circuitos, famílias inteiras, estudantes de escolas e universidades, profissionais da área e gente que nunca tinha tocado em uma placa de prototipagem. As bancadas viraram pontos de conversa, e as perguntas eram menos sobre o resultado e mais sobre o caminho até ele.
 
@@ -52,14 +52,14 @@ O Arduino Day expressa uma ideia central do Rio Maker Space: tecnologia se apren
 Cada oficina, protótipo e conversa do dia virou material aberto: projetos, aprendizados e processos documentados para quem quiser reproduzir, adaptar ou levar a ideia para outro lugar. É assim que o Rio Maker Space entende tecnologia aberta. O que se aprende aqui não fica guardado; vira ponto de partida para outras pessoas.
 
 O Arduino Day 2026 termina com bastante coisa para continuar e uma pergunta em aberto: o que a gente constrói no próximo? Quem tem uma ideia, um protótipo ou só curiosidade é bem-vindo. A próxima edição já começa a ser desenhada a partir do que ficou deste dia.
-<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/IMG_1550_adf64ff1.jpg" alt="">
+<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/IMG_1550_152c28d8.jpg" alt="">
 {% columns() %}
 	{% column(ratio=31.25) %}
-		<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/f2d53bae-d6d1-4a23-8262-ccad9a276045_f6d94e94.jpg" alt="">
+		<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/f2d53bae-d6d1-4a23-8262-ccad9a276045_8d17e9c6.jpg" alt="">
 		
 	{% end %}
 	{% column(ratio=68.75) %}
-		<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/Design_sem_nome_529e7739.jpg" alt="">
+		<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/Design_sem_nome_4360d66e.jpg" alt="">
 		
 	{% end %}
 {% end %}
