@@ -33,19 +33,19 @@ O Hackanoel é um evento de criação de brinquedos e projetos feitos com materi
 
 
 {% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-715264f75b9c4babb6eb58231b99715d.jpg" alt="" layout="inteira"> %}{% </foto_responsiva> %}
+<!-- rms:tres-fotos -->
 {% <columns> %}
 {% <column ratio={33.33}> %}
-{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-0af1c3266696431994a79c29ec5e1661.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
-
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-0af1c3266696431994a79c29ec5e1661.jpg" alt="" layout="terco"> %}{% </foto_responsiva> %}
 {% </column> %}
 {% <column ratio={33.33}> %}
-{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-bbee685d6cc74eac8bf81768260d566c.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-bbee685d6cc74eac8bf81768260d566c.jpg" alt="" layout="terco"> %}{% </foto_responsiva> %}
 {% </column> %}
 {% <column ratio={33.33}> %}
-{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-e6b6e150e35d4b358d4e75e008d826af.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
-
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-e6b6e150e35d4b358d4e75e008d826af.jpg" alt="" layout="terco"> %}{% </foto_responsiva> %}
 {% </column> %}
 {% </columns> %}
+<!-- /rms:tres-fotos -->
 <!-- rms:duas-fotos -->
 {% <columns> %}
 {% <column ratio={50.0}> %}

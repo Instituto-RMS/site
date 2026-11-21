@@ -52,17 +52,3 @@ O dia começou com credenciamento e uma apresentação do Rio Maker Space, seus 
 {% </column> %}
 {% </columns> %}
 <!-- /rms:tres-fotos -->
-
-
-{% <columns> %}
-{% <column ratio={33.33}> %}
-{% \<foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231522/rms-notion-c5225f5369164ccfa8adcc8e6b9e4712.png" alt="" layout="metade"> %}{% \</foto_responsiva> %}
-{% </column> %}
-{% <column ratio={33.33}> %}
-{% \<foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231522/rms-notion-b415c9250dc44bc1988870fcb12da479.png" alt="" layout="metade"> %}{% \</foto_responsiva> %}
-
-{% </column> %}
-{% <column ratio={33.33}> %}
-{% \<foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231522/rms-notion-ce3b1f12e4a94952851953d773c0a6b6.png" alt="" layout="metade"> %}{% \</foto_responsiva> %}
-{% </column> %}
-{% </columns> %}
