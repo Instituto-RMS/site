@@ -1,16 +1,12 @@
 +++
 title = "Hackanoel 2025"
 description = "Realizado"
+date = 2025-12-20
 draft = false
-date = "2025-12-20"
 
 [extra]
 status = "Realizado"
-tags = [
-    "sucata",
-    "natal",
-    "comunidade",
-]
+tags = [ "sucata", "natal", "comunidade" ]
 location = ""
 audience = ""
 partners = ""
