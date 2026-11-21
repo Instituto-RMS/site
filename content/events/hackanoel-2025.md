@@ -20,6 +20,18 @@ O Hackanoel é um evento de criação de brinquedos e projetos feitos com materi
 
 {% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795229312/main-sample.png" alt="" layout="inteira"> %}{% </foto_responsiva> %}
 
+<!-- rms:duas-fotos -->
+{% <columns> %}
+{% <column ratio={50.0}> %}
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795229311/cld-sample-4.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
+{% </column> %}
+{% <column ratio={50.0}> %}
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795229311/cld-sample-3.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
+{% </column> %}
+{% </columns> %}
+<!-- /rms:duas-fotos -->
+
+
 <img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-715264f75b9c4babb6eb58231b99715d.jpg" alt="">
 {% <columns> %}
 {% <column ratio={33.33}> %}
