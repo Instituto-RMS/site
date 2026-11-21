@@ -1,5 +1,5 @@
 <header
-  class="{% if config.extra.style.header_blur %}blur-header{% else %}header{% endif %} fixed top-0 z-40 mx-auto min-h-16 w-full"
+  class="{% if config.extra.style?.header_blur %}blur-header{% else %}header{% endif %} fixed top-0 z-40 mx-auto min-h-16 w-full"
 >
   <div class="mx-auto flex w-full max-w-5xl items-center justify-between p-4 lg:px-6">
     <div class="flex items-center gap-3">
@@ -81,11 +81,43 @@
         class="flex flex-row items-center gap-1"
       >
         {% for menu in config.extra.menu %}
-        {% set menu_path = menu.url | replace(from=`$BASE_URL`, to=``) %}
+        {% set menu_path = menu.url | default(value=``) | replace(from=`$BASE_URL`, to=``) %}
         {% set menu_href = get_url(path=menu_path) %}  {# resolves $BASE_URL paths relative to root #}
         {% if not menu_path %}{% set menu_href = get_url(path=``) %}{% endif %}
         {% set current = current_path | default(value=``) %}
-        {% set is_active = current == menu_path or current == menu_path ~ `/` or current is starting_with(menu_path ~ `/`) %}
+        {% set is_active = current == menu_path or current == menu_path ~ `/` or current is starting_with(pat=menu_path ~ `/`) %}
+        {% if menu.submenu %}
+        <li class="group relative">
+          <button
+            type="button"
+            class="primary-link flex items-center gap-1 px-3 py-1.5 text-sm font-medium tracking-tight"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            {{ menu.name }}
+            <svg class="h-3 w-3 transition-transform group-hover:rotate-180" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul
+            class="invisible absolute left-0 top-full z-50 min-w-48 rounded-lg border border-concrete/15 bg-(--header) py-1 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 dark:border-concrete/10 dark:bg-(--header-dark)"
+          >
+            {% for sub in menu.submenu %}
+            {% set sub_path = sub.url | replace(from=`$BASE_URL`, to=``) %}
+            {% set sub_href = get_url(path=sub_path) %}
+            {% if not sub_path %}{% set sub_href = get_url(path=``) %}{% endif %}
+            {% set sub_active = current == sub_path or current == sub_path ~ `/` or current is starting_with(pat=sub_path ~ `/`) %}
+            <li>
+              <a
+                class="block px-4 py-2 text-sm font-medium tracking-tight hover:bg-brand-green/8 hover:text-brand-green {% if sub_active %}text-brand-green font-semibold{% endif %}"
+                href="{{ sub_href }}"
+                >{{ sub.name }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        {% else %}
         <li>
           <a
             class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight {% if is_active %}border-b-2 border-brand-green font-semibold{% endif %}"
@@ -93,21 +125,49 @@
             >{{ menu.name }}</a
           >
         </li>
+        {% endif %}
         {% endfor %}
       </ul>
       <!-- Header Nav inject -->
-      {% include "injects/header_nav.html" ignore missing %}
+      {% include "injects/header_nav.html" %}
     </nav>
 
     <nav class="nav-wrapper absolute inset-x-0 top-16 flex-col border-b border-concrete/15 bg-(--header) px-4 py-4 shadow-lg backdrop-blur-lg lg:hidden dark:border-concrete/10 dark:bg-(--header-dark)">
       <div class="rule-brand absolute inset-x-0 bottom-0" aria-hidden="true"></div>
       <ul class="flex w-full flex-col gap-2">
         {% for menu in config.extra.menu %}
-        {% set menu_path = menu.url | replace(from=`$BASE_URL`, to=``) %}
+        {% set menu_path = menu.url | default(value=``) | replace(from=`$BASE_URL`, to=``) %}
         {% set menu_href = get_url(path=menu_path) %}  {# resolves $BASE_URL paths relative to root #}
         {% if not menu_path %}{% set menu_href = get_url(path=``) %}{% endif %}
         {% set current = current_path | default(value=``) %}
-        {% set is_active = current == menu_path or current == menu_path ~ `/` or current is starting_with(menu_path ~ `/`) %}
+        {% set is_active = current == menu_path or current == menu_path ~ `/` or current is starting_with(pat=menu_path ~ `/`) %}
+        {% if menu.submenu %}
+        <li>
+          <details class="group">
+            <summary class="primary-link flex cursor-pointer list-none items-center justify-center gap-1 py-2 text-base font-medium tracking-tight marker:hidden">
+              {{ menu.name }}
+              <svg class="h-3 w-3 transition-transform group-open:rotate-180" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <path d="M2.5 4.5L6 8l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <ul class="flex flex-col gap-1 pb-1">
+              {% for sub in menu.submenu %}
+              {% set sub_path = sub.url | replace(from=`$BASE_URL`, to=``) %}
+              {% set sub_href = get_url(path=sub_path) %}
+              {% if not sub_path %}{% set sub_href = get_url(path=``) %}{% endif %}
+              {% set sub_active = current == sub_path or current == sub_path ~ `/` or current is starting_with(pat=sub_path ~ `/`) %}
+              <li>
+                <a
+                  class="block py-1.5 text-center text-sm font-medium tracking-tight hover:text-brand-green {% if sub_active %}text-brand-green font-semibold{% endif %}"
+                  href="{{ sub_href }}"
+                  >{{ sub.name }}</a
+                >
+              </li>
+              {% endfor %}
+            </ul>
+          </details>
+        </li>
+        {% else %}
         <li>
           <a
             class="primary-link block py-2 text-center text-base font-medium tracking-tight {% if is_active %}text-brand-green font-semibold{% endif %}"
@@ -115,10 +175,11 @@
             >{{ menu.name }}</a
           >
         </li>
+        {% endif %}
         {% endfor %}
       </ul>
       <!-- Header Nav inject -->
-      {% include "injects/header_nav.html" ignore missing %}
+      {% include "injects/header_nav.html" %}
     </nav>
     {% endif %}
   </div>

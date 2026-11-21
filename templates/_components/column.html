@@ -1,0 +1,5 @@
+{% component column(ratio: float = 0.0) %}
+<div class="min-w-0 box-border px-2" style="{% if ratio > 0 %}flex: 0 0 {{ ratio }}%{% else %}flex: 1 1 0%{% endif %}">
+{{ body | safe }}
+</div>
+{% endcomponent column %}

@@ -19,7 +19,9 @@ feature unless later notes in this file (or commits) say otherwise.
 
 - **[Zola](https://www.getzola.org/)** — Rust-based static site generator.
   Content lives in `content/`, templates in `templates/` (Tera templating
-  language), config in `zola.toml`.
+  language), config in `zola.toml`. **Requires Zola 0.23.6+** (`theme.toml`
+  `min_version`): shortcodes were removed in 0.23, and their replacement, Tera
+  components, live in `templates/_components/`.
 - **Tailwind CSS v4** — styling. `static/app.css` is the source; `static/main.css`
   is the generated output. Built via the CLI, not a bundler.
 - **Bun** — used to run the Tailwind CLI (see `package.json`). `bun.lock` is
@@ -66,8 +68,10 @@ templates/
   404.html
   macros.html                # Tera macros (formatted by oxfmt — see .oxfmtrc.json ignore list)
   partials/                  # header, footer, profile, toc, comment (giscus), page_info, etc.
-  shortcodes/                 # admonition, gallery, mermaid, inline_svg
-  injects/ (not present yet)  # optional override point — see "Inject support" below; create as needed
+  _components/               # Tera components (Zola 0.23+ replaced shortcodes):
+                             #   admonition, gallery, mermaid, inline_svg, column, columns,
+                             #   __social_icon_url (was macros.html)
+  injects/                    # optional override points — see "Inject support" below
 static/
   app.css / main.css          # Tailwind input/output
   icons/                       # svg icons referenced by name in zola.toml (social links, avatar)
@@ -119,10 +123,12 @@ embedded calendar, membership CTA) to keep the diff from upstream Kita small.
   `data.toml` approach described above; keep this note as historical context
   for the previous TOML pattern, but new content should follow the
   Markdown-per-item section pattern used by both `events/` and `projects/`.
-- Demo/placeholder content (`markdown-syntax.md`, `math-typesetting.md`,
-  `placeholder-*.md`, `theme-config.md`, `content/shortcodes/*`) is upstream
-  theme sample content — expect to delete it when real makerspace content
-  goes in, but keep it around for reference on shortcode usage until then.
+- Demo/placeholder content from the upstream theme (`markdown-syntax.md`,
+  `math-typesetting.md`, `placeholder-*.md`, `theme-config.md`,
+  `content/shortcodes/*`) has been removed. Content uses Tera components
+  instead of shortcodes since Zola 0.23 — e.g. `{% <columns> %}…{% </columns> %}`
+  in event pages, rendered by `templates/_components/columns.html`. Content is
+  also a Tera template now: wrap literal `{{`/`{%` in `{% raw %}`/`{% endraw %}`.
 
 ## Notion-as-CMS integration (planned, not yet implemented)
 
@@ -155,9 +161,9 @@ No code for this exists yet. When implementing it, consider:
 ## Conventions / tooling
 
 - Formatting: `oxfmt` is configured via `.oxfmtrc.json` (`printWidth: 100`,
-  Tailwind class sorting enabled). It ignores `templates/macros.html` and
-  `static/main.css` (generated/hand-tuned files) — don't hand-format those,
-  and don't fight the formatter on them.
+  Tailwind class sorting enabled). It ignores `static/main.css` and
+  `templates/_components/__social_icon_url.html` (generated/hand-tuned files) —
+  don't hand-format those, and don't fight the formatter on them.
 - `static/main.css` is a **build artifact** — edit `static/app.css` and run
   the Tailwind build instead of editing `main.css` directly.
 - `.gitignore` excludes `/public` (Zola's build output), `/node_modules`, and

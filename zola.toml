@@ -3,7 +3,7 @@ title = "Rio Maker Space"
 description = "Rio Maker Space (RMS) é uma comunidade maker aberta no Rio de Janeiro que constrói foguetes, balões estratosféricos, robótica e tecnologia open source desde 2015."
 author = "Rio Maker Space"
 default_language = "pt-BR"
-taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
+taxonomies = [{ name = "tags", feed = true, paginate_by = 5 }]
 
 
 [markdown]
@@ -62,7 +62,11 @@ url = "$BASE_URL/events"
 
 [[extra.menu]]
 name = "Sobre"
-url = "$BASE_URL/about"
+submenu = [
+  { name = "Quem somos", url = "$BASE_URL/about" },
+  { name = "Nossa história", url = "$BASE_URL/sobre/nossa-historia" },
+  { name = "Missão e valores", url = "$BASE_URL/sobre/missao-valores" },
+]
 
 # The page footer options.
 [extra.footer]

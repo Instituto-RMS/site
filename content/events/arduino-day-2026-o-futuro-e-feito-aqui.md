@@ -49,17 +49,15 @@ Nada disso teria acontecido sem muita gente envolvida. Teve voluntários que mon
 
 O Arduino Day expressa uma ideia central do Rio Maker Space: tecnologia se aprende melhor quando o conhecimento circula, o processo é compartilhado e todas as pessoas são convidadas a colocar a mão na massa.
 ## Tecnologia aberta em movimento
-Cada oficina, protótipo e conversa do dia virou material aberto: projetos, aprendizados e processos documentados para quem quiser reproduzir, adaptar ou levar a ideia para outro lugar. É assim que o Rio Maker Space entende tecnologia aberta. O que se aprende aqui não fica guardado; vira ponto de partida para outras pessoas.
+Cada oficina, protótipo e conversa fortaleceu uma rede formada por comunidades, instituições de ensino, grupos de pesquisa e iniciativas independentes. É assim que construímos eventos abertos, educativos e capazes de inspirar os próximos projetos.
+<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/IMG_1550_ca044204.jpg" alt="">
+{% <columns> %}
+{% <column ratio={31.25}> %}
+<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/f2d53bae-d6d1-4a23-8262-ccad9a276045_58d53e3c.jpg" alt="">
 
-O Arduino Day 2026 termina com bastante coisa para continuar e uma pergunta em aberto: o que a gente constrói no próximo? Quem tem uma ideia, um protótipo ou só curiosidade é bem-vindo. A próxima edição já começa a ser desenhada a partir do que ficou deste dia.
-<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/IMG_1550_152c28d8.jpg" alt="">
-{% columns() %}
-	{% column(ratio=31.25) %}
-		<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/f2d53bae-d6d1-4a23-8262-ccad9a276045_8d17e9c6.jpg" alt="">
-		
-	{% end %}
-	{% column(ratio=68.75) %}
-		<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/Design_sem_nome_4360d66e.jpg" alt="">
-		
-	{% end %}
-{% end %}
+{% </column> %}
+{% <column ratio={68.75}> %}
+<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/Design_sem_nome_198baf11.jpg" alt="">
+
+{% </column> %}
+{% </columns> %}

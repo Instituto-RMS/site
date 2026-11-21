@@ -31,14 +31,14 @@ O conjunto alcançou 23 km de altitude, com dados recebidos pela estação de so
 - TermoHumiNet
 O lançamento validou o RS41, o sistema LILYGO com LoRa e a estrutura e o mecanismo de soltura do Projeto ASA.
 <img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250908-WA014_4fcc583d.jpg" alt="">
-{% columns() %}
-	{% column(ratio=50) %}
-		<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0157_02618dcb.jpg" alt="">
-		
-	{% end %}
-	{% column(ratio=50) %}
-		<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0144_1f96d556.jpg" alt="">
-		
-	{% end %}
-{% end %}
+{% <columns> %}
+{% <column ratio={50.0}> %}
+<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0157_02618dcb.jpg" alt="">
+
+{% </column> %}
+{% <column ratio={50.0}> %}
+<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0144_1f96d556.jpg" alt="">
+
+{% </column> %}
+{% </columns> %}
 <img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0097_7ea8425c.jpg" alt="">

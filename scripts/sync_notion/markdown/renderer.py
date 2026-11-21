@@ -6,9 +6,10 @@ Zola precisamos:
 
 1. Baixar imagens (URLs pre-assinadas expiram em ~1h) e reescrever os `src`
    para caminhos locais estaveis em /notion/images/...
-2. Converter blocos `<columns>...<column>...</column></columns>` em shortcodes
-   Zola `{{ columns() }}...{{ column() }}...{{ end }}...{{ end }}`, que sao
-   renderizados pelo template `templates/shortcodes/columns.html`.
+2. Converter blocos `<columns>...<column>...</column></columns>` em componentes
+   Tera `{% <columns> %}...{% <column> %}...{% </column> %}...{% </columns> %}`,
+   renderizados pelos templates `templates/_components/columns.html` e
+   `templates/_components/column.html` (Zola 0.23+ removeu shortcodes).
 
 A funcao principal `render_markdown()` coordena essas transformacoes. A
 estrategia e puramente baseada em regex sobre o texto (nao fazemos parse HTML
@@ -20,6 +21,7 @@ from __future__ import annotations
 
 import logging
 import re
+import textwrap
 from html import escape
 from typing import Optional
 from urllib.parse import unquote, urlparse
@@ -39,9 +41,20 @@ _IMAGE_RE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
 _COLUMNS_OPEN_RE = re.compile(r"<columns\s*>", re.IGNORECASE)
 _COLUMNS_CLOSE_RE = re.compile(r"</columns\s*>", re.IGNORECASE)
 # <column> pode vir com atributo `ratio="33.33"` (Notion). Capturamos o valor
-# para repassar ao shortcode Zola `{{ column(ratio=...) }}`.
+# para repassar ao componente Zola `{% <column ratio={...}> %}`.
 _COLUMN_OPEN_RE = re.compile(r'<column(?:\s+ratio="([0-9.]+)")?\s*>', re.IGNORECASE)
 _COLUMN_CLOSE_RE = re.compile(r"</column\s*>", re.IGNORECASE)
+
+# Ja no formato de componente: usado para dedentar corpos. O Tera remove as
+# linhas das tags, mas preserva a indentacao do corpo; como o Markdown trata
+# 4+ espacos (ou um tab) como bloco de codigo, um corpo indentado viraria
+# `<pre>` em vez de HTML/Markdown normal.
+_COMPONENT_COLUMNS_RE = re.compile(
+    r"\{% <columns> %\}(.*?)\{% </columns> %\}", re.DOTALL
+)
+_COMPONENT_COLUMN_RE = re.compile(
+    r"\{% <column(?: ratio=\{[0-9.]+\})?> %\}(.*?)\{% </column> %\}", re.DOTALL
+)
 
 # Outras tags HTML fantasmas que a Notion insere e que nao renderizam.
 # Removemos da saida.
@@ -116,7 +129,7 @@ def _is_fetchable(url: str) -> bool:
 # --- colunas ------------------------------------------------------------------
 
 def _convert_columns(text: str) -> str:
-    """Converte `<columns>`/`<column>` da Notion em shortcodes Zola.
+    """Converte `<columns>`/`<column>` da Notion em componentes Tera.
 
     A Notion gera:
 
@@ -131,30 +144,56 @@ def _convert_columns(text: str) -> str:
 
     Convertemos para:
 
-        {{ columns() }}
-        {{ column() }}
+        {% <columns> %}
+        {% <column> %}
         ...conteudo...
-        {{ end }}
-        {{ column() }}
+        {% </column> %}
+        {% <column> %}
         ...
-        {{ end }}
-        {{ end }}
+        {% </column> %}
+        {% </columns> %}
 
     Funciona para qualquer conteudo dentro de colunas, nao so imagens.
+
+    O corpo de cada componente e dedentado: o Tera remove as linhas das tags,
+    mas o Markdown trataria a indentacao restante (4+ espacos/tab) como bloco
+    de codigo, transformando as imagens em `<pre>`.
     """
 
-    text = _COLUMNS_OPEN_RE.sub("{% columns() %}", text)
-    text = _COLUMNS_CLOSE_RE.sub("{% end %}", text)
+    text = _COLUMNS_OPEN_RE.sub("{% <columns> %}", text)
+    text = _COLUMNS_CLOSE_RE.sub("{% </columns> %}", text)
 
     def _column_repl(match: re.Match) -> str:
         ratio = match.group(1)
         if ratio:
-            return "{%% column(ratio=%s) %%}" % ratio
-        return "{% column() %}"
+            # O componente declara `ratio: float`; literais inteiros precisam de
+            # casa decimal para o Tera aceitar o argumento.
+            if "." not in ratio:
+                ratio += ".0"
+            return "{% <column ratio={" + ratio + "}> %}"
+        return "{% <column> %}"
 
     text = _COLUMN_OPEN_RE.sub(_column_repl, text)
-    text = _COLUMN_CLOSE_RE.sub("{% end %}", text)
-    return text
+    text = _COLUMN_CLOSE_RE.sub("{% </column> %}", text)
+    return _dedent_component_bodies(text)
+
+
+def _dedent_component_bodies(text: str) -> str:
+    """Remove a indentacao comum dos corpos de `<columns>`/`<column>`.
+
+    Processa primeiro `<columns>` (mais externo) e depois `<column>`, de modo
+    que cada corpo perca um nivel de indentacao, preservando a indentacao
+    relativa interna (listas, continuacoes, etc.).
+    """
+
+    def _dedent(match: re.Match) -> str:
+        whole = match.group(0)
+        start = match.start(1) - match.start(0)
+        end = match.end(1) - match.start(0)
+        return whole[:start] + textwrap.dedent(match.group(1)) + whole[end:]
+
+    text = _COMPONENT_COLUMNS_RE.sub(_dedent, text)
+    return _COMPONENT_COLUMN_RE.sub(_dedent, text)
 
 
 def _clean_ghost_tags(text: str) -> str:

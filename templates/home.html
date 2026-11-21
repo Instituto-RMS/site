@@ -1,10 +1,15 @@
-{% extends "index.html" %}<!---->
+{% extends "index.html" %}
 {% block main %}<!---->
 {% set stats = load_data(path="content/data/stats.toml", format="toml") %}<!---->
 {% set partners = load_data(path="content/data/partners.toml", format="toml") %}<!---->
 {% set events_section = get_section(path="events/_index.md") %}<!---->
-{% set today = now() %}<!---->
-{% set upcoming_events = events_section.pages | filter(attribute="date", op=">=", value=today) | slice(end=3) %}<!---->
+{% set today = now() | date(format="%Y-%m-%d") %}<!---->
+{% set_global upcoming_events = [] %}<!---->
+{% for event in events_section.pages %}<!---->
+{% if event.date | date(format="%Y-%m-%d") >= today and upcoming_events | length < 3 %}<!---->
+{% set_global upcoming_events = [...upcoming_events, event] %}<!---->
+{% endif %}<!---->
+{% endfor %}<!---->
 {% set home = config.extra.home %}<!---->
 {% set base = get_url(path=``) %}<!----> -->
 <section class="relative left-1/2 -mt-24 mb-24 w-screen -translate-x-1/2 overflow-hidden bg-brand-black px-4 pt-36 pb-24 text-center text-white sm:px-6 lg:-mt-32 lg:pt-44 lg:pb-32">

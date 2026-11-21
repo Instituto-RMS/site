@@ -18,18 +18,18 @@ def test_convert_columns_basic():
         "</columns>"
     )
     out = _convert_columns(src)
-    assert "{% columns() %}" in out
-    assert "{% end %}" in out
-    assert "{% column() %}" in out
-    assert "<columns>" not in out
-    assert "</column>" not in out
+    assert out == (
+        "{% <columns> %}\n"
+        "{% <column> %}\nconteudo A\n{% </column> %}\n"
+        "{% <column> %}\nconteudo B\n{% </column> %}\n"
+        "{% </columns> %}"
+    )
 
 
 def test_convert_columns_case_insensitive():
     src = "<COLUMNS><COLUMN>x</COLUMN></COLUMNS>"
     out = _convert_columns(src)
-    assert "{% columns() %}" in out
-    assert "{% column() %}" in out
+    assert out == "{% <columns> %}{% <column> %}x{% </column> %}{% </columns> %}"
 
 
 def test_convert_columns_preserves_ratio():
@@ -41,8 +41,13 @@ def test_convert_columns_preserves_ratio():
         "</columns>"
     )
     out = _convert_columns(src)
-    assert '{% column(ratio=33.33) %}' in out
-    assert "<column" not in out
+    assert out == (
+        "{% <columns> %}\n"
+        "{% <column ratio={33.33}> %}A{% </column> %}\n"
+        "{% <column ratio={33.33}> %}B{% </column> %}\n"
+        "{% <column ratio={33.33}> %}C{% </column> %}\n"
+        "{% </columns> %}"
+    )
 
 
 def test_convert_columns_mixed_ratio_and_plain():
@@ -53,9 +58,51 @@ def test_convert_columns_mixed_ratio_and_plain():
         "</columns>"
     )
     out = _convert_columns(src)
-    assert '{% column(ratio=50) %}' in out
-    assert '{% column() %}' in out
-    assert "<column" not in out
+    assert out == (
+        "{% <columns> %}\n"
+        "{% <column ratio={50.0}> %}A{% </column> %}\n"
+        "{% <column> %}B{% </column> %}\n"
+        "{% </columns> %}"
+    )
+
+
+def test_convert_columns_dedents_indented_bodies():
+    """Notion indenta o corpo; sem dedent o Markdown vira bloco de codigo."""
+
+    src = (
+        "<columns>\n"
+        '  <column ratio="50">\n'
+        '    <img src="a.png" alt="">\n'
+        "  </column>\n"
+        '  <column ratio="50">\n'
+        '    <img src="b.png" alt="">\n'
+        "  </column>\n"
+        "</columns>"
+    )
+    out = _convert_columns(src)
+    assert out == (
+        "{% <columns> %}\n"
+        "{% <column ratio={50.0}> %}\n"
+        '<img src="a.png" alt="">\n'
+        "{% </column> %}\n"
+        "{% <column ratio={50.0}> %}\n"
+        '<img src="b.png" alt="">\n'
+        "{% </column> %}\n"
+        "{% </columns> %}"
+    )
+
+
+def test_convert_columns_preserves_relative_indentation():
+    src = (
+        "<columns>\n"
+        "  <column>\n"
+        "    - item\n"
+        "      - subitem\n"
+        "  </column>\n"
+        "</columns>"
+    )
+    out = _convert_columns(src)
+    assert "- item\n  - subitem" in out
 
 
 # --- imagens (sem download) ---------------------------------------------------

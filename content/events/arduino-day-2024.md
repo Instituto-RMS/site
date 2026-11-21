@@ -37,15 +37,15 @@ O dia começou com credenciamento e uma apresentação do Rio Maker Space, seus 
 - **Hardware Hacking com Stroogreen** — modificações e experimentos com componentes eletrônicos.
 - Instalação **Arco Cantante** — arco elétrico que produz som.
 <img src="/notion/images/events/arduino-day-2024/image_bfe945d4.png" alt="">
-{% columns() %}
-	{% column(ratio=33.33) %}
-		<img src="/notion/images/events/arduino-day-2024/image_6bab15c8.png" alt="">
-	{% end %}
-	{% column(ratio=33.33) %}
-		<img src="/notion/images/events/arduino-day-2024/image_8cca7222.png" alt="">
-		
-	{% end %}
-	{% column(ratio=33.33) %}
-		<img src="/notion/images/events/arduino-day-2024/image_f4eaa91f.png" alt="">
-	{% end %}
-{% end %}
+{% <columns> %}
+{% <column ratio={33.33}> %}
+<img src="/notion/images/events/arduino-day-2024/image_6bab15c8.png" alt="">
+{% </column> %}
+{% <column ratio={33.33}> %}
+<img src="/notion/images/events/arduino-day-2024/image_8cca7222.png" alt="">
+
+{% </column> %}
+{% <column ratio={33.33}> %}
+<img src="/notion/images/events/arduino-day-2024/image_f4eaa91f.png" alt="">
+{% </column> %}
+{% </columns> %}
