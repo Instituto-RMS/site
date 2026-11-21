@@ -21,4 +21,4 @@ external_link = ""
 
 O Hackanoel é um evento de criação de brinquedos e projetos feitos com materiais recicláveis com tema natalino. Famílias se reúnem para construir juntas usando sucata, papelão, garrafas PET, cola quente e o que estiver à mão. Sem manual, sem certo ou errado, cada um cria do seu jeito. O que vale é botar a mão na massa e o tempo compartilhado.
 ## Fotos
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231369/rms-hackanoel-2019-7184a40e.png" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231369/rms-hackanoel-2019-7184a40e.png" alt="" layout="inteira"> %}{% </foto_responsiva> %}

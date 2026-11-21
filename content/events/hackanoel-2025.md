@@ -32,27 +32,27 @@ O Hackanoel é um evento de criação de brinquedos e projetos feitos com materi
 <!-- /rms:duas-fotos -->
 
 
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-715264f75b9c4babb6eb58231b99715d.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-715264f75b9c4babb6eb58231b99715d.jpg" alt="" layout="inteira"> %}{% </foto_responsiva> %}
 {% <columns> %}
 {% <column ratio={33.33}> %}
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-0af1c3266696431994a79c29ec5e1661.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-0af1c3266696431994a79c29ec5e1661.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
 
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-bbee685d6cc74eac8bf81768260d566c.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-bbee685d6cc74eac8bf81768260d566c.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-e6b6e150e35d4b358d4e75e008d826af.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-e6b6e150e35d4b358d4e75e008d826af.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
 
 {% </column> %}
 {% </columns> %}
+<!-- rms:duas-fotos -->
 {% <columns> %}
 {% <column ratio={50.0}> %}
-
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-1e02c7ac11204170a8142c4cd8de453b.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-1e02c7ac11204170a8142c4cd8de453b.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
 {% </column> %}
 {% <column ratio={50.0}> %}
-
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-c54b7edf53c44d5f89704650c83166d7.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-c54b7edf53c44d5f89704650c83166d7.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
 {% </column> %}
 {% </columns> %}
+<!-- /rms:duas-fotos -->

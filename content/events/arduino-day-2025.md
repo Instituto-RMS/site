@@ -35,7 +35,7 @@ Enquanto o auditório recebia as palestras, as bancadas ao redor ofereciam ativi
 - **BIOS Hacking** — Flappy Bird rodando direto na BIOS de um PC.
 - **Hardware hacking** com experimentos e modificações ao vivo.
 - **UERJ Sats** — foguetes, CubeSats e tecnologias aeroespaciais exibidas pela equipe universitária.
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231523/rms-notion-cfa23b50584744b4b35e6f04377d4174.png" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231523/rms-notion-cfa23b50584744b4b35e6f04377d4174.png" alt="" layout="inteira"> %}{% </foto_responsiva> %}
 {% <columns> %}
 {% <column ratio={33.33}> %}
 ![](file://%7B%22source%22%3A%22attachment%3Aef41536c-3987-4fd2-b688-b2fa4bcf015a%3Aimage(1).png%22%2C%22permissionRecord%22%3A%7B%22table%22%3A%22block%22%2C%22id%22%3A%223bb7747a-369a-803c-abcb-c44e29ee0ebb%22%2C%22spaceId%22%3A%22b6a819e4-5bdb-46ab-8679-88dadf847b1a%22%7D%7D)

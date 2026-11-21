@@ -24,13 +24,13 @@ A edição de 2024 repetiu a fórmula: mesas cheias de sucata, famílias reunida
 ## Fotos
 {% <columns> %}
 {% <column ratio={33.33}> %}
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231528/rms-notion-fdbef9fb221a4420a7fbf388544885e7.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231528/rms-notion-fdbef9fb221a4420a7fbf388544885e7.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
 
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-3c49764d820d4d2eb17b04eab418a06a.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-3c49764d820d4d2eb17b04eab418a06a.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-4b2bc355793a4c708a95f36ea288d2ef.jpg" alt="">
+{% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-4b2bc355793a4c708a95f36ea288d2ef.jpg" alt="" layout="metade"> %}{% </foto_responsiva> %}
 {% </column> %}
 {% </columns> %}
