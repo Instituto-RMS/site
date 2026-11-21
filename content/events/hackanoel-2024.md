@@ -24,13 +24,13 @@ A edição de 2024 repetiu a fórmula: mesas cheias de sucata, famílias reunida
 ## Fotos
 {% <columns> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T191323.000Z-0001_d3c0821d.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231528/rms-notion-fdbef9fb221a4420a7fbf388544885e7.jpg" alt="">
 
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T191835.000Z-0001_08b66e4b.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-3c49764d820d4d2eb17b04eab418a06a.jpg" alt="">
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/hackanoel-2024/riomakerspace_2024-12-14T212639.000Z-0001_3d663592.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-4b2bc355793a4c708a95f36ea288d2ef.jpg" alt="">
 {% </column> %}
 {% </columns> %}

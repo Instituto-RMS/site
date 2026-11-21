@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+
+backend:
+  name: github
+  repo: Instituto-RMS/site
+  branch: sveltia
+
+media_folder: /public/media
+public_folder: /media
+
+media_libraries:
+  cloudinary:
+    default: true
+    config:
+      cloud_name: p9uceq87
+      api_key: 131384261519737
+
+collections:
+  - name: events
+    label: Eventos
+    label_singular: Evento
+    folder: content/events
+    format: toml-frontmatter
+    create: true
+    fields:
+      - { label: Título, name: title, widget: string }
+      - { label: Descrição, name: description, widget: string, required: false }
+      - { label: Data, name: date, widget: datetime, type: date, required: false }
+      - { label: Rascunho, name: draft, widget: boolean, default: false }
+      - label: Informações
+        name: extra
+        widget: object
+        fields:
+          - { label: Status, name: status, widget: string, required: false }
+          - { label: Tags, name: tags, widget: list, required: false }
+          - { label: Local, name: location, widget: string, required: false }
+          - { label: Público, name: audience, widget: string, required: false }
+          - { label: Parceiros, name: partners, widget: string, required: false }
+          - { label: Destaque, name: highlight, widget: boolean, default: false }
+          - { label: Link externo, name: external_link, widget: string, required: false }
+      - { label: Conteúdo, name: body, widget: markdown }
+  - name: projects
+    label: Projetos
+    label_singular: Projeto
+    folder: content/projects
+    format: toml-frontmatter
+    create: true
+    fields:
+      - { label: Título, name: title, widget: string }
+      - { label: Descrição, name: description, widget: text, required: false }
+      - { label: Ordem, name: weight, widget: number, required: false }
+      - { label: Rascunho, name: draft, widget: boolean, default: false }
+      - label: Informações
+        name: extra
+        widget: object
+        fields:
+          - { label: Status, name: status, widget: string, required: false }
+          - { label: Tags, name: tags, widget: list, required: false }
+          - { label: Parceiros, name: partners, widget: string, required: false }
+          - { label: Destaque, name: highlight, widget: boolean, default: false }
+          - { label: Link externo, name: external_link, widget: string, required: false }
+          - { label: Data de início, name: start_date, widget: string, required: false }
+      - { label: Conteúdo, name: body, widget: markdown }

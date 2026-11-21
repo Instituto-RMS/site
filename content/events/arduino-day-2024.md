@@ -36,16 +36,16 @@ O dia começou com credenciamento e uma apresentação do Rio Maker Space, seus 
 - **BIOS Hacking** — Flappy Bird rodando diretamente na BIOS de um PC.
 - **Hardware Hacking com Stroogreen** — modificações e experimentos com componentes eletrônicos.
 - Instalação **Arco Cantante** — arco elétrico que produz som.
-<img src="/notion/images/events/arduino-day-2024/image_bfe945d4.png" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231522/rms-notion-840f4a1b1c0d40eaa3cf8acb01ba48de.png" alt="">
 {% <columns> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/arduino-day-2024/image_6bab15c8.png" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231522/rms-notion-c5225f5369164ccfa8adcc8e6b9e4712.png" alt="">
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/arduino-day-2024/image_8cca7222.png" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231522/rms-notion-b415c9250dc44bc1988870fcb12da479.png" alt="">
 
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/arduino-day-2024/image_f4eaa91f.png" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231522/rms-notion-ce3b1f12e4a94952851953d773c0a6b6.png" alt="">
 {% </column> %}
 {% </columns> %}

@@ -30,15 +30,15 @@ O conjunto alcançou 23 km de altitude, com dados recebidos pela estação de so
 - Sinfonia Elétrica com Bobina de Tesla
 - TermoHumiNet
 O lançamento validou o RS41, o sistema LILYGO com LoRa e a estrutura e o mecanismo de soltura do Projeto ASA.
-<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250908-WA014_4fcc583d.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-cfc8a236f2ca4d0a958e5bc37177b1a4.jpg" alt="">
 {% <columns> %}
 {% <column ratio={50.0}> %}
-<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0157_02618dcb.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231531/rms-notion-8fe4efe4f517472fa1828c491e0da6d3.jpg" alt="">
 
 {% </column> %}
 {% <column ratio={50.0}> %}
-<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0144_1f96d556.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231531/rms-notion-59230590ac264e9680370788df481895.jpg" alt="">
 
 {% </column> %}
 {% </columns> %}
-<img src="/notion/images/events/lancamento-do-bec-barra-do-pirai/IMG-20250907-WA0097_7ea8425c.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231531/rms-notion-7699d3c5869b43be85cf10307e96255a.jpg" alt="">

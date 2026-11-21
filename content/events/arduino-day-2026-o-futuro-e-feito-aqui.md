@@ -50,14 +50,14 @@ Nada disso teria acontecido sem muita gente envolvida. Teve voluntários que mon
 O Arduino Day expressa uma ideia central do Rio Maker Space: tecnologia se aprende melhor quando o conhecimento circula, o processo é compartilhado e todas as pessoas são convidadas a colocar a mão na massa.
 ## Tecnologia aberta em movimento
 Cada oficina, protótipo e conversa fortaleceu uma rede formada por comunidades, instituições de ensino, grupos de pesquisa e iniciativas independentes. É assim que construímos eventos abertos, educativos e capazes de inspirar os próximos projetos.
-<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/IMG_1550_ca044204.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231525/rms-notion-d2255dcbb9fd49698c2bcf9c192dfc9e.jpg" alt="">
 {% <columns> %}
 {% <column ratio={31.25}> %}
-<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/f2d53bae-d6d1-4a23-8262-ccad9a276045_58d53e3c.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231525/rms-notion-bb4799850b48482fba594a611453a7c3.jpg" alt="">
 
 {% </column> %}
 {% <column ratio={68.75}> %}
-<img src="/notion/images/events/arduino-day-2026-o-futuro-e-feito-aqui/Design_sem_nome_198baf11.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231525/rms-notion-5c0ad07916ea46f08b619bb42149c66f.jpg" alt="">
 
 {% </column> %}
 {% </columns> %}

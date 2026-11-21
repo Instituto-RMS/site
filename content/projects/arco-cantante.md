@@ -31,5 +31,5 @@ O coração do projeto é o circuito oscilador Hartley modulado, operando na fai
 - Resistor 220 Ohms (3W)
 - Resistor 22 Ohms (2W)
 - Arduino UNO (pino D9)
-<img src="/notion/images/projects/arco-cantante/image_a1a53538.png" alt="">
-<img src="/notion/images/projects/arco-cantante/0643c5e7-ef95-480b-871b-8e3dab3c4700_5cf69968.png" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231532/rms-notion-c1b2e2e626794e02892cc0d6bc14e4ec.png" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231531/rms-notion-275581505a914fa391be0438f6da591e.png" alt="">

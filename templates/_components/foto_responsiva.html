@@ -1,0 +1,13 @@
+{% component foto_responsiva(src: string, alt: string = "", layout: string = "inteira") %}
+{% set base = "https://res.cloudinary.com/p9uceq87/image/upload/" %}
+{% set alt_html = alt | replace(from="&", to="&amp;") | replace(from="\"", to="&quot;") | replace(from="<", to="&lt;") | replace(from=">", to="&gt;") %}
+{% set src_html = src | replace(from="&", to="&amp;") | replace(from="\"", to="&quot;") | replace(from="<", to="&lt;") | replace(from=">", to="&gt;") %}
+{% if src is starting_with(pat=base) %}
+  {% set src480 = src_html | replace(from=base, to=base ~ "c_scale,w_480/f_auto/q_auto/") %}
+  {% set src960 = src_html | replace(from=base, to=base ~ "c_scale,w_960/f_auto/q_auto/") %}
+  {% set src1440 = src_html | replace(from=base, to=base ~ "c_scale,w_1440/f_auto/q_auto/") %}
+  <img src="{{ src960 }}" srcset="{{ src480 }} 480w, {{ src960 }} 960w, {{ src1440 }} 1440w" sizes="{% if layout == 'metade' %}(min-width: 768px) 360px, calc(50vw - 16px){% else %}(min-width: 768px) 736px, calc(100vw - 32px){% endif %}" alt="{{ alt_html }}" loading="lazy" decoding="async" style="max-width:100%;height:auto">
+{% else %}
+  <img src="{{ src_html }}" alt="{{ alt_html }}" loading="lazy" decoding="async" style="max-width:100%;height:auto">
+{% endif %}
+{% endcomponent foto_responsiva %}

@@ -20,27 +20,27 @@ O Hackanoel é um evento de criação de brinquedos e projetos feitos com materi
 
 {% <foto_responsiva src="https://res.cloudinary.com/p9uceq87/image/upload/v1795229312/main-sample.png" alt="" layout="inteira"> %}{% </foto_responsiva> %}
 
-<img src="/notion/images/events/hackanoel-2025/photo_153620-12-2025_20-44-25_35d5bd0f.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-715264f75b9c4babb6eb58231b99715d.jpg" alt="">
 {% <columns> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/hackanoel-2025/rafael_7e57845a.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231529/rms-notion-0af1c3266696431994a79c29ec5e1661.jpg" alt="">
 
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/hackanoel-2025/riomakerspace_2025-12-20T231905.000Z-0001_83169752.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-bbee685d6cc74eac8bf81768260d566c.jpg" alt="">
 {% </column> %}
 {% <column ratio={33.33}> %}
-<img src="/notion/images/events/hackanoel-2025/riomakerspace_2025-12-20T231619.000Z-0001_863a2e0a.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-e6b6e150e35d4b358d4e75e008d826af.jpg" alt="">
 
 {% </column> %}
 {% </columns> %}
 {% <columns> %}
 {% <column ratio={50.0}> %}
 
-<img src="/notion/images/events/hackanoel-2025/photo_154420-12-2025_20-44-33_6ed44a8f.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-1e02c7ac11204170a8142c4cd8de453b.jpg" alt="">
 {% </column> %}
 {% <column ratio={50.0}> %}
 
-<img src="/notion/images/events/hackanoel-2025/photo_152320-12-2025_20-44-24_03e0b194.jpg" alt="">
+<img src="https://res.cloudinary.com/p9uceq87/image/upload/v1795231530/rms-notion-c54b7edf53c44d5f89704650c83166d7.jpg" alt="">
 {% </column> %}
 {% </columns> %}
