@@ -2,13 +2,16 @@
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* RMS brand palette. Neon green is the primary action accent; cyan/orange are
-   reserved for secondary/decorative use. Raw, high-contrast surfaces borrow from
-   the same family to keep the workshop feel across light and dark modes. */
+/* RMS brand palette. Matte PCB solder-mask green drives interactive actions and
+   states across light and dark modes; brand-green, brand-cyan, and brand-orange
+   remain reserved for decorative stripes and stat borders. */
 @theme {
   --color-brand-green: #adf758;
   --color-brand-cyan: #80e3f6;
   --color-brand-orange: #fdb314;
+  --color-pcb: #1b6940;
+  --color-pcb-hover: #145231;
+  --color-pcb-sage: #63b587;
   --color-brand-black: #0c0c0d;
   --color-brand-white: #f7f7f5;
   --color-steel: #212122;
@@ -58,7 +61,7 @@ h6 {
 }
 
 ::selection {
-  @apply bg-brand-green text-brand-black;
+  @apply bg-brand-orange text-brand-black;
 }
 
 .not-ready * {
@@ -234,11 +237,11 @@ article {
 }
 
 @utility block-hover {
-  @apply hover:border-brand-green/50 hover:bg-brand-green/8 dark:hover:border-brand-green/50 dark:hover:bg-brand-green/8;
+  @apply hover:border-steel/40 hover:bg-steel/5 dark:hover:border-concrete/40 dark:hover:bg-concrete/10;
 }
 
 @utility block-hover-mask {
-  @apply hover:bg-brand-green/6 dark:hover:bg-brand-green/10;
+  @apply hover:bg-steel/5 dark:hover:bg-concrete/10;
 }
 
 /* Impact stats cards: thin colored border cycling through brand colors. */
@@ -269,22 +272,31 @@ article {
 }
 
 @utility primary-link {
-  @apply text-steel no-underline hover:text-brand-green dark:text-concrete;
+  @apply text-steel no-underline transition-colors hover:text-pcb dark:text-concrete dark:hover:text-pcb-sage;
 }
 
-/* Primary CTA: neon green punch on black text. Used as a signature action
-   across both modes. */
+/* Primary CTA: Ink & Paper with subtle Logo Amber border accent on hover. */
 @utility btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-brand-green px-5 py-2.5 font-semibold text-brand-black no-underline transition-all duration-150 hover:brightness-105 hover:shadow-[0_0_18px_rgba(173,247,88,0.45)] active:scale-95;
+  @apply inline-flex items-center justify-center rounded-md border-[1.5px] border-brand-black bg-brand-black px-5 py-2.5 font-semibold text-brand-white no-underline transition-colors duration-150 hover:border-brand-orange hover:bg-steel focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange active:scale-[0.98] dark:border-brand-white dark:bg-brand-white dark:text-brand-black dark:hover:border-brand-orange dark:hover:bg-concrete;
 }
 
-/* Secondary/outline CTA — engineered, with a neon hover glow. */
+/* Secondary/outline CTA — crisp ink border with Logo Amber hover border. */
 @utility btn-outline {
-  @apply inline-flex items-center justify-center rounded-full border border-steel/30 px-5 py-2.5 font-semibold text-steel no-underline transition-all duration-150 hover:border-brand-green hover:text-brand-green dark:border-concrete/40 dark:text-concrete;
+  @apply inline-flex items-center justify-center rounded-md border border-steel/30 px-5 py-2.5 font-semibold text-steel no-underline transition-colors duration-150 hover:border-brand-orange hover:bg-brand-orange/10 hover:text-brand-black active:scale-[0.98] dark:border-concrete/35 dark:text-concrete dark:hover:border-brand-orange dark:hover:bg-brand-orange/10 dark:hover:text-brand-white;
+}
+
+/* Outline CTA for always-dark surfaces (e.g. hero banner in light mode). */
+@utility btn-outline-dark {
+  @apply inline-flex items-center justify-center rounded-md border border-concrete/40 px-5 py-2.5 font-semibold text-brand-white no-underline transition-colors duration-150 hover:border-brand-cyan hover:bg-brand-cyan/10 hover:text-brand-white active:scale-[0.98];
+}
+
+/* Quiet editorial card link — Ink text with Logo Amber underline on hover. */
+@utility card-link {
+  @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand-black no-underline decoration-brand-orange decoration-2 underline-offset-4 transition-colors duration-150 hover:underline dark:text-brand-white dark:decoration-brand-cyan;
 }
 
 @utility secondary-link {
-  @apply text-steel/80 no-underline transition-colors hover:text-brand-green dark:text-concrete/80;
+  @apply text-steel/80 no-underline decoration-brand-orange decoration-2 underline-offset-4 transition-colors hover:text-brand-black hover:underline dark:text-concrete/80 dark:decoration-brand-cyan dark:hover:text-brand-white;
 }
 
 /* Utility: thick top border used to introduce raw, exposed divisions. */
@@ -294,5 +306,10 @@ article {
 
 /* Utility: strong blockquote / testimonial treatment. */
 @utility quote-block {
-  @apply relative border-l-4 border-brand-green pl-5 font-display text-lg font-medium leading-tight tracking-tight text-steel dark:text-concrete;
+  @apply relative border-l-4 border-brand-orange pl-5 font-display text-lg font-medium leading-tight tracking-tight text-steel dark:border-brand-cyan dark:text-concrete;
+}
+
+/* Flip primary CTA to paper-on-ink inside always-dark banners even in light mode. */
+.bg-brand-black .btn-primary {
+  @apply border-brand-white bg-brand-white text-brand-black hover:border-brand-orange hover:bg-concrete focus-visible:outline-brand-orange;
 }
