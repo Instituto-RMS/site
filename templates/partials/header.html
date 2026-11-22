@@ -90,7 +90,7 @@
         <li class="group relative">
           <button
             type="button"
-            class="primary-link flex items-center gap-1 px-3 py-1.5 text-sm font-medium tracking-tight"
+            class="primary-link flex items-center gap-1 border-b-2 border-transparent px-3 py-1.5 text-sm font-medium tracking-tight hover:border-pcb dark:hover:border-pcb-sage"
             aria-haspopup="true"
             aria-expanded="false"
           >
@@ -109,7 +109,7 @@
             {% set sub_active = current == sub_path or current == sub_path ~ `/` or current is starting_with(pat=sub_path ~ `/`) %}
             <li>
               <a
-                class="block px-4 py-2 text-sm font-medium tracking-tight hover:bg-brand-green/8 hover:text-brand-green {% if sub_active %}text-brand-green font-semibold{% endif %}"
+                class="block px-4 py-2 text-sm font-medium tracking-tight hover:bg-pcb/8 hover:text-pcb dark:hover:bg-pcb-sage/10 dark:hover:text-pcb-sage {% if sub_active %}text-pcb dark:text-pcb-sage font-semibold{% endif %}"
                 href="{{ sub_href }}"
                 >{{ sub.name }}</a
               >
@@ -120,7 +120,7 @@
         {% else %}
         <li>
           <a
-            class="primary-link block px-3 py-1.5 text-sm font-medium tracking-tight {% if is_active %}border-b-2 border-brand-green font-semibold{% endif %}"
+            class="primary-link block border-b-2 px-3 py-1.5 text-sm font-medium tracking-tight {% if is_active %}border-pcb dark:border-pcb-sage font-semibold{% else %}border-transparent hover:border-pcb dark:hover:border-pcb-sage{% endif %}"
             href="{{ menu_href }}"
             >{{ menu.name }}</a
           >
@@ -158,7 +158,7 @@
               {% set sub_active = current == sub_path or current == sub_path ~ `/` or current is starting_with(pat=sub_path ~ `/`) %}
               <li>
                 <a
-                  class="block py-1.5 text-center text-sm font-medium tracking-tight hover:text-brand-green {% if sub_active %}text-brand-green font-semibold{% endif %}"
+                  class="block py-1.5 text-center text-sm font-medium tracking-tight hover:text-pcb dark:hover:text-pcb-sage {% if sub_active %}text-pcb dark:text-pcb-sage font-semibold{% endif %}"
                   href="{{ sub_href }}"
                   >{{ sub.name }}</a
                 >
@@ -170,7 +170,7 @@
         {% else %}
         <li>
           <a
-            class="primary-link block py-2 text-center text-base font-medium tracking-tight {% if is_active %}text-brand-green font-semibold{% endif %}"
+            class="primary-link block py-2 text-center text-base font-medium tracking-tight {% if is_active %}text-pcb dark:text-pcb-sage font-semibold{% endif %}"
             href="{{ menu_href }}"
             >{{ menu.name }}</a
           >

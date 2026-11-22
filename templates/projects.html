@@ -31,7 +31,7 @@
       {% for project in projects %}
       <div class="{% if loop.index0 % 3 == 0 %}stat-card-green{% elif loop.index0 % 3 == 1 %}stat-card-cyan{% else %}stat-card-orange{% endif %} flex flex-col p-6">
         <h2 class="mt-0 mb-2 text-xl font-bold">
-          <a class="no-underline hover:text-brand-green" href="{{ project.permalink }}">{{ project.title }}</a>
+          <a class="no-underline transition-colors hover:text-pcb dark:hover:text-pcb-sage" href="{{ project.permalink }}">{{ project.title }}</a>
         </h2>
         <p class="mb-4 grow opacity-80">{{ project.description | default(value=project.summary) | safe }}</p>
         {% if project.extra.tags %}
@@ -42,9 +42,9 @@
         </div>
         {% endif %}
         <a
-          class="btn-primary self-start px-4 py-2 text-sm"
+          class="card-link group self-start"
           href="{{ project.permalink }}"
-          >Saiba mais</a
+          >Saiba mais <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span></a
         >
       </div>
       {% endfor %}

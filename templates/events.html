@@ -40,9 +40,9 @@
         <h2 class="mt-0 mb-2 text-xl font-bold">{{ event.title }}</h2>
         <p class="mb-5 grow opacity-80">{{ event.description | default(value=event.summary) | safe }}</p>
         <a
-          class="btn-primary self-start px-4 py-2 text-sm"
+          class="card-link group self-start"
           href="{{ event.permalink }}"
-          >{{ event.extra.cta_label | default(value="Saiba mais") }}</a
+          >{{ event.extra.cta_label | default(value="Saiba mais") }} <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span></a
         >
       </div>
       {% endfor %}
