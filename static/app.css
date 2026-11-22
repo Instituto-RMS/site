@@ -292,7 +292,7 @@ article {
 
 /* Quiet editorial card link — Ink text with Logo Amber underline on hover. */
 @utility card-link {
-  @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand-black no-underline decoration-brand-orange decoration-2 underline-offset-4 transition-colors duration-150 hover:underline dark:text-brand-white dark:decoration-brand-cyan;
+  @apply inline-flex items-center text-sm font-semibold text-brand-black no-underline decoration-brand-orange decoration-2 underline-offset-4 transition-colors duration-150 hover:underline dark:text-brand-white dark:decoration-brand-cyan;
 }
 
 @utility secondary-link {

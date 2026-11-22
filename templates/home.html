@@ -173,9 +173,9 @@
         {% endfor %}
       </ul>
       <a
-        class="card-link group mt-auto self-start"
+        class="card-link mt-auto self-start"
         href="{{ home.practice_projects.cta_url | replace(from=`$BASE_URL`, to=base) | safe }}"
-        >{{ home.practice_projects.cta_label }} <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span></a
+        >{{ home.practice_projects.cta_label }}</a
       >
     </div>
     <!-- Card 2 — Eventos que conectam pessoas -->
@@ -206,9 +206,9 @@
         {% endfor %}
       </ul>
       <a
-        class="card-link group mt-auto self-start"
+        class="card-link mt-auto self-start"
         href="{{ home.practice_events.cta_url | replace(from=`$BASE_URL`, to=base) | safe }}"
-        >{{ home.practice_events.cta_label }} <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span></a
+        >{{ home.practice_events.cta_label }}</a
       >
     </div>
   </div>
@@ -238,9 +238,9 @@
         {% endif %}
         <p class="mb-5 grow opacity-80">{{ event.description | default(value=event.summary) | safe }}</p>
         <a
-          class="card-link group self-start"
+          class="card-link self-start"
           href="{{ event.permalink }}"
-          >{{ event.extra.cta_label | default(value="Saiba mais") }} <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span></a
+          >{{ event.extra.cta_label | default(value="Saiba mais") }}</a
         >
       </div>
       {% endfor %}

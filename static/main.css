@@ -1028,36 +1028,6 @@
       scale: 0.98;
     }
   }
-  .card-link {
-    display: inline-flex;
-    align-items: center;
-    gap: calc(var(--spacing) * 1.5);
-    font-size: var(--text-sm);
-    line-height: var(--tw-leading, var(--text-sm--line-height));
-    --tw-font-weight: var(--font-weight-semibold);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-brand-black);
-    text-decoration-line: none;
-    text-decoration-color: var(--color-brand-orange);
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-    --tw-duration: 150ms;
-    transition-duration: 150ms;
-    &:hover {
-      @media (hover: hover) {
-        text-decoration-line: underline;
-      }
-    }
-    &:where(.dark, .dark *) {
-      color: var(--color-brand-white);
-    }
-    &:where(.dark, .dark *) {
-      text-decoration-color: var(--color-brand-cyan);
-    }
-  }
   .tag-chip-dark {
     display: inline-flex;
     align-items: center;
@@ -1121,6 +1091,35 @@
     }
     &:where(.dark, .dark *) {
       color: var(--color-concrete);
+    }
+  }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-brand-black);
+    text-decoration-line: none;
+    text-decoration-color: var(--color-brand-orange);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+    --tw-duration: 150ms;
+    transition-duration: 150ms;
+    &:hover {
+      @media (hover: hover) {
+        text-decoration-line: underline;
+      }
+    }
+    &:where(.dark, .dark *) {
+      color: var(--color-brand-white);
+    }
+    &:where(.dark, .dark *) {
+      text-decoration-color: var(--color-brand-cyan);
     }
   }
   .block {
@@ -2065,10 +2064,6 @@
   @media (hover: hover) {
     :is(:where(.group):hover .group-hover\:visible) {
       visibility: visible;
-    }
-    :is(:where(.group):hover .group-hover\:translate-x-0\.5) {
-      --tw-translate-x: calc(var(--spacing) * 0.5);
-      translate: var(--tw-translate-x) var(--tw-translate-y);
     }
     :is(:where(.group):hover .group-hover\:rotate-180) {
       rotate: 180deg;
