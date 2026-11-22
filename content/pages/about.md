@@ -62,8 +62,7 @@ Já colaboramos com CBPF, UFRJ (Minerva Rockets), Ajuda Robótica, Galileu, SORA
 
 ## Quem faz o RMS
 
-- **Maiza Dias** - Diretora
-- **João Carlos** - Vice-Diretor
+O RMS é tocado por uma equipe voluntária de diretoria, coordenação e comunidade. [Conheça nossa equipe completa](@/pages/equipe.md).
 
 ---
 

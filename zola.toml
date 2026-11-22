@@ -66,6 +66,7 @@ submenu = [
   { name = "Quem somos", url = "$BASE_URL/about" },
   { name = "Nossa história", url = "$BASE_URL/sobre/nossa-historia" },
   { name = "Missão e valores", url = "$BASE_URL/sobre/missao-valores" },
+  { name = "Equipe", url = "$BASE_URL/sobre/equipe" },
 ]
 
 # The page footer options.

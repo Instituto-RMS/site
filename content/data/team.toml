@@ -1,0 +1,35 @@
+# Dados da página /sobre/equipe — gerenciados via Sveltia CMS (/admin).
+# ATENÇÃO: Em TOML, chaves vazias no nível raiz (como `coordenadores = []`)
+# devem permanecer ANTES de qualquer tabela `[...]` ou `[[...]]`.
+
+embaixadores = []
+
+[[diretoria]]
+name = "Maiza Dias"
+role = "Diretora"
+photo = ""
+bio = ""
+linkedin = ""
+github = ""
+instagram = ""
+website = ""
+
+[[diretoria]]
+name = "João Carlos"
+role = "Vice-Diretor"
+photo = ""
+bio = ""
+linkedin = ""
+github = ""
+instagram = ""
+website = ""
+
+[[coordenadores]]
+name = "Giovanna Alice"
+role = "Coordenadora MulheRio Maker"
+photo = ""
+bio = "Responsável por oficinas do grupo exclusivo de mulheres."
+linkedin = ""
+github = "https://github.com/GiovanaAlice"
+instagram = ""
+website = ""

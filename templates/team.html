@@ -1,0 +1,64 @@
+{% extends "index.html" %}
+{% block main %}
+{% set team = load_data(path="content/data/team.toml", format="toml") %}
+{% set diretoria = team?.diretoria | default(value=[]) %}
+{% set coordenadores = team?.coordenadores | default(value=[]) %}
+{% set embaixadores = team?.embaixadores | default(value=[]) %}
+
+<section class="relative left-1/2 -mt-24 mb-16 w-screen -translate-x-1/2 overflow-hidden bg-brand-black px-4 pt-32 pb-20 text-center text-white sm:px-6 lg:-mt-32 lg:pt-40 lg:pb-24">
+  <div class="rule-brand absolute inset-x-0 bottom-0" aria-hidden="true"></div>
+  <p class="mb-3 font-mono text-xs font-medium uppercase tracking-[0.2em] text-pcb-sage">Sobre · RMS</p>
+  <h1 class="mx-auto mb-4 max-w-4xl font-display text-4xl leading-display font-extrabold tracking-tight text-brand-white lg:text-6xl">{{ page.title }}</h1>
+  {% if page.content %}
+  <div class="mx-auto max-w-2xl text-concrete/90 [&>p]:m-0">{{ page.content | safe }}</div>
+  {% endif %}
+</section>
+
+{% if diretoria | length > 0 %}
+<section id="diretoria" class="mb-16">
+  <div class="not-prose mb-8">
+    <h2 class="mb-2 font-display text-2xl font-extrabold tracking-tight text-brand-black lg:text-3xl dark:text-brand-white">Diretoria</h2>
+    <p class="max-w-2xl text-steel/80 dark:text-concrete/80">Responsável pela condução institucional e articulação estratégica do Rio Maker Space.</p>
+  </div>
+  <div class="not-prose grid gap-5 sm:grid-cols-2">
+    {% set card_accent = "stat-card-green" %}
+    {% set avatar_accent = "border-brand-green/50 bg-brand-green/10 text-brand-black dark:text-brand-green" %}
+    {% for member in diretoria %}
+      {% include "partials/team_card.html" %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if coordenadores | length > 0 %}
+<section id="coordenadores" class="mb-16">
+  <div class="not-prose mb-8">
+    <h2 class="mb-2 font-display text-2xl font-extrabold tracking-tight text-brand-black lg:text-3xl dark:text-brand-white">Coordenadores</h2>
+    <p class="max-w-2xl text-steel/80 dark:text-concrete/80">Lideranças técnicas e comunitárias à frente dos projetos, oficinas e frentes do RMS.</p>
+  </div>
+  <div class="not-prose grid gap-5 sm:grid-cols-2">
+    {% set card_accent = "stat-card-cyan" %}
+    {% set avatar_accent = "border-brand-cyan/50 bg-brand-cyan/10 text-brand-black dark:text-brand-cyan" %}
+    {% for member in coordenadores %}
+      {% include "partials/team_card.html" %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if embaixadores | length > 0 %}
+<section id="embaixadores" class="mb-8">
+  <div class="not-prose mb-8">
+    <h2 class="mb-2 font-display text-2xl font-extrabold tracking-tight text-brand-black lg:text-3xl dark:text-brand-white">Embaixadores</h2>
+    <p class="max-w-2xl text-steel/80 dark:text-concrete/80">Representantes que ampliam o alcance da cultura maker em escolas, universidades e comunidades.</p>
+  </div>
+  <div class="not-prose grid gap-5 sm:grid-cols-2">
+    {% set card_accent = "stat-card-orange" %}
+    {% set avatar_accent = "border-brand-orange/50 bg-brand-orange/10 text-brand-black dark:text-brand-orange" %}
+    {% for member in embaixadores %}
+      {% include "partials/team_card.html" %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock main %}

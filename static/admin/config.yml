@@ -3,7 +3,7 @@
 backend:
   name: github
   repo: Instituto-RMS/site
-  branch: sveltia
+  branch: main
 
 media_folder: /public/media
 public_folder: /media
@@ -61,3 +61,42 @@ collections:
           - { label: Link externo, name: external_link, widget: string, required: false }
           - { label: Data de início, name: start_date, widget: string, required: false }
       - { label: Conteúdo, name: body, widget: markdown }
+  - name: institutional
+    label: Institucional
+    icon: groups
+    files:
+      - name: team
+        label: Equipe
+        file: content/data/team.toml
+        format: toml
+        description: Gerencie a diretoria, coordenação e embaixadores exibidos em /sobre/equipe.
+        fields:
+          - label: Diretoria
+            name: diretoria
+            label_singular: Diretor(a)
+            widget: list
+            required: false
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields: &team_member_fields
+              - { label: Nome, name: name, widget: string }
+              - { label: Cargo, name: role, widget: string }
+              - { label: Foto, name: photo, widget: image, required: false }
+              - { label: Bio curta, name: bio, widget: text, required: false }
+              - { label: LinkedIn, name: linkedin, widget: string, required: false, hint: "URL completa, ex: https://linkedin.com/in/..." }
+              - { label: GitHub, name: github, widget: string, required: false, hint: "URL completa, ex: https://github.com/..." }
+              - { label: Instagram, name: instagram, widget: string, required: false, hint: "URL completa, ex: https://instagram.com/..." }
+              - { label: Site, name: website, widget: string, required: false, hint: "URL completa, ex: https://..." }
+          - label: Coordenadores
+            name: coordenadores
+            label_singular: Coordenador(a)
+            widget: list
+            required: false
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields: *team_member_fields
+          - label: Embaixadores
+            name: embaixadores
+            label_singular: Embaixador(a)
+            widget: list
+            required: false
+            summary: "{{fields.name}} — {{fields.role}}"
+            fields: *team_member_fields

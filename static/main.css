@@ -46,6 +46,7 @@
     --tracking-widest: 0.1em;
     --leading-tight: 0.95;
     --leading-snug: 1.375;
+    --leading-relaxed: 1.625;
     --radius-md: 0.375rem;
     --radius-lg: 0.5rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
@@ -1166,11 +1167,17 @@
   .h-3 {
     height: calc(var(--spacing) * 3);
   }
+  .h-3\.5 {
+    height: calc(var(--spacing) * 3.5);
+  }
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
   .h-8 {
     height: calc(var(--spacing) * 8);
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
   }
   .h-auto {
     height: auto;
@@ -1192,6 +1199,9 @@
   }
   .w-3 {
     width: calc(var(--spacing) * 3);
+  }
+  .w-3\.5 {
+    width: calc(var(--spacing) * 3.5);
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
@@ -1287,6 +1297,9 @@
   .gap-1 {
     gap: var(--spacing);
   }
+  .gap-1\.5 {
+    gap: calc(var(--spacing) * 1.5);
+  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -1298,6 +1311,9 @@
   }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
+  }
+  .gap-5 {
+    gap: calc(var(--spacing) * 5);
   }
   :where(.space-y-1\.5 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
@@ -1454,6 +1470,24 @@
       border-color: color-mix(in oklab, var(--color-black) 10%, transparent);
     }
   }
+  .border-brand-cyan\/50 {
+    border-color: color-mix(in srgb, #80e3f6 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-brand-cyan) 50%, transparent);
+    }
+  }
+  .border-brand-green\/50 {
+    border-color: color-mix(in srgb, #adf758 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-brand-green) 50%, transparent);
+    }
+  }
+  .border-brand-orange\/50 {
+    border-color: color-mix(in srgb, #fdb314 50%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-brand-orange) 50%, transparent);
+    }
+  }
   .border-concrete\/15 {
     border-color: color-mix(in srgb, #c9c8c3 15%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -1579,6 +1613,9 @@
   .object-cover {
     object-fit: cover;
   }
+  .object-top {
+    object-position: top;
+  }
   .p-2 {
     padding: calc(var(--spacing) * 2);
   }
@@ -1638,6 +1675,9 @@
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
+  }
+  .pt-4 {
+    padding-top: calc(var(--spacing) * 4);
   }
   .pt-18 {
     padding-top: calc(var(--spacing) * 18);
@@ -1746,6 +1786,10 @@
     --tw-leading: 1 !important;
     line-height: 1 !important;
   }
+  .leading-relaxed {
+    --tw-leading: var(--leading-relaxed);
+    line-height: var(--leading-relaxed);
+  }
   .leading-snug {
     --tw-leading: var(--leading-snug);
     line-height: var(--leading-snug);
@@ -1852,6 +1896,9 @@
   .text-black {
     color: var(--color-black);
   }
+  .text-brand-black {
+    color: var(--color-brand-black);
+  }
   .text-brand-cyan {
     color: var(--color-brand-cyan);
   }
@@ -1886,6 +1933,18 @@
     color: color-mix(in srgb, #212122 70%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-steel) 70%, transparent);
+    }
+  }
+  .text-steel\/80 {
+    color: color-mix(in srgb, #212122 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-steel) 80%, transparent);
+    }
+  }
+  .text-steel\/85 {
+    color: color-mix(in srgb, #212122 85%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-steel) 85%, transparent);
     }
   }
   .text-white {
@@ -2040,6 +2099,9 @@
     .hover\:animate-spin:hover {
       animation: var(--animate-spin);
     }
+    .hover\:border-brand-orange:hover {
+      border-color: var(--color-brand-orange);
+    }
     .hover\:border-pcb:hover {
       border-color: var(--color-pcb);
     }
@@ -2050,6 +2112,9 @@
       .hover\:bg-pcb\/8:hover {
         background-color: color-mix(in oklab, var(--color-pcb) 8%, transparent);
       }
+    }
+    .hover\:text-brand-black:hover {
+      color: var(--color-brand-black);
     }
     .hover\:text-pcb:hover {
       color: var(--color-pcb);
@@ -2219,6 +2284,18 @@
   .dark\:text-black:where(.dark, .dark *) {
     color: var(--color-black);
   }
+  .dark\:text-brand-cyan:where(.dark, .dark *) {
+    color: var(--color-brand-cyan);
+  }
+  .dark\:text-brand-green:where(.dark, .dark *) {
+    color: var(--color-brand-green);
+  }
+  .dark\:text-brand-orange:where(.dark, .dark *) {
+    color: var(--color-brand-orange);
+  }
+  .dark\:text-brand-white:where(.dark, .dark *) {
+    color: var(--color-brand-white);
+  }
   .dark\:text-concrete\/60:where(.dark, .dark *) {
     color: color-mix(in srgb, #c9c8c3 60%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -2229,6 +2306,18 @@
     color: color-mix(in srgb, #c9c8c3 70%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-concrete) 70%, transparent);
+    }
+  }
+  .dark\:text-concrete\/80:where(.dark, .dark *) {
+    color: color-mix(in srgb, #c9c8c3 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-concrete) 80%, transparent);
+    }
+  }
+  .dark\:text-concrete\/85:where(.dark, .dark *) {
+    color: color-mix(in srgb, #c9c8c3 85%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-concrete) 85%, transparent);
     }
   }
   .dark\:text-pcb-sage:where(.dark, .dark *) {
@@ -2262,6 +2351,9 @@
     --tw-prose-td-borders: var(--tw-prose-invert-td-borders);
   }
   @media (hover: hover) {
+    .dark\:hover\:border-brand-cyan:where(.dark, .dark *):hover {
+      border-color: var(--color-brand-cyan);
+    }
     .dark\:hover\:border-pcb-sage:where(.dark, .dark *):hover {
       border-color: var(--color-pcb-sage);
     }
@@ -2272,6 +2364,9 @@
       .dark\:hover\:bg-pcb-sage\/10:where(.dark, .dark *):hover {
         background-color: color-mix(in oklab, var(--color-pcb-sage) 10%, transparent);
       }
+    }
+    .dark\:hover\:text-brand-white:where(.dark, .dark *):hover {
+      color: var(--color-brand-white);
     }
     .dark\:hover\:text-pcb-sage:where(.dark, .dark *):hover {
       color: var(--color-pcb-sage);
@@ -2333,6 +2428,9 @@
   }
   .prose-img\:rounded-lg :is(:where(img):not(:where([class~="not-prose"], [class~="not-prose"] *))) {
     border-radius: var(--radius-lg);
+  }
+  .\[\&\>p\]\:m-0 > p {
+    margin: 0px;
   }
 }
 :root {
