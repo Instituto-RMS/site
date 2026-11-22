@@ -2,7 +2,7 @@ name: Build e deploy do site
 
 on:
   push:
-    branches: [sveltia]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
