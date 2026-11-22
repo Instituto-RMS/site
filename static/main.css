@@ -762,6 +762,9 @@
   .mt-1 {
     margin-top: var(--spacing);
   }
+  .mt-2\.5 {
+    margin-top: calc(var(--spacing) * 2.5);
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
@@ -1101,7 +1104,7 @@
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
     color: var(--color-brand-black);
-    text-decoration-line: none;
+    text-decoration-line: underline;
     text-decoration-color: var(--color-brand-orange);
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
@@ -1112,7 +1115,7 @@
     transition-duration: 150ms;
     &:hover {
       @media (hover: hover) {
-        text-decoration-line: underline;
+        color: var(--color-pcb);
       }
     }
     &:where(.dark, .dark *) {
@@ -1120,6 +1123,13 @@
     }
     &:where(.dark, .dark *) {
       text-decoration-color: var(--color-brand-cyan);
+    }
+    &:where(.dark, .dark *) {
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-pcb-sage);
+        }
+      }
     }
   }
   .block {
@@ -1139,6 +1149,9 @@
   }
   .inline-block {
     display: inline-block;
+  }
+  .inline-flex {
+    display: inline-flex;
   }
   .aspect-\[4\/3\] {
     aspect-ratio: 4/3;
@@ -1166,8 +1179,8 @@
   .h-3 {
     height: calc(var(--spacing) * 3);
   }
-  .h-3\.5 {
-    height: calc(var(--spacing) * 3.5);
+  .h-4 {
+    height: calc(var(--spacing) * 4);
   }
   .h-6 {
     height: calc(var(--spacing) * 6);
@@ -1199,8 +1212,8 @@
   .w-3 {
     width: calc(var(--spacing) * 3);
   }
-  .w-3\.5 {
-    width: calc(var(--spacing) * 3.5);
+  .w-4 {
+    width: calc(var(--spacing) * 4);
   }
   .w-6 {
     width: calc(var(--spacing) * 6);
@@ -1296,9 +1309,6 @@
   .gap-1 {
     gap: var(--spacing);
   }
-  .gap-1\.5 {
-    gap: calc(var(--spacing) * 1.5);
-  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -1352,6 +1362,9 @@
   }
   .rounded-lg {
     border-radius: var(--radius-lg);
+  }
+  .rounded-md {
+    border-radius: var(--radius-md);
   }
   .rounded-l-md {
     border-top-left-radius: var(--radius-md);
@@ -1496,6 +1509,12 @@
   .border-pcb {
     border-color: var(--color-pcb);
   }
+  .border-steel\/20 {
+    border-color: color-mix(in srgb, #212122 20%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-steel) 20%, transparent);
+    }
+  }
   .border-transparent {
     border-color: transparent;
   }
@@ -1563,6 +1582,12 @@
     background-color: color-mix(in srgb, #fdb314 10%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-brand-orange) 10%, transparent);
+    }
+  }
+  .bg-brand-white\/60 {
+    background-color: color-mix(in srgb, #f7f7f5 60%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-brand-white) 60%, transparent);
     }
   }
   .bg-inherit {
@@ -1674,9 +1699,6 @@
   }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
-  }
-  .pt-4 {
-    padding-top: calc(var(--spacing) * 4);
   }
   .pt-18 {
     padding-top: calc(var(--spacing) * 18);
@@ -2009,6 +2031,10 @@
     --tw-duration: 100ms;
     transition-duration: 100ms;
   }
+  .duration-150 {
+    --tw-duration: 150ms;
+    transition-duration: 150ms;
+  }
   .duration-200 {
     --tw-duration: 200ms;
     transition-duration: 200ms;
@@ -2100,6 +2126,14 @@
     .hover\:border-pcb:hover {
       border-color: var(--color-pcb);
     }
+    .hover\:bg-brand-orange\/10:hover {
+      background-color: color-mix(in srgb, #fdb314 10%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .hover\:bg-brand-orange\/10:hover {
+        background-color: color-mix(in oklab, var(--color-brand-orange) 10%, transparent);
+      }
+    }
     .hover\:bg-pcb\/8:hover {
       background-color: color-mix(in srgb, #1b6940 8%, transparent);
     }
@@ -2114,6 +2148,16 @@
     .hover\:text-pcb:hover {
       color: var(--color-pcb);
     }
+  }
+  .focus-visible\:outline-2:focus-visible {
+    outline-style: var(--tw-outline-style);
+    outline-width: 2px;
+  }
+  .focus-visible\:outline-offset-2:focus-visible {
+    outline-offset: 2px;
+  }
+  .focus-visible\:outline-brand-orange:focus-visible {
+    outline-color: var(--color-brand-orange);
   }
   .active\:scale-95:active {
     --tw-scale-x: 95%;
@@ -2255,11 +2299,23 @@
       border-color: color-mix(in oklab, var(--color-concrete) 10%, transparent);
     }
   }
+  .dark\:border-concrete\/25:where(.dark, .dark *) {
+    border-color: color-mix(in srgb, #c9c8c3 25%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklab, var(--color-concrete) 25%, transparent);
+    }
+  }
   .dark\:border-pcb-sage:where(.dark, .dark *) {
     border-color: var(--color-pcb-sage);
   }
   .dark\:bg-\(--header-dark\):where(.dark, .dark *) {
     background-color: var(--header-dark);
+  }
+  .dark\:bg-white\/5:where(.dark, .dark *) {
+    background-color: color-mix(in srgb, #fff 5%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-white) 5%, transparent);
+    }
   }
   .dark\:bg-white\/10:where(.dark, .dark *) {
     background-color: color-mix(in srgb, #fff 10%, transparent);
@@ -2352,6 +2408,14 @@
     .dark\:hover\:border-pcb-sage:where(.dark, .dark *):hover {
       border-color: var(--color-pcb-sage);
     }
+    .dark\:hover\:bg-brand-cyan\/10:where(.dark, .dark *):hover {
+      background-color: color-mix(in srgb, #80e3f6 10%, transparent);
+    }
+    @supports (color: color-mix(in lab, red, red)) {
+      .dark\:hover\:bg-brand-cyan\/10:where(.dark, .dark *):hover {
+        background-color: color-mix(in oklab, var(--color-brand-cyan) 10%, transparent);
+      }
+    }
     .dark\:hover\:bg-pcb-sage\/10:where(.dark, .dark *):hover {
       background-color: color-mix(in srgb, #63b587 10%, transparent);
     }
@@ -2366,6 +2430,9 @@
     .dark\:hover\:text-pcb-sage:where(.dark, .dark *):hover {
       color: var(--color-pcb-sage);
     }
+  }
+  .dark\:focus-visible\:outline-brand-cyan:where(.dark, .dark *):focus-visible {
+    outline-color: var(--color-brand-cyan);
   }
   .prose-a\:block :is(:where(a):not(:where([class~="not-prose"], [class~="not-prose"] *))) {
     display: block;

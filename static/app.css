@@ -290,9 +290,9 @@ article {
   @apply inline-flex items-center justify-center rounded-md border border-concrete/40 px-5 py-2.5 font-semibold text-brand-white no-underline transition-colors duration-150 hover:border-brand-cyan hover:bg-brand-cyan/10 hover:text-brand-white active:scale-[0.98];
 }
 
-/* Quiet editorial card link — Ink text with Logo Amber underline on hover. */
+/* Quiet editorial card link — Ink text with Logo Amber underline, PCB green on hover. */
 @utility card-link {
-  @apply inline-flex items-center text-sm font-semibold text-brand-black no-underline decoration-brand-orange decoration-2 underline-offset-4 transition-colors duration-150 hover:underline dark:text-brand-white dark:decoration-brand-cyan;
+  @apply inline-flex items-center text-sm font-semibold text-brand-black underline decoration-brand-orange decoration-2 underline-offset-4 transition-colors duration-150 hover:text-pcb dark:text-brand-white dark:decoration-brand-cyan dark:hover:text-pcb-sage;
 }
 
 @utility secondary-link {
