@@ -2,6 +2,7 @@
 # ATENÇÃO: Em TOML, chaves vazias no nível raiz (como `coordenadores = []`)
 # devem permanecer ANTES de qualquer tabela `[...]` ou `[[...]]`.
 
+coordenadores = []
 embaixadores = []
 
 [[diretoria]]
@@ -21,15 +22,5 @@ photo = "https://res.cloudinary.com/p9uceq87/image/upload/v1795370518/1786406718
 bio = ""
 linkedin = ""
 github = ""
-instagram = ""
-website = ""
-
-[[coordenadores]]
-name = "Giovanna Alice"
-role = "Coordenadora MulheRio Maker"
-photo = "https://res.cloudinary.com/p9uceq87/image/upload/v1795370627/160683137.jpg"
-bio = "Responsável por oficinas do grupo exclusivo de mulheres."
-linkedin = ""
-github = "https://github.com/GiovanaAlice"
 instagram = ""
 website = ""
